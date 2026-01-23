@@ -102,8 +102,12 @@ export const producingPartners = [
   "ATER Balletto (IT)",
   "Transart Festival (IT)",
   "RedSapata Tanzfabrik (AT)",
-  "Tanzfabrik Berlin (DE)",
-  "Compagnia Abbondanza/Bertoni",
+  "Tanzfabrik Berlin (DE)"
+];
+
+export const productionCompany = "Compagnia Abbondanza/Bertoni";
+
+export const supportedBy = [
   "Zerogrammi – Permutazioni 2025",
   "Il Vaporetto dell'Immaginario - Venice"
 ];

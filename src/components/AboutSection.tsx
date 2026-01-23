@@ -1,5 +1,5 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, cvLink, shortBioLink } from "@/data/cv";
+import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 
 const AboutSection = () => {
@@ -96,7 +96,7 @@ const AboutSection = () => {
             <div className="section-divider" />
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-12">
             {coProducingPartners.map((partner, index) => (
               <StaggerItem key={index}>
                 <div className="p-4 border border-border/50 text-center font-light text-sm">
@@ -105,6 +105,28 @@ const AboutSection = () => {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* Producing Partners */}
+          <AnimatedSection className="text-center mb-8">
+            <h4 className="text-xl font-light tracking-wide text-primary mb-4">Producing Partners</h4>
+            <p className="text-foreground/80 font-light">
+              {producingPartners.join(" • ")}
+            </p>
+          </AnimatedSection>
+
+          {/* Production Company */}
+          <AnimatedSection className="text-center mb-8">
+            <h4 className="text-xl font-light tracking-wide text-primary mb-4">Production</h4>
+            <p className="text-foreground/80 font-light">{productionCompany}</p>
+          </AnimatedSection>
+
+          {/* Supported By */}
+          <AnimatedSection className="text-center">
+            <h4 className="text-xl font-light tracking-wide text-primary mb-4">Supported by</h4>
+            <p className="text-foreground/80 font-light">
+              {supportedBy.join(" • ")}
+            </p>
+          </AnimatedSection>
         </div>
 
         {/* CV Section */}
