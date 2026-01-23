@@ -1,7 +1,21 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { projects, getAllWorks } from "@/data/projects";
+import { getAllWorks } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem, HoverScale } from "./ScrollAnimations";
+
+// Import project images
+import balanceIn1 from "@/assets/balance-in-1.jpg";
+import strangers1 from "@/assets/strangers-1.png";
+import wfdal1 from "@/assets/wfdal-1.jpg";
+import bodyBorder1 from "@/assets/body-border-1.jpg";
+
+// Image mapping for projects
+const projectImages: Record<string, string> = {
+  "balance-in": balanceIn1,
+  "strangers-in-the-night": strangers1,
+  "what-falls-doesnt-always-land": wfdal1,
+  "the-body-as-border": bodyBorder1,
+};
 
 const WorksSection = () => {
   // Get all works sorted by year (newest first)
@@ -28,11 +42,21 @@ const WorksSection = () => {
               <HoverScale>
                 <Link to={`/project/${work.id}`}>
                   <article className="work-card group cursor-pointer">
-                    {/* Placeholder Image Area */}
+                    {/* Image Area */}
                     <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30">
-                        <span className="text-6xl font-light">{work.title.charAt(0)}</span>
-                      </div>
+                      {projectImages[work.id] ? (
+                        <img 
+                          src={projectImages[work.id]} 
+                          alt={work.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30">
+                          <span className="text-6xl font-light">{work.title.charAt(0)}</span>
+                        </div>
+                      )}
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       {/* Hover Arrow */}
                       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                         <ArrowUpRight className="w-6 h-6 text-primary" />
@@ -50,7 +74,7 @@ const WorksSection = () => {
                       <p className="text-sm text-primary/80 uppercase tracking-wider mb-3">
                         {work.subtitle}
                       </p>
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                      <p className="text-sm text-muted-foreground font-light leading-relaxed line-clamp-3">
                         {work.description}
                       </p>
                     </div>
