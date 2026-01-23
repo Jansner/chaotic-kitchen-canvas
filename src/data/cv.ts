@@ -27,22 +27,20 @@ export const mentors = [
   "Micha Purucker",
   "Anton Lachky",
   "Paul Blackman",
-  "Eduardo Torroja"
+  "Eduardo Torroja",
+  "Jos Baker"
 ];
 
-export const professionalExperience: CVExperience[] = [
+// Only bold/selected professional experiences from CV
+export const selectedProfessionalExperience: CVExperience[] = [
   { year: "2025", production: "Liminal Phantoms", location: "Canada / Europe tour", company: "Chaotic Kitchen" },
   { year: "2025", production: "What Falls Doesn't Always Land", location: "Canada / Europe tour", company: "Chaotic Kitchen" },
   { year: "2025", production: "Strangers in the Night", location: "Italy tour", company: "Co-creator Jos Baker, Carlo Massari" },
   { year: "2025", production: "Balance In", location: "Italy", company: "Chaotic Kitchen / Abbondanza–Bertoni" },
-  { year: "2025", production: "Capodimonte", location: "Italy", company: "Antonello Tudisco" },
-  { year: "2025", production: "Ministry of Red Carpets", location: "Belgium", company: "Silvia Pezzarossi" },
-  { year: "2025", production: "Bolero / Assistant", location: "Germany", company: "Nationaltheater Mannheim (NTM)" },
   { year: "2024", production: "White Out", location: "Central Europe tour", company: "Piergiorgio Milano" },
   { year: "2024", production: "Empty Phantoms", location: "Canada", company: "Chaotic Kitchen" },
   { year: "2024", production: "FIKA", location: "Sweden / Germany / South Korea", company: "Minjoung Jang" },
-  { year: "2024", production: "Liminal Phantoms", location: "Central Europe tour", company: "Chaotic Kitchen" },
-  { year: "2024", production: "100.80.40", location: "Germany", company: "Micha Purucker" }
+  { year: "2024", production: "Liminal Phantoms", location: "Central Europe tour", company: "Chaotic Kitchen" }
 ];
 
 export const choreographies: CVChoreography[] = [
@@ -88,3 +86,50 @@ export const languages = [
   { language: "Swedish", level: "native" },
   { language: "German", level: "working knowledge" }
 ];
+
+export const coProducingPartners = [
+  "Oriente Occidente (Italy) - National Dance Foundation",
+  "ATER Balletto (Italy) - National Ballet Organisation",
+  "Transart Festival (Italy)",
+  "ERT Emilia-Romagna Teatro / Teatro Nazionale - focus CARNE",
+  "Associazione Culturale SPaCCa (Production Company)",
+  "MIC - Ministero della Cultura (Italian Ministry of Culture)",
+  "Assessorato alla Cultura - Regione Emilia Romagna"
+];
+
+export const producingPartners = [
+  "Oriente Occidente (IT)",
+  "ATER Balletto (IT)",
+  "Transart Festival (IT)",
+  "RedSapata Tanzfabrik (AT)",
+  "Tanzfabrik Berlin (DE)",
+  "Compagnia Abbondanza/Bertoni",
+  "Zerogrammi – Permutazioni 2025",
+  "Il Vaporetto dell'Immaginario - Venice"
+];
+
+export const presentations2024 = [
+  { date: "October 2024", venue: "Rome - Teatro India" },
+  { date: "November 2024", venue: "Bologna - Teatro delle Moline" },
+  { date: "December 2024", venue: "Turin - Teatro Astra" },
+  { date: "December 2024", venue: "Milan - Teatro Out Off" }
+];
+
+export const presentations2025 = [
+  { date: "01-03-2025", venue: "Perugia - Teatro Morlacchi" },
+  { date: "14-03-2025", venue: "Modena - Teatro delle Passioni" },
+  { date: "15-03-2025", venue: "Modena - Teatro delle Passioni" },
+  { date: "13-04-2025", venue: "Pergine Valsugana - Teatro Comunale" },
+  { date: "10-05-2025", venue: "Napoli - TAN Teatro Area Nord" },
+  { date: "01-06-2025", venue: "Bari - Nuovo Teatro Abeliano" },
+  { date: "04-09-2025", venue: "Venezia - Forte Marghera Venezia Mestre" },
+  { date: "19-09-2025", venue: "Bolzano - Teatro Cristallo" },
+  { date: "20-09-2025", venue: "Florence - Teatro Cantiere Florida" },
+  { date: "25-10-2025", venue: "Palermo - Teatro Biondo" },
+  { date: "15-11-2025", venue: "Genova - Teatro Akropolis" },
+  { date: "08-12-2025", venue: "Trieste - Teatro Miela" }
+];
+
+// External links
+export const cvLink = "https://drive.google.com/file/d/11dBAB3KyaApD3EC7a7JXdmv4B72vAjfK/view?usp=drive_link";
+export const shortBioLink = "https://drive.google.com/file/d/1jbV78fdZ8sjtwtCcpJpFhtjc-KdP9Oro/view?usp=sharing";
