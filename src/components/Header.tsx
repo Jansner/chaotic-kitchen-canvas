@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -17,7 +16,7 @@ const Header = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    setIsMobileMenuOpen(false);
+    setIsMenuOpen(false);
     if (href.startsWith("#")) {
       const element = document.querySelector(href);
       if (element) {
@@ -27,108 +26,85 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md">
-      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="text-xl md:text-2xl font-light tracking-[0.15em] uppercase">
-          CK
-        </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <nav className="container mx-auto px-6 py-6 flex items-center justify-between">
+          {/* Logo - Left side */}
+          <Link 
+            to="/" 
+            className="text-xl font-light tracking-[0.15em] uppercase border border-primary/50 px-3 py-1.5 hover:bg-primary/10 transition-colors"
+          >
+            CK
+          </Link>
 
-        {/* Desktop Navigation - Hidden on mobile */}
-        <ul className="hidden md:flex items-center gap-12">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              {item.href.startsWith("/") && !item.href.includes("#") ? (
-                <Link 
-                  to={item.href} 
-                  className="nav-link text-sm tracking-widest uppercase"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a 
-                  href={item.href} 
-                  className="nav-link text-sm tracking-widest uppercase"
-                  onClick={(e) => {
-                    if (isHomePage && item.href.startsWith("#")) {
-                      e.preventDefault();
-                      handleNavClick(item.href);
-                    }
-                  }}
-                >
-                  {item.label}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+          {/* Three Strips Menu Button - Right side (visible on all screens) */}
+          <button
+            className="relative z-50 w-10 h-8 flex flex-col justify-center items-center gap-[6px] group"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <motion.span 
+              className="w-7 h-[2px] bg-foreground block origin-center"
+              animate={isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+            <motion.span 
+              className="w-7 h-[2px] bg-foreground block"
+              animate={isMenuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span 
+              className="w-7 h-[2px] bg-foreground block origin-center"
+              animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+          </button>
+        </nav>
+      </header>
 
-        {/* Hamburger Menu - Only visible on mobile */}
-        <button
-          className="md:hidden relative z-50 w-8 h-8 flex flex-col justify-center items-center gap-1.5"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <motion.span 
-            className="w-6 h-0.5 bg-foreground block"
-            animate={isMobileMenuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span 
-            className="w-6 h-0.5 bg-foreground block"
-            animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span 
-            className="w-6 h-0.5 bg-foreground block"
-            animate={isMobileMenuOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-        </button>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
+      {/* Full-screen Menu Overlay */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-background z-40 md:hidden"
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 bg-background z-40"
           >
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="flex flex-col items-center justify-center h-full gap-8"
             >
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + index * 0.05 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ delay: 0.1 + index * 0.08, duration: 0.4 }}
                 >
                   {item.href.startsWith("/") && !item.href.includes("#") ? (
                     <Link 
                       to={item.href}
-                      className="text-3xl font-light tracking-[0.2em] uppercase hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-4xl md:text-5xl font-light tracking-[0.15em] uppercase hover:text-primary transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
                     </Link>
                   ) : (
                     <a
                       href={item.href}
-                      className="text-3xl font-light tracking-[0.2em] uppercase hover:text-primary transition-colors"
+                      className="text-4xl md:text-5xl font-light tracking-[0.15em] uppercase hover:text-primary transition-colors duration-300"
                       onClick={(e) => {
                         if (isHomePage && item.href.startsWith("#")) {
                           e.preventDefault();
                           handleNavClick(item.href);
                         } else {
-                          setIsMobileMenuOpen(false);
+                          setIsMenuOpen(false);
                         }
                       }}
                     >
@@ -138,18 +114,18 @@ const Header = () => {
                 </motion.div>
               ))}
               
-              {/* Social Links in Mobile Menu */}
+              {/* Social Links in Menu */}
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="flex gap-6 mt-8"
+                transition={{ delay: 0.5 }}
+                className="flex gap-8 mt-12 text-sm tracking-widest"
               >
                 <a 
                   href="https://www.instagram.com/f.l.o.w.e.r_boy/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors uppercase"
                 >
                   Instagram
                 </a>
@@ -157,7 +133,7 @@ const Header = () => {
                   href="https://www.youtube.com/@ChaoticKitchenJansner" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors uppercase"
                 >
                   YouTube
                 </a>
@@ -166,7 +142,7 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };
 
