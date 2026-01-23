@@ -1,12 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { projects, getAllWorks, getAllFilms } from "@/data/projects";
+import { projects, getAllWorks } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem, HoverScale } from "./ScrollAnimations";
 
 const WorksSection = () => {
   // Get all works sorted by year (newest first)
   const performances = getAllWorks();
-  const films = getAllFilms();
 
   return (
     <section id="works" className="py-24 md:py-32 bg-background">
@@ -62,52 +61,15 @@ const WorksSection = () => {
           ))}
         </StaggerContainer>
 
-        {/* Short Films Section */}
-        {films.length > 0 && (
-          <>
-            <AnimatedSection className="text-center mt-24 mb-12">
-              <h3 className="text-3xl md:text-4xl font-light tracking-wide">
-                Short Films
-              </h3>
-              <div className="section-divider" />
-            </AnimatedSection>
-
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-              {films.map((film) => (
-                <StaggerItem key={film.id}>
-                  <HoverScale>
-                    <Link to={`/project/${film.id}`}>
-                      <article className="work-card group cursor-pointer">
-                        <div className="aspect-video bg-secondary relative overflow-hidden">
-                          <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30">
-                            <span className="text-5xl font-light">{film.title.charAt(0)}</span>
-                          </div>
-                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                            <ArrowUpRight className="w-6 h-6 text-primary" />
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <div className="flex items-baseline justify-between mb-2">
-                            <h3 className="text-xl font-light tracking-wide group-hover:text-primary transition-colors duration-300">
-                              {film.title}
-                            </h3>
-                            <span className="text-sm text-muted-foreground">{film.year}</span>
-                          </div>
-                          <p className="text-sm text-primary/80 uppercase tracking-wider mb-2">
-                            {film.subtitle}
-                          </p>
-                          <p className="text-sm text-muted-foreground font-light">
-                            {film.description}
-                          </p>
-                        </div>
-                      </article>
-                    </Link>
-                  </HoverScale>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </>
-        )}
+        {/* Link to Short Movies Page */}
+        <AnimatedSection className="text-center mt-16">
+          <Link 
+            to="/short-movies"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-light tracking-wide"
+          >
+            View Short Movies & Films <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </AnimatedSection>
       </div>
     </section>
   );

@@ -12,6 +12,7 @@ const Header = () => {
     { label: "Works", href: isHomePage ? "#works" : "/#works" },
     { label: "About", href: isHomePage ? "#about" : "/#about" },
     { label: "News", href: "/news" },
+    { label: "Short Movies", href: "/short-movies" },
     { label: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
