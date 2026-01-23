@@ -1,13 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { projects, shortFilms, getAllWorks } from "@/data/projects";
+import { projects, getAllWorks, getAllFilms } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem, HoverScale } from "./ScrollAnimations";
 
 const WorksSection = () => {
   // Get all works sorted by year (newest first)
-  const allWorks = getAllWorks();
-  const performances = allWorks.filter(w => w.type === 'performance');
-  const films = allWorks.filter(w => w.type === 'film');
+  const performances = getAllWorks();
+  const films = getAllFilms();
 
   return (
     <section id="works" className="py-24 md:py-32 bg-background">
@@ -23,8 +22,8 @@ const WorksSection = () => {
           </p>
         </AnimatedSection>
 
-        {/* Performances Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Performances Grid - 2x2 layout */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {performances.map((work) => (
             <StaggerItem key={work.id}>
               <HoverScale>
