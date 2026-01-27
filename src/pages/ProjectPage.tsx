@@ -25,6 +25,14 @@ import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.p
 import gloomPreview from "@/assets/gloom-preview.jpg";
 import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
+import haitunPreview from "@/assets/haitun-preview.png";
+import fikaPreview from "@/assets/fika-preview.png";
+import rorschachPreview from "@/assets/rorschach-preview.jpg";
+import rorschachGallery from "@/assets/rorschach-gallery.jpg";
+import storfagelPreview from "@/assets/storfagel-preview.jpg";
+import imbrutePreview from "@/assets/imbrute-preview.png";
+import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
+import beneathPreview from "@/assets/beneath-preview.jpg";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -64,6 +72,34 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     main: justLikeOldDaysPreview,
     gallery: []
   },
+  "haitun": {
+    main: haitunPreview,
+    gallery: []
+  },
+  "fika": {
+    main: fikaPreview,
+    gallery: []
+  },
+  "rorschach": {
+    main: rorschachPreview,
+    gallery: [rorschachGallery]
+  },
+  "stor-fagel": {
+    main: storfagelPreview,
+    gallery: []
+  },
+  "imburte-union": {
+    main: imbrutePreview,
+    gallery: []
+  },
+  "vicious-cycle": {
+    main: viciousCyclePreview,
+    gallery: []
+  },
+  "beneath": {
+    main: beneathPreview,
+    gallery: []
+  },
 };
 
 // Helper to get YouTube thumbnail from URL
@@ -96,11 +132,26 @@ const ProjectPage = () => {
   const images = projectImages[project.id];
   const trailerVideo = project.videoLinks?.find(v => v.type === 'trailer') || project.videoLinks?.[0];
 
+  // Check if this is Strangers in the Night - special gallery layout
+  const isStrangers = project.id === "strangers-in-the-night";
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       
-      <main className="pt-24">
+      {/* Faded Hero Background Image */}
+      {images?.main && (
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <img 
+            src={images.main}
+            alt=""
+            className="w-full h-full object-cover opacity-[0.03]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+        </div>
+      )}
+      
+      <main className="pt-24 relative z-10">
         {/* Back Button */}
         <section className="container mx-auto px-6 py-8">
           <FadeInSection>
@@ -133,10 +184,10 @@ const ProjectPage = () => {
               </div>
             </AnimatedSection>
 
-            {/* Right: Video Embed or Thumbnail */}
+            {/* Right: Video Embed or Thumbnail + Gallery for Strangers */}
             <AnimatedSection delay={0.2}>
-              {trailerVideo && (
-                <div className="sticky top-32">
+              <div className="sticky top-32 space-y-4">
+                {trailerVideo && (
                   <a
                     href={trailerVideo.url}
                     target="_blank"
@@ -167,26 +218,41 @@ const ProjectPage = () => {
                       {trailerVideo.title}
                     </div>
                   </a>
-                  
-                  {/* Additional video links */}
-                  {project.videoLinks && project.videoLinks.length > 1 && (
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.videoLinks.slice(1).map((video, index) => (
-                        <a
-                          key={index}
-                          href={video.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-                        >
-                          <Play className="w-4 h-4" />
-                          {video.title}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
+                )}
+                
+                {/* Additional video links */}
+                {project.videoLinks && project.videoLinks.length > 1 && (
+                  <div className="flex flex-wrap gap-2">
+                    {project.videoLinks.slice(1).map((video, index) => (
+                      <a
+                        key={index}
+                        href={video.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        <Play className="w-4 h-4" />
+                        {video.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
+                {/* Gallery under video for Strangers in the Night */}
+                {isStrangers && images?.gallery && images.gallery.length > 0 && (
+                  <div className="grid grid-cols-1 gap-4 mt-4">
+                    {images.gallery.map((img, index) => (
+                      <div key={index} className="aspect-[4/3] overflow-hidden group">
+                        <img 
+                          src={img} 
+                          alt={`${project.title} - Image ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </AnimatedSection>
           </div>
         </section>
@@ -316,8 +382,8 @@ const ProjectPage = () => {
           </section>
         )}
 
-        {/* Gallery Section */}
-        {images?.gallery && images.gallery.length > 0 && (
+        {/* Gallery Section - Skip for Strangers as gallery is shown next to video */}
+        {!isStrangers && images?.gallery && images.gallery.length > 0 && (
           <section className="py-16 bg-card">
             <div className="container mx-auto px-6">
               <AnimatedSection>

@@ -13,6 +13,13 @@ import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.p
 import gloomPreview from "@/assets/gloom-preview.jpg";
 import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
+import haitunPreview from "@/assets/haitun-preview.png";
+import fikaPreview from "@/assets/fika-preview.png";
+import rorschachPreview from "@/assets/rorschach-preview.jpg";
+import storfagelPreview from "@/assets/storfagel-preview.jpg";
+import imbrutePreview from "@/assets/imbrute-preview.png";
+import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
+import beneathPreview from "@/assets/beneath-preview.jpg";
 
 // Image mapping for projects
 const projectImages: Record<string, string> = {
@@ -25,6 +32,13 @@ const projectImages: Record<string, string> = {
   "gloom": gloomPreview,
   "through-the-looking-glass": throughLookingGlassPreview,
   "just-like-old-days": justLikeOldDaysPreview,
+  "haitun": haitunPreview,
+  "fika": fikaPreview,
+  "rorschach": rorschachPreview,
+  "stor-fagel": storfagelPreview,
+  "imburte-union": imbrutePreview,
+  "vicious-cycle": viciousCyclePreview,
+  "beneath": beneathPreview,
 };
 
 const WorksSection = () => {
@@ -45,8 +59,8 @@ const WorksSection = () => {
           </p>
         </AnimatedSection>
 
-        {/* Performances Grid - 3 columns on desktop, more spacing */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
+        {/* Performances Grid - 2 columns on desktop, more spacing */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
           {performances.map((work) => (
             <StaggerItem key={work.id}>
               <HoverScale>
