@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, ArrowRight, X } from "lucide-react";
 import { newsItems, NewsItem } from "@/data/news";
@@ -9,6 +9,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const NewsPage = () => {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
