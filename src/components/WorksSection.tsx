@@ -5,40 +5,40 @@ import { AnimatedSection, StaggerContainer, StaggerItem, HoverScale } from "./Sc
 
 // Import project images
 import balanceInPreview from "@/assets/balance-in-preview.png";
-import strangers1 from "@/assets/strangers-1.png";
+import strangers2 from "@/assets/strangers-2.png";
 import wfdal1 from "@/assets/wfdal-1.jpg";
-import bodyBorderPreview from "@/assets/body-border-preview.jpg";
+import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
+import throughLookingGlassPreviewNew from "@/assets/through-looking-glass-preview-new.jpg";
 import liminalPhantomsPreview from "@/assets/liminal-phantoms-preview.jpg";
 import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.png";
 import gloomPreview from "@/assets/gloom-preview.jpg";
-import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
-import haitunPreview from "@/assets/haitun-preview.png";
-import fikaPreview from "@/assets/fika-preview.png";
+import haitunPreviewNew from "@/assets/haitun-preview-new.jpg";
+import fikaPreviewNew from "@/assets/fika-preview-new.png";
 import rorschachPreview from "@/assets/rorschach-preview.jpg";
 import storfagelPreview from "@/assets/storfagel-preview.jpg";
 import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
-import beneathPreview from "@/assets/beneath-preview.jpg";
+import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 
-// Image mapping for projects
+// Image mapping for projects - updated with swaps
 const projectImages: Record<string, string> = {
   "balance-in": balanceInPreview,
-  "strangers-in-the-night": strangers1,
+  "strangers-in-the-night": strangers2, // Swapped
   "what-falls-doesnt-always-land": wfdal1,
-  "the-body-as-border": bodyBorderPreview,
+  "the-body-as-border": throughLookingGlassPreview, // Using Through Looking Glass preview for Body as Border
   "liminal-phantoms": liminalPhantomsPreview,
   "noise-without-silence": noiseWithoutSilencePreview,
   "gloom": gloomPreview,
-  "through-the-looking-glass": throughLookingGlassPreview,
+  "through-the-looking-glass": throughLookingGlassPreviewNew, // New preview
   "just-like-old-days": justLikeOldDaysPreview,
-  "haitun": haitunPreview,
-  "fika": fikaPreview,
+  "haitun": haitunPreviewNew, // New preview
+  "fika": fikaPreviewNew, // New preview
   "rorschach": rorschachPreview,
   "stor-fagel": storfagelPreview,
   "imburte-union": imbrutePreview,
   "vicious-cycle": viciousCyclePreview,
-  "beneath": beneathPreview,
+  "beneath": beneathPreviewNew, // New preview
 };
 
 const WorksSection = () => {
@@ -101,6 +101,15 @@ const WorksSection = () => {
                       <p className="text-sm text-muted-foreground font-light leading-relaxed line-clamp-3">
                         {work.description}
                       </p>
+                      {/* Quote for Balance In */}
+                      {work.quote && (
+                        <blockquote className="mt-4 pt-4 border-t border-border/30">
+                          <p className="text-xs italic text-foreground/60 line-clamp-2">
+                            "{work.quote.text}"
+                          </p>
+                          <cite className="text-xs text-primary/60 mt-1 block">— {work.quote.author}</cite>
+                        </blockquote>
+                      )}
                     </div>
                   </article>
                 </Link>

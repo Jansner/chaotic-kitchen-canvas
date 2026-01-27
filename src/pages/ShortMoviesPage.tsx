@@ -4,6 +4,15 @@ import { shortFilms, musicVideos } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ScrollAnimations";
 import { Play, Film, Music } from "lucide-react";
 
+// Helper to get YouTube thumbnail from URL
+const getYouTubeThumbnail = (url: string) => {
+  const videoIdMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+  if (videoIdMatch && videoIdMatch[1]) {
+    return `https://img.youtube.com/vi/${videoIdMatch[1]}/maxresdefault.jpg`;
+  }
+  return null;
+};
+
 const ShortMoviesPage = () => {
   // Sort films by order
   const sortedFilms = [...shortFilms].sort((a, b) => (a.order || 999) - (b.order || 999));
@@ -40,58 +49,73 @@ const ShortMoviesPage = () => {
             </AnimatedSection>
 
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {sortedFilms.map((film) => (
-                <StaggerItem key={film.id}>
-                  <div className="group relative bg-card border border-border overflow-hidden hover:border-primary/50 transition-all duration-300">
-                    {/* Thumbnail/Placeholder */}
-                    <div className="aspect-video bg-secondary relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="w-16 h-16 text-primary/30 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+              {sortedFilms.map((film) => {
+                const thumbnail = film.videoLinks?.[0] ? getYouTubeThumbnail(film.videoLinks[0].url) : null;
+                const hasLinks = film.videoLinks && film.videoLinks.length > 0;
+                
+                return (
+                  <StaggerItem key={film.id}>
+                    <div className="group relative bg-card border border-border overflow-hidden hover:border-primary/50 transition-all duration-300">
+                      {/* Thumbnail */}
+                      <div className="aspect-video bg-secondary relative overflow-hidden">
+                        {thumbnail ? (
+                          <img 
+                            src={thumbnail}
+                            alt={film.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <Play className="w-16 h-16 text-primary/30 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+                          </div>
+                        )}
+                        {hasLinks && (
+                          <a 
+                            href={film.videoLinks![0].url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            aria-label={`Watch ${film.title}`}
+                          >
+                            <Play className="w-16 h-16 text-white" />
+                          </a>
+                        )}
                       </div>
-                      {film.videoLinks && film.videoLinks[0] && (
-                        <a 
-                          href={film.videoLinks[0].url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute inset-0 z-10"
-                          aria-label={`Watch ${film.title}`}
-                        />
-                      )}
-                    </div>
-                    
-                    {/* Info */}
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-2xl font-light tracking-wide group-hover:text-primary transition-colors">
-                          {film.title}
-                        </h3>
-                        <span className="text-sm text-muted-foreground">{film.year}</span>
-                      </div>
-                      <p className="text-muted-foreground font-light mb-4">
-                        {film.description}
-                      </p>
                       
-                      {/* Video Links */}
-                      {film.videoLinks && film.videoLinks.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                          {film.videoLinks.map((link, idx) => (
-                            <a
-                              key={idx}
-                              href={link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs px-3 py-1 border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                            >
-                              <Play className="w-3 h-3" />
-                              {link.title}
-                            </a>
-                          ))}
+                      {/* Info */}
+                      <div className="p-6">
+                        <div className="flex justify-between items-start mb-2">
+                          <h3 className="text-2xl font-light tracking-wide group-hover:text-primary transition-colors">
+                            {film.title}
+                          </h3>
+                          <span className="text-sm text-muted-foreground">{film.year}</span>
                         </div>
-                      )}
+                        <p className="text-muted-foreground font-light mb-4">
+                          {film.description}
+                        </p>
+                        
+                        {/* Video Links - only show if film has links */}
+                        {hasLinks && (
+                          <div className="flex flex-wrap gap-2">
+                            {film.videoLinks!.map((link, idx) => (
+                              <a
+                                key={idx}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-xs px-3 py-1 border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                              >
+                                <Play className="w-3 h-3" />
+                                {link.title}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </StaggerItem>
-              ))}
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </section>
@@ -107,36 +131,50 @@ const ShortMoviesPage = () => {
               <div className="section-divider !mx-0" />
             </AnimatedSection>
 
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {musicVideos.map((video) => (
-                <StaggerItem key={video.id}>
-                  <div className="group relative bg-background border border-border overflow-hidden hover:border-primary/50 transition-all duration-300">
-                    {/* Thumbnail/Placeholder - Smaller aspect ratio */}
-                    <div className="aspect-square bg-secondary relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Play className="w-8 h-8 text-primary/30 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {musicVideos.map((video) => {
+                const thumbnail = video.videoLinks?.[0] ? getYouTubeThumbnail(video.videoLinks[0].url) : null;
+                
+                return (
+                  <StaggerItem key={video.id}>
+                    <div className="group relative bg-background border border-border overflow-hidden hover:border-primary/50 transition-all duration-300">
+                      {/* Thumbnail - Smaller aspect ratio */}
+                      <div className="aspect-video bg-secondary relative overflow-hidden">
+                        {thumbnail ? (
+                          <img 
+                            src={thumbnail}
+                            alt={video.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <Play className="w-6 h-6 text-primary/30 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+                          </div>
+                        )}
+                        {video.videoLinks && video.videoLinks[0] && (
+                          <a 
+                            href={video.videoLinks[0].url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            aria-label={`Watch ${video.title}`}
+                          >
+                            <Play className="w-8 h-8 text-white" />
+                          </a>
+                        )}
                       </div>
-                      {video.videoLinks && video.videoLinks[0] && (
-                        <a 
-                          href={video.videoLinks[0].url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute inset-0 z-10"
-                          aria-label={`Watch ${video.title}`}
-                        />
-                      )}
+                      
+                      {/* Info - Compact */}
+                      <div className="p-2">
+                        <h3 className="text-xs font-light tracking-wide group-hover:text-primary transition-colors truncate">
+                          {video.title}
+                        </h3>
+                        <span className="text-xs text-muted-foreground">{video.year}</span>
+                      </div>
                     </div>
-                    
-                    {/* Info - Compact */}
-                    <div className="p-3">
-                      <h3 className="text-sm font-light tracking-wide group-hover:text-primary transition-colors truncate">
-                        {video.title}
-                      </h3>
-                      <span className="text-xs text-muted-foreground">{video.year}</span>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
           </div>
         </section>

@@ -40,7 +40,8 @@ export const selectedProfessionalExperience: CVExperience[] = [
   { year: "2024", production: "White Out", location: "Central Europe tour", company: "Piergiorgio Milano" },
   { year: "2024", production: "Empty Phantoms", location: "Germany, Belgium, Canada", company: "Chaotic Kitchen" },
   { year: "2024", production: "FIKA", location: "Sweden / Germany / South Korea", company: "Chaotic Kitchen / Geosmin Jang" },
-  { year: "2023", production: "Bolero", location: "Belgium & France", company: "Michèle Anne de Mey" }
+  { year: "2023", production: "Bolero", location: "Belgium & France", company: "Michèle Anne de Mey" },
+  { year: "2022", production: "ZENITH – Lead actor Hungry", location: "International", company: "György Kristof, Anton Lachky" }
 ];
 
 export const choreographies: CVChoreography[] = [
@@ -138,4 +139,4 @@ export const presentations2025 = [
 
 // External links
 export const cvLink = "https://drive.google.com/file/d/11dBAB3KyaApD3EC7a7JXdmv4B72vAjfK/view?usp=drive_link";
-export const shortBioLink = "https://drive.google.com/file/d/1jbV78fdZ8sjtwtCcpJpFhtjc-KdP9Oro/view?usp=sharing";
+export const shortBioLink = "https://drive.google.com/file/d/15qUxdw59rSVpU-jMX4UnbcT3214zKAw-/view?usp=drive_link";

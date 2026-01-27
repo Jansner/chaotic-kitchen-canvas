@@ -11,6 +11,11 @@ export interface Project {
   year: string;
   description: string;
   fullDescription?: string;
+  quote?: {
+    text: string;
+    author: string;
+  };
+  dossierLink?: string;
   details?: {
     duration?: string;
     premiere?: string;
@@ -39,18 +44,19 @@ export const projects: Project[] = [
     title: "Balance In",
     subtitle: "Duet with Live Guitar",
     year: "2026",
-    description: "An intimate and atmospheric encounter between movement and sound—a duet in which contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.",
-    fullDescription: `Balance In is an intimate and atmospheric encounter between movement and sound—a duet in which contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.
+    description: "An intimate encounter between movement and sound—a duet where contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.",
+    fullDescription: `Balance In explores balance as a living negotiation: between two bodies, between human and instrument, between discipline and instinct, between structure and spontaneity. The performers oscillate between harmony and rupture, revealing how passion can both stabilise and destabilise.
 
-The work explores balance as a living negotiation: between two bodies, between human and instrument, between discipline and instinct, between structure and spontaneity. The performers oscillate between harmony and rupture, revealing how passion can both stabilise and destabilise the very things it fuels.
+The guitar becomes an extension of the body; the dancer becomes a resonating chamber. Every pluck, slide, and vibration shifts the physical score. Every gesture influences music. The two disciplines compose each other.
 
-The performance exists in a space between musical recital, choreography, and narrative. The guitar becomes an extension of the body; the dancer becomes a resonating chamber. Every pluck, slide, and vibration shifts the physical score. Every gesture influences music. The two disciplines compose each other: movement writes rhythm, music sculpts space.
+Rooted in improvisational research and the parallel creation of movement, musical, and dramaturgical scores, the piece investigates the architecture of passion—its weight, tenderness, and unpredictability.
 
-Rooted in improvisational research and the parallel creation of a movement score, musical score, and dramaturgical score, the piece investigates the architecture of passion shaped by emotions — its weight, its tenderness, its unpredictability. Passion is treated as a force that can steady, break, and transform.
-
-The work is also conceived as site-responsive, consciously shaped by the architectural character of each venue. A theatre becomes an intimate stage; a gallery becomes a chamber of resonance; A courtyard becomes an echoing body. Each performance is subtly rewritten by the acoustics, light and the audience's presence and feelings.
-
-Balance In invites viewers to enter a fragile, profound environment where silence carries tension and every movement is part of a negotiation: with gravity, with sound, with another human being. It is a reflection of the impulse to create — the desire to push, to reach, to fall, and to regain balance.`,
+The work is site-responsive, shaped by each venue's architectural character. A theatre becomes an intimate stage; a gallery becomes a chamber of resonance. Each performance is subtly rewritten by acoustics, light, and the audience's presence.`,
+    quote: {
+      text: "You have to find a balance between the rigour of the score and the freedom of the body's own expression. The passion is in that negotiation.",
+      author: "Anne Teresa De Keersmaeker"
+    },
+    dossierLink: "https://drive.google.com/file/d/1J74j57lBwxKl-jsATKhjb4J2LMMm6sCI/view?usp=sharing",
     details: {
       duration: "30-45 minutes",
       choreography: "Linus Jansner & Emily Heather Manica",
@@ -141,6 +147,7 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
     fullDescription: `This is a poetic and visceral duet that explores the emotional weight of displacement, trust, and the struggle for survival. Two bodies fall, catch, and merge, echoing themes of forced migration and emotional resilience. It's an intimate reflection on how physical closeness can still feel distant when the world around you is unstable. 
 
 This piece is a sculptural and bodily exploration of identity, grief, and the silent negotiations in every partnership, especially those navigating trauma. It questions: What do we hold onto when everything else collapses? What falls… doesn't always land.`,
+    dossierLink: "https://drive.google.com/file/d/1GEbxfblf9x-SghfxaCBxTUqnOnnEezl8/view?usp=sharing",
     details: {
       duration: "Approx. 20min",
       choreography: "Linus Jansner, Yamuna Huygen",
@@ -150,7 +157,6 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       presentations: [
         "December 20, 2024 — RedSapata, Linz, Austria (Premiere)",
         "May 5, 2025 — Eslöv, Sweden",
-        "June 28, 2025 — Mannheim, Germany",
         "September 10, 2025 — Festival Quartiers Danses, Montreal, Canada"
       ]
     },
@@ -168,11 +174,13 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
     subtitle: "Solo Work",
     year: "2025",
     description: "A powerful solo exploring the cacophony of modern existence and the search for stillness.",
-    fullDescription: "Noise Without Silence is a solo work that delves into the relentless noise of contemporary life—both external and internal. The piece examines how we navigate a world filled with constant stimulation and the rare moments of peace we find within the chaos.",
+    fullDescription: "Noise Without Silence is a solo work developed together with Charlotte Fenn and Vladimir Staicu that delves into the relentless noise of contemporary life—both external and internal. The piece examines how we navigate a world filled with constant stimulation and the rare moments of peace we find within the chaos.",
+    dossierLink: "https://drive.google.com/file/d/1V-_bGLG5ceK1FM12hkml64q8EBBzAeb0/view?usp=sharing",
     details: {
       choreography: "Linus Jansner",
       performers: "Linus Jansner",
-      premiere: "2025"
+      premiere: "2025",
+      location: "Mannheim"
     },
     videoLinks: [
       { title: "Performance", url: "https://www.youtube.com/watch?v=Los37YIz-V8", type: "performance" },
@@ -190,6 +198,7 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
     fullDescription: `The Body as Border is conceived as a spin-off of the performance Body.light and takes the form of a solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens. 
 
 A male body that explores its own ambiguity, or vice versa, exposes itself as sensitive matter, crossed by opposing forces: control and release, resistance and vulnerability, desire and self-affirmation. The body becomes a plastic surface, both object and subject of the gaze, a place where identity is constructed and dissolves in the time of the action, shaping an intimate discourse that passes not through words but through presence.`,
+    dossierLink: "https://drive.google.com/file/d/1cNMFnNZU30tWBwXGwML-gRB5BptS7urL/view?usp=sharing",
     details: {
       choreography: "Linus Jansner & Antonello Tudisco",
       performers: "Linus Jansner",
@@ -216,6 +225,7 @@ A male body that explores its own ambiguity, or vice versa, exposes itself as se
     fullDescription: `Liminal Phantoms is a solo performance that investigates the liminal spaces we inhabit between different states of being. The work explores how we construct and deconstruct our identities in response to external pressures and internal desires, navigating the threshold between who we are and who we are expected to be.
 
 The piece is a growth for each year, presenting a new solo adaptation.`,
+    dossierLink: "https://drive.google.com/file/d/1qNkbLoJMkAOuCzzS24n5RYsvm-8aHDML/view?usp=sharing",
     details: {
       duration: "35 minutes",
       choreography: "Linus Jansner",
@@ -253,6 +263,26 @@ The piece is a growth for each year, presenting a new solo adaptation.`,
     order: 6
   },
   {
+    id: "beneath",
+    title: "Beneath",
+    subtitle: "Trio Work",
+    year: "2025",
+    description: "A collaborative trio work exploring what lies beneath the surface of human interaction.",
+    fullDescription: `Beneath is a trio work created in collaboration with Charlotte Fenn, exploring the hidden layers of human connection and what exists below the surface of our everyday interactions. The piece delves into the unspoken dynamics between individuals, examining the currents of emotion, memory, and desire that flow beneath our conscious awareness.
+
+Created as an investigation into the spaces between people—the gaps, silences, and tensions that define our relationships—Beneath invites audiences to consider what remains unseen in their own connections with others.`,
+    details: {
+      choreography: "Linus Jansner & Charlotte Fenn",
+      premiere: "March 17, 2025",
+      location: "Mannheim"
+    },
+    videoLinks: [
+      { title: "Performance", url: "https://youtu.be/Mdpd_sueJUo", type: "performance" }
+    ],
+    type: 'performance',
+    order: 7
+  },
+  {
     id: "fika",
     title: "FIKA",
     subtitle: "Interactive Performance",
@@ -273,7 +303,7 @@ Developed through public space observations, interviews, and studio research, FI
       { title: "Full Performance", url: "https://www.youtube.com/watch?v=daxFDvaNRc4", type: "performance" }
     ],
     type: 'performance',
-    order: 7
+    order: 8
   },
   {
     id: "rorschach",
@@ -291,7 +321,7 @@ Developed through public space observations, interviews, and studio research, FI
       { title: "Performance", url: "https://youtu.be/L2E3BGXpFQo", type: "performance" }
     ],
     type: 'performance',
-    order: 8
+    order: 9
   },
   {
     id: "imburte-union",
@@ -313,31 +343,6 @@ Through movement, imagery, and provocative narrative, the piece questions how fa
       { title: "Trailer", url: "https://www.youtube.com/watch?v=qAgHOvPABGo", type: "trailer" }
     ],
     type: 'performance',
-    order: 9
-  },
-  {
-    id: "gloom",
-    title: "Gloom",
-    subtitle: "Physical Theatre",
-    year: "2021",
-    description: "An intense piece delving into the psychological captivity of the human mind.",
-    fullDescription: `Gloom is an intense physical theatre dance piece that delves into the psychological captivity of the human mind. Through the story of three dancers experiencing trauma, the piece explores themes of isolation, mental health, and the raw emotional struggles that accompany human existence. 
-
-The work reflects the fine line between love and anger, creation and destruction, and community versus isolation. The narrative is told through a unique combination of movement, sound, and lighting, using symbolism and metaphors to explore themes such as time, trauma, and the forbidden.`,
-    details: {
-      duration: "40 minutes",
-      choreography: "Linus Jansner",
-      performers: "Kevin Au, Camille Cibort, Geosmin Yang",
-      premiere: "March 5, 2021",
-      location: "SEAD Josef Echart Theatre",
-      music: "Cristobal Tapia De Veer, Lady Vengeance OST, Two Steps from Hell",
-      themes: ["Memory & Trauma", "Isolation & Community", "The Struggle for Identity", "Hope, Despair, and Rebirth"]
-    },
-    videoLinks: [
-      { title: "Trailer", url: "https://youtu.be/ABTQTlkvWJY", type: "trailer" },
-      { title: "Performance", url: "https://youtu.be/l1RJqr9Sy5U", type: "performance" }
-    ],
-    type: 'performance',
     order: 10
   },
   {
@@ -355,6 +360,10 @@ Through dance, acrobatics, classic comedy, stunt work, and multimedia, it invite
       dramaturg: "Carla Piris",
       premiere: "February 2021"
     },
+    videoLinks: [
+      { title: "Performance", url: "https://youtu.be/06X8F6FuvMc", type: "performance" },
+      { title: "Extracts", url: "https://youtu.be/jZRIjlUs97A", type: "other" }
+    ],
     type: 'performance',
     order: 11
   },
@@ -380,18 +389,26 @@ The performance begins with the dancer restrained within this marked boundary, a
     order: 12
   },
   {
-    id: "through-the-looking-glass",
-    title: "Through the Looking Glass",
-    subtitle: "Dance Performance",
-    year: "2019",
-    description: "Exploring how modern distractions create bewilderment and disconnection.",
-    fullDescription: `Through the Looking Glass is a dance performance that examines our relationship with reflection, perception, and the distorted realities we create for ourselves. The work explores how modern life and its constant distractions can lead to bewilderment and a sense of disconnection from our authentic selves.`,
+    id: "gloom",
+    title: "Gloom",
+    subtitle: "Physical Theatre",
+    year: "2021",
+    description: "An intense piece delving into the psychological captivity of the human mind.",
+    fullDescription: `Gloom is an intense physical theatre dance piece that delves into the psychological captivity of the human mind. Through the story of three dancers experiencing trauma, the piece explores themes of isolation, mental health, and the raw emotional struggles that accompany human existence. 
+
+The work reflects the fine line between love and anger, creation and destruction, and community versus isolation. The narrative is told through a unique combination of movement, sound, and lighting, using symbolism and metaphors to explore themes such as time, trauma, and the forbidden.`,
     details: {
+      duration: "40 minutes",
       choreography: "Linus Jansner",
-      premiere: "November 9, 2019"
+      performers: "Kevin Au, Camille Cibort, Geosmin Yang",
+      premiere: "March 5, 2021",
+      location: "SEAD Josef Echart Theatre",
+      music: "Cristobal Tapia De Veer, Lady Vengeance OST, Two Steps from Hell",
+      themes: ["Memory & Trauma", "Isolation & Community", "The Struggle for Identity", "Hope, Despair, and Rebirth"]
     },
     videoLinks: [
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=ovfFnAsv1vw", type: "trailer" }
+      { title: "Trailer", url: "https://youtu.be/ABTQTlkvWJY", type: "trailer" },
+      { title: "Performance", url: "https://youtu.be/l1RJqr9Sy5U", type: "performance" }
     ],
     type: 'performance',
     order: 13
@@ -420,21 +437,19 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
     order: 14
   },
   {
-    id: "beneath",
-    title: "Beneath",
-    subtitle: "Trio Work",
-    year: "2025",
-    description: "A collaborative trio work exploring what lies beneath the surface of human interaction.",
-    fullDescription: `Beneath is a trio work created in collaboration with Charlotte Fenn, exploring the hidden layers of human connection and what exists below the surface of our everyday interactions. The piece delves into the unspoken dynamics between individuals, examining the currents of emotion, memory, and desire that flow beneath our conscious awareness.
-
-Created as an investigation into the spaces between people—the gaps, silences, and tensions that define our relationships—Beneath invites audiences to consider what remains unseen in their own connections with others.`,
+    id: "through-the-looking-glass",
+    title: "Through the Looking Glass",
+    subtitle: "Dance Performance",
+    year: "2019",
+    description: "Exploring how modern distractions create bewilderment and disconnection.",
+    fullDescription: `Through the Looking Glass is a dance performance that examines our relationship with reflection, perception, and the distorted realities we create for ourselves. The work explores how modern life and its constant distractions can lead to bewilderment and a sense of disconnection from our authentic selves.`,
     details: {
-      choreography: "Linus Jansner & Charlotte Fenn",
-      premiere: "March 17, 2025",
-      location: "Mannheim"
+      choreography: "Linus Jansner",
+      premiere: "November 9, 2019",
+      location: "SEAD Josef Echart Theatre"
     },
     videoLinks: [
-      { title: "Performance", url: "https://youtu.be/Mdpd_sueJUo", type: "performance" }
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=ovfFnAsv1vw", type: "trailer" }
     ],
     type: 'performance',
     order: 15
@@ -462,22 +477,6 @@ Created as an investigation into the spaces between people—the gaps, silences,
 // Short films data
 export const shortFilms: Project[] = [
   {
-    id: "zenith",
-    title: "Zenith",
-    subtitle: "Short Film",
-    year: "2023",
-    description: "An experimental short film exploring the peak of human experience and emotion.",
-    fullDescription: "Zenith is an experimental short film that captures moments at the peak of human experience. A creative exploration through movement and visual storytelling.",
-    details: {
-      credits: "Editing, filming, and production by Linus Jansner"
-    },
-    videoLinks: [
-      { title: "Watch", url: "https://www.youtube.com/watch?v=h6F0nAI-J0s", type: "performance" }
-    ],
-    type: 'film',
-    order: 1
-  },
-  {
     id: "why-not-me",
     title: "Why Not Me?",
     subtitle: "Short Film Series",
@@ -495,7 +494,7 @@ export const shortFilms: Project[] = [
       { title: "Part 5", url: "https://youtu.be/6_ebeENp9Ps", type: "performance" }
     ],
     type: 'film',
-    order: 2
+    order: 1
   },
   {
     id: "jokers-joke",
@@ -507,11 +506,9 @@ export const shortFilms: Project[] = [
     details: {
       credits: "Editing, filming, and production by Linus Jansner"
     },
-    videoLinks: [
-      { title: "Watch", url: "https://www.youtube.com/watch?v=cD2xklDfGrY", type: "performance" }
-    ],
+    videoLinks: [],
     type: 'film',
-    order: 3
+    order: 2
   },
   {
     id: "trixie",
@@ -523,11 +520,9 @@ export const shortFilms: Project[] = [
     details: {
       credits: "Editing, filming, and production by Linus Jansner"
     },
-    videoLinks: [
-      { title: "Watch", url: "https://youtu.be/zJuDFyENBN4", type: "performance" }
-    ],
+    videoLinks: [],
     type: 'film',
-    order: 4
+    order: 3
   }
 ];
 

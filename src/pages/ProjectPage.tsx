@@ -1,14 +1,12 @@
-import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, MapPin, Users, Clock, FileText, ExternalLink, Play, Award } from "lucide-react";
-import { projects, shortFilms, musicVideos } from "@/data/projects";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, ArrowRight, Calendar, MapPin, Users, Clock, FileText, ExternalLink, Play, Award } from "lucide-react";
+import { projects, shortFilms, musicVideos, getAllWorks } from "@/data/projects";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnimatedSection, FadeInSection, StaggerContainer, StaggerItem } from "@/components/ScrollAnimations";
+import { useEffect } from "react";
 
 // Import project images
-import balanceIn1 from "@/assets/balance-in-1.jpg";
-import balanceIn2 from "@/assets/balance-in-2.jpg";
-import balanceIn3 from "@/assets/balance-in-3.jpg";
 import balanceInPreview from "@/assets/balance-in-preview.png";
 import strangers1 from "@/assets/strangers-1.png";
 import strangers2 from "@/assets/strangers-2.png";
@@ -18,54 +16,62 @@ import wfdal3 from "@/assets/wfdal-3.jpg";
 import bodyBorder1 from "@/assets/body-border-1.jpg";
 import bodyBorder2 from "@/assets/body-border-2.jpg";
 import bodyBorder3 from "@/assets/body-border-3.jpg";
-import bodyBorderPreview from "@/assets/body-border-preview.jpg";
+import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
+import throughLookingGlassPreviewNew from "@/assets/through-looking-glass-preview-new.jpg";
 import liminalPhantomsPreview from "@/assets/liminal-phantoms-preview.jpg";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
+import liminalPhantomsGallery2 from "@/assets/liminal-phantoms-gallery-2.jpg";
+import liminalPhantomsGallery3 from "@/assets/liminal-phantoms-gallery-3.jpg";
 import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.png";
+import noiseWithoutSilenceGallery1 from "@/assets/noise-without-silence-gallery-1.png";
 import gloomPreview from "@/assets/gloom-preview.jpg";
-import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
-import haitunPreview from "@/assets/haitun-preview.png";
+import haitunPreviewNew from "@/assets/haitun-preview-new.jpg";
+import fikaPreviewNew from "@/assets/fika-preview-new.png";
 import fikaPreview from "@/assets/fika-preview.png";
+import fikaGallery1 from "@/assets/fika-gallery-1.png";
+import fikaGallery2 from "@/assets/fika-gallery-2.jpg";
+import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import rorschachPreview from "@/assets/rorschach-preview.jpg";
 import rorschachGallery from "@/assets/rorschach-gallery.jpg";
 import storfagelPreview from "@/assets/storfagel-preview.jpg";
 import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
+import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 
-// Image mapping for projects
+// Image mapping for projects - swap strangers preview/gallery
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "balance-in": {
     main: balanceInPreview,
-    gallery: [balanceIn1, balanceIn2, balanceIn3]
+    gallery: [] // Removed WFDAL images from Balance In
   },
   "strangers-in-the-night": {
-    main: strangers1,
-    gallery: [strangers2]
+    main: strangers2, // Swapped - gallery image is now preview
+    gallery: [strangers1] // Swapped - preview image is now gallery
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
     gallery: [wfdal2, wfdal3]
   },
   "the-body-as-border": {
-    main: bodyBorderPreview,
+    main: throughLookingGlassPreview, // Using Through the Looking Glass preview for Body as Border
     gallery: [bodyBorder1, bodyBorder2, bodyBorder3]
   },
   "liminal-phantoms": {
     main: liminalPhantomsPreview,
-    gallery: [liminalPhantomsGallery]
+    gallery: [liminalPhantomsGallery, liminalPhantomsGallery2, liminalPhantomsGallery3]
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
-    gallery: []
+    gallery: [noiseWithoutSilenceGallery1]
   },
   "gloom": {
     main: gloomPreview,
     gallery: []
   },
   "through-the-looking-glass": {
-    main: throughLookingGlassPreview,
+    main: throughLookingGlassPreviewNew, // New preview for Through the Looking Glass
     gallery: []
   },
   "just-like-old-days": {
@@ -73,12 +79,12 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     gallery: []
   },
   "haitun": {
-    main: haitunPreview,
+    main: haitunPreviewNew,
     gallery: []
   },
   "fika": {
-    main: fikaPreview,
-    gallery: []
+    main: fikaPreviewNew, // New preview
+    gallery: [fikaPreview, fikaGallery1, fikaGallery2, fikaGallery3] // Old preview goes to gallery
   },
   "rorschach": {
     main: rorschachPreview,
@@ -97,8 +103,8 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     gallery: []
   },
   "beneath": {
-    main: beneathPreview,
-    gallery: []
+    main: beneathPreviewNew, // New preview
+    gallery: [beneathPreview] // Old preview goes to gallery
   },
 };
 
@@ -113,8 +119,20 @@ const getYouTubeThumbnail = (url: string) => {
 
 const ProjectPage = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const allWorks = [...projects, ...shortFilms, ...musicVideos];
   const project = allWorks.find(p => p.id === id);
+
+  // Get ordered works for prev/next navigation
+  const orderedWorks = getAllWorks();
+  const currentIndex = orderedWorks.findIndex(w => w.id === id);
+  const prevProject = currentIndex > 0 ? orderedWorks[currentIndex - 1] : null;
+  const nextProject = currentIndex < orderedWorks.length - 1 ? orderedWorks[currentIndex + 1] : null;
+
+  // Scroll to top when project changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!project) {
     return (
@@ -165,6 +183,22 @@ const ProjectPage = () => {
           </FadeInSection>
         </section>
 
+        {/* Quote Section for Balance In */}
+        {project.quote && (
+          <section className="container mx-auto px-6 pb-8">
+            <AnimatedSection>
+              <blockquote className="max-w-3xl mx-auto text-center">
+                <p className="text-xl md:text-2xl font-light italic text-foreground/80 leading-relaxed mb-4">
+                  "{project.quote.text}"
+                </p>
+                <cite className="text-primary text-sm uppercase tracking-widest">
+                  — {project.quote.author}
+                </cite>
+              </blockquote>
+            </AnimatedSection>
+          </section>
+        )}
+
         {/* Title + Video Section - Side by Side */}
         <section className="container mx-auto px-6 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -181,6 +215,21 @@ const ProjectPage = () => {
                 <div className="text-foreground/80 font-light leading-relaxed whitespace-pre-line">
                   {project.fullDescription || project.description}
                 </div>
+
+                {/* Dossier Link */}
+                {project.dossierLink && (
+                  <div className="mt-6">
+                    <a
+                      href={project.dossierLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <FileText className="w-4 h-4" />
+                      View Dossier
+                    </a>
+                  </div>
+                )}
               </div>
             </AnimatedSection>
 
@@ -220,21 +269,39 @@ const ProjectPage = () => {
                   </a>
                 )}
                 
-                {/* Additional video links */}
+                {/* Additional video links as thumbnails */}
                 {project.videoLinks && project.videoLinks.length > 1 && (
-                  <div className="flex flex-wrap gap-2">
-                    {project.videoLinks.slice(1).map((video, index) => (
-                      <a
-                        key={index}
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-                      >
-                        <Play className="w-4 h-4" />
-                        {video.title}
-                      </a>
-                    ))}
+                  <div className="grid grid-cols-2 gap-2">
+                    {project.videoLinks.slice(1).map((video, index) => {
+                      const thumbnail = getYouTubeThumbnail(video.url);
+                      return (
+                        <a
+                          key={index}
+                          href={video.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative aspect-video bg-secondary overflow-hidden group"
+                        >
+                          {thumbnail ? (
+                            <img 
+                              src={thumbnail}
+                              alt={video.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center bg-secondary">
+                              <Play className="w-8 h-8 text-muted-foreground/50" />
+                            </div>
+                          )}
+                          <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <Play className="w-8 h-8 text-white" />
+                          </div>
+                          <div className="absolute bottom-2 left-2 bg-background/90 px-2 py-0.5 text-xs">
+                            {video.title}
+                          </div>
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
 
@@ -455,6 +522,43 @@ const ProjectPage = () => {
                 </p>
               </div>
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Previous/Next Navigation */}
+        <section className="py-12 border-t border-primary/10">
+          <div className="container mx-auto px-6">
+            <div className="flex justify-between items-center">
+              {prevProject ? (
+                <Link
+                  to={`/project/${prevProject.id}`}
+                  className="group flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                  <div className="text-left">
+                    <span className="text-xs uppercase tracking-wider block">Previous</span>
+                    <span className="font-light">{prevProject.title}</span>
+                  </div>
+                </Link>
+              ) : (
+                <div />
+              )}
+              
+              {nextProject ? (
+                <Link
+                  to={`/project/${nextProject.id}`}
+                  className="group flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <div className="text-right">
+                    <span className="text-xs uppercase tracking-wider block">Next</span>
+                    <span className="font-light">{nextProject.title}</span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ) : (
+                <div />
+              )}
+            </div>
           </div>
         </section>
       </main>

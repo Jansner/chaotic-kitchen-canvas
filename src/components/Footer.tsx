@@ -13,24 +13,24 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <a
               href="https://www.instagram.com/f.l.o.w.e.r_boy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-primary/80 transition-colors"
               aria-label="Instagram"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-7 h-7" />
             </a>
             <a
               href="https://www.youtube.com/@ChaoticKitchenJansner"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-primary/80 transition-colors"
               aria-label="YouTube"
             >
-              <Youtube className="w-5 h-5" />
+              <Youtube className="w-7 h-7" />
             </a>
           </div>
 
