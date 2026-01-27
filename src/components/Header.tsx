@@ -1,26 +1,65 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   const navItems = [
-    { label: "Works", href: isHomePage ? "#works" : "/#works" },
-    { label: "About", href: isHomePage ? "#about" : "/#about" },
+    { label: "Works", href: "/#works" },
+    { label: "About", href: "/#about" },
     { label: "News", href: "/news" },
-    { label: "Short Movies", href: "/short-movies" },
-    { label: "Contact", href: isHomePage ? "#contact" : "/#contact" },
+    { label: "Films & Gallery", href: "/short-movies" },
+    { label: "Contact", href: "/#contact" },
   ];
 
-  const handleNavClick = (href: string) => {
+  // Handle scrolling to section when navigating from another page
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsMenuOpen(false);
-    if (href.startsWith("#")) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+    
+    // If it's a hash link
+    if (href.includes("#")) {
+      const hash = href.split("#")[1];
+      
+      if (isHomePage) {
+        // Already on home page, just scroll
+        e.preventDefault();
+        const element = document.getElementById(hash);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      } else {
+        // Navigate to home page with hash
+        e.preventDefault();
+        navigate(`/#${hash}`);
       }
     }
   };
@@ -99,14 +138,7 @@ const Header = () => {
                     <a
                       href={item.href}
                       className="text-4xl md:text-5xl font-light tracking-[0.15em] uppercase hover:text-primary transition-colors duration-300"
-                      onClick={(e) => {
-                        if (isHomePage && item.href.startsWith("#")) {
-                          e.preventDefault();
-                          handleNavClick(item.href);
-                        } else {
-                          setIsMenuOpen(false);
-                        }
-                      }}
+                      onClick={(e) => handleNavClick(e, item.href)}
                     >
                       {item.label}
                     </a>
