@@ -7,8 +7,7 @@ const VideoHero = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   
   // Direct video URL - for proper autoplay, host the video file directly
-  // Using a fallback gradient background when video isn't available
-  const videoUrl = "/hero-video.mp4"; // Place video in public folder
+  const videoUrl = "/hero-video.mp4";
 
   const scrollToContent = () => {
     document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' });
@@ -51,7 +50,7 @@ const VideoHero = () => {
       {/* Overlay */}
       <div className="video-overlay absolute inset-0 z-10" />
 
-      {/* Content */}
+      {/* Content - Only "Chaotic Kitchen" title, no subtitle */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center px-6 text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
@@ -69,14 +68,6 @@ const VideoHero = () => {
         >
           Kitchen
         </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-8 text-lg md:text-xl text-foreground/60 font-light tracking-widest uppercase"
-        >
-          Physical Theatre • Contemporary Dance • Visual Arts
-        </motion.p>
       </div>
 
       {/* Scroll Indicator */}

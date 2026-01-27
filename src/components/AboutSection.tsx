@@ -1,6 +1,7 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
 import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
+import artistPortrait from "@/assets/artist-portrait.jpg";
 
 const AboutSection = () => {
   return (
@@ -8,12 +9,14 @@ const AboutSection = () => {
       <div className="container mx-auto px-6">
         {/* Main About Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24">
-          {/* Image Placeholder */}
+          {/* Image */}
           <AnimatedSection className="relative">
             <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20">
-                <span className="text-8xl font-light">LJ</span>
-              </div>
+              <img 
+                src={artistPortrait}
+                alt="Linus Jansner"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-primary/30" />
           </AnimatedSection>
@@ -89,10 +92,10 @@ const AboutSection = () => {
           </AnimatedSection>
         </div>
 
-        {/* Co-producing Partners Section */}
+        {/* Co-producing & Partners Section */}
         <div className="border-t border-border pt-16 mb-16">
           <AnimatedSection className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-light tracking-wide">Co-producing Foundations & Partners</h3>
+            <h3 className="text-3xl md:text-4xl font-light tracking-wide">Co-producing & Partners</h3>
             <div className="section-divider" />
           </AnimatedSection>
 

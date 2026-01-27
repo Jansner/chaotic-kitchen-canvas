@@ -4,53 +4,113 @@ export interface NewsItem {
   date: string;
   category: 'upcoming' | 'news' | 'update';
   description: string;
+  fullDescription?: string;
   link?: string;
+  projectId?: string;
 }
 
 export const newsItems: NewsItem[] = [
   {
-    id: "balance-in-2026",
-    title: "Balance In - World Premiere",
-    date: "2026-10-21",
+    id: "manosphere-2026",
+    title: "Manosphere - New Creation with Jos Baker",
+    date: "2026-05-01",
     category: "upcoming",
-    description: "New creation premiering in Italy in collaboration with Abbondanza–Bertoni. An exploration of equilibrium between chaos and control."
+    description: "A new collaborative creation investigating online male culture and its intersection with ancient storytelling.",
+    fullDescription: `Manosphere is a project that investigates the world of online male culture and the ways in which that can slip into misogyny and political extremism while tying this in to ancient storytelling. This is an extremely important topic as we see the rise of extreme right-wing politics.
+
+The show will have elements of humour and magic, but ultimately dive into some dark narratives that weave an old story into our modern world. The narrative unfolds through character-driven spoken word, movement, and illusion, exploring both the internal lives of the characters and the online world they spend time in.
+
+This project follows on from Strangers in the Night, combining physical and image-based storytelling with scripted theatre.
+
+TEAM:
+Concept, direction and script: Jos Baker
+Choreography: Jos Baker and Linus Jansner
+Performers: Jos Baker, Linus Jansner, and TBA
+Outside eye/dramaturgy: Antonello Tudisco
+Music: Christos Parapagidis
+
+Co-produced with Interon5Danza • Residency May 2026`
   },
   {
-    id: "intimate-speech-2026",
-    title: "Intimate Speech at RAID Festival",
+    id: "balance-in-rovereto-march",
+    title: "Balance In - Informal Showing at Rovereto",
+    date: "2026-03-20",
+    category: "upcoming",
+    description: "Informal showing of Balance In at Abbondanza/Bertoni, Rovereto.",
+    projectId: "balance-in"
+  },
+  {
+    id: "balance-in-trento",
+    title: "Balance In - Trento Presentation",
+    date: "2026-04-16",
+    category: "upcoming",
+    description: "Balance In presented in Trento, Italy.",
+    projectId: "balance-in"
+  },
+  {
+    id: "balance-in-premiere-pergine",
+    title: "Balance In - Premiere at Pergine Festival",
+    date: "2026-06-28",
+    category: "upcoming",
+    description: "World premiere of Balance In at Pergine Festival, Italy. A duet with live classical guitar exploring the architecture of passion.",
+    projectId: "balance-in"
+  },
+  {
+    id: "balance-in-premiere-rovereto",
+    title: "Balance In - Premiere at Rovereto",
+    date: "2026-09-23",
+    category: "upcoming",
+    description: "Balance In premiere at Abbondanza/Bertoni, Rovereto.",
+    projectId: "balance-in"
+  },
+  {
+    id: "body-as-border-raid",
+    title: "The Body as Border - RAID Festival Premiere",
     date: "2026-10-03",
     category: "upcoming",
-    description: "Avant-première of the new solo work created with Antonello Tudisco at RAID Festival."
+    description: "Avant-première of the new solo work created with Antonello Tudisco at RAID Festival.",
+    projectId: "the-body-as-border"
   },
   {
-    id: "wdfal-tour-2025",
-    title: "What Falls Doesn't Always Land - Canada/Europe Tour",
-    date: "2025-03-01",
+    id: "wfdal-tour-2025",
+    title: "What Falls Doesn't Always Land - Tour 2025",
+    date: "2025-09-10",
     category: "upcoming",
-    description: "The acclaimed duet with Yamuna Huygen continues its international tour across Canada and Europe."
+    description: "The acclaimed duet with Yamuna Huygen continues its international tour across Canada and Europe, including Festival Quartiers Danses in Montreal.",
+    projectId: "what-falls-doesnt-always-land"
   },
   {
-    id: "empty-phantoms-win",
-    title: "Empty Phantoms Wins at Festival Quartiers Danses",
-    date: "2024-10-13",
+    id: "strangers-italy-tour",
+    title: "Strangers in the Night - Italy Tour Continues",
+    date: "2025-03-01",
     category: "news",
-    description: "The dance film Empty Phantoms receives recognition at Festival Quartiers Danses in Canada."
+    description: "The tragicomic metatheatre work with Jos Baker and Carlo Massari continues touring major Italian theatres.",
+    projectId: "strangers-in-the-night"
+  },
+  {
+    id: "liminal-phantoms-awards",
+    title: "Liminal Phantoms - Award-Winning Solo",
+    date: "2024-10-01",
+    category: "news",
+    description: "The solo performance continues to receive international recognition, including 1st place at Frankfurt Fringe Festival and audience awards across Europe.",
+    fullDescription: `Liminal Phantoms has received multiple awards throughout its touring history:
+
+• Fringe Festival Winner 1st Place - Frankfurt, Germany
+• Raw and Polished Audience Award Winner - Nuremberg, Germany
+• In:vzbl Festival Cultural Award Winner - Timisoara, Romania
+
+The work has been presented across Europe, North America, and Asia, including festivals in Las Palmas, Montreal, Berlin, Tenerife, Linz, Munich, and Bangalore.`,
+    projectId: "liminal-phantoms"
   },
   {
     id: "fika-korea",
     title: "FIKA Travels to South Korea",
     date: "2024-11-01",
     category: "news",
-    description: "The interactive performance FIKA expands its research to include Korean cultural perspectives on human connection."
-  },
-  {
-    id: "liminal-phantoms-tour",
-    title: "Liminal Phantoms Central Europe Tour",
-    date: "2024-06-01",
-    category: "update",
-    description: "Solo performance tours through Central Europe, exploring identity and societal expectations."
+    description: "The interactive performance FIKA expands its research to include Korean cultural perspectives on human connection.",
+    projectId: "fika"
   }
 ];
 
-export const getUpcomingEvents = () => newsItems.filter(item => item.category === 'upcoming');
+export const getUpcomingEvents = () => newsItems.filter(item => item.category === 'upcoming').sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 export const getLatestNews = () => newsItems.filter(item => item.category === 'news');

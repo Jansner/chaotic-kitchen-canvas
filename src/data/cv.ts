@@ -34,13 +34,13 @@ export const mentors = [
 // Only bold/selected professional experiences from CV
 export const selectedProfessionalExperience: CVExperience[] = [
   { year: "2025", production: "Liminal Phantoms", location: "Canada / Europe tour", company: "Chaotic Kitchen" },
-  { year: "2025", production: "What Falls Doesn't Always Land", location: "Canada / Europe tour", company: "Chaotic Kitchen" },
+  { year: "2025", production: "What Falls Doesn't Always Land", location: "Austria / Canada", company: "Chaotic Kitchen" },
   { year: "2025", production: "Strangers in the Night", location: "Italy tour", company: "Co-creator Jos Baker, Carlo Massari" },
   { year: "2025", production: "Balance In", location: "Italy", company: "Chaotic Kitchen / Abbondanza–Bertoni" },
   { year: "2024", production: "White Out", location: "Central Europe tour", company: "Piergiorgio Milano" },
-  { year: "2024", production: "Empty Phantoms", location: "Canada", company: "Chaotic Kitchen" },
-  { year: "2024", production: "FIKA", location: "Sweden / Germany / South Korea", company: "Minjoung Jang" },
-  { year: "2024", production: "Liminal Phantoms", location: "Central Europe tour", company: "Chaotic Kitchen" }
+  { year: "2024", production: "Empty Phantoms", location: "Germany, Belgium, Canada", company: "Chaotic Kitchen" },
+  { year: "2024", production: "FIKA", location: "Sweden / Germany / South Korea", company: "Chaotic Kitchen / Geosmin Jang" },
+  { year: "2023", production: "Bolero", location: "Belgium & France", company: "Michèle Anne de Mey" }
 ];
 
 export const choreographies: CVChoreography[] = [
@@ -94,7 +94,9 @@ export const coProducingPartners = [
   "ERT Emilia-Romagna Teatro / Teatro Nazionale - focus CARNE",
   "Associazione Culturale SPaCCa (Production Company)",
   "MIC - Ministero della Cultura (Italian Ministry of Culture)",
-  "Assessorato alla Cultura - Regione Emilia Romagna"
+  "Assessorato alla Cultura - Regione Emilia Romagna",
+  "Compagnia Abbondanza/Bertoni",
+  "RedSapata Tanzfabrik (AT)"
 ];
 
 export const producingPartners = [

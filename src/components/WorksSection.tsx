@@ -4,21 +4,31 @@ import { getAllWorks } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem, HoverScale } from "./ScrollAnimations";
 
 // Import project images
-import balanceIn1 from "@/assets/balance-in-1.jpg";
+import balanceInPreview from "@/assets/balance-in-preview.png";
 import strangers1 from "@/assets/strangers-1.png";
 import wfdal1 from "@/assets/wfdal-1.jpg";
-import bodyBorder1 from "@/assets/body-border-1.jpg";
+import bodyBorderPreview from "@/assets/body-border-preview.jpg";
+import liminalPhantomsPreview from "@/assets/liminal-phantoms-preview.jpg";
+import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.png";
+import gloomPreview from "@/assets/gloom-preview.jpg";
+import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
+import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
 
 // Image mapping for projects
 const projectImages: Record<string, string> = {
-  "balance-in": balanceIn1,
+  "balance-in": balanceInPreview,
   "strangers-in-the-night": strangers1,
   "what-falls-doesnt-always-land": wfdal1,
-  "the-body-as-border": bodyBorder1,
+  "the-body-as-border": bodyBorderPreview,
+  "liminal-phantoms": liminalPhantomsPreview,
+  "noise-without-silence": noiseWithoutSilencePreview,
+  "gloom": gloomPreview,
+  "through-the-looking-glass": throughLookingGlassPreview,
+  "just-like-old-days": justLikeOldDaysPreview,
 };
 
 const WorksSection = () => {
-  // Get all works sorted by year (newest first)
+  // Get all works sorted by custom order
   const performances = getAllWorks();
 
   return (
@@ -35,8 +45,8 @@ const WorksSection = () => {
           </p>
         </AnimatedSection>
 
-        {/* Performances Grid - 2x2 layout */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        {/* Performances Grid - 3 columns on desktop, more spacing */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
           {performances.map((work) => (
             <StaggerItem key={work.id}>
               <HoverScale>
@@ -85,13 +95,13 @@ const WorksSection = () => {
           ))}
         </StaggerContainer>
 
-        {/* Link to Short Movies Page */}
+        {/* Link to Films & Gallery Page */}
         <AnimatedSection className="text-center mt-16">
           <Link 
             to="/short-movies"
             className="inline-flex items-center gap-2 px-8 py-4 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-light tracking-wide"
           >
-            View Short Movies & Films <ArrowUpRight className="w-4 h-4" />
+            View Films & Gallery <ArrowUpRight className="w-4 h-4" />
           </Link>
         </AnimatedSection>
       </div>

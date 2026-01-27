@@ -22,11 +22,15 @@ export interface Project {
     credits?: string;
     production?: string;
     presentations?: string[];
+    dramaturg?: string;
+    costumeDesign?: string;
+    awards?: string[];
   };
   videoLinks?: VideoLink[];
   imageUrl?: string;
   galleryImages?: string[];
   type: 'performance' | 'film';
+  order?: number; // For custom ordering
 }
 
 export const projects: Project[] = [
@@ -34,7 +38,7 @@ export const projects: Project[] = [
     id: "balance-in",
     title: "Balance In",
     subtitle: "Duet with Live Guitar",
-    year: "2025",
+    year: "2026",
     description: "An intimate and atmospheric encounter between movement and sound—a duet in which contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.",
     fullDescription: `Balance In is an intimate and atmospheric encounter between movement and sound—a duet in which contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.
 
@@ -52,10 +56,14 @@ Balance In invites viewers to enter a fragile, profound environment where silenc
       choreography: "Linus Jansner & Emily Heather Manica",
       performers: "Linus Jansner & Emily Heather Manica",
       music: "Emily Heather Manica (Original, live)",
-      premiere: "October 21, 2025",
+      premiere: "June 28, 2026 — Pergine Festival, Italy",
       production: "Compagnia Abbondanza/Bertoni",
       credits: "Supported by: Zerogrammi – Permutazioni 2025, Il Vaporetto dell'Immaginario - Venice. Photography: Stefano Manica, Matteo Rioda",
       presentations: [
+        "March 20, 2026 — Rovereto, Abbondanza/Bertoni Informal Showing",
+        "April 16, 2026 — Trento, Italy",
+        "June 28, 2026 — Pergine Festival, Italy (Premiere)",
+        "September 23, 2026 — Rovereto, Abbondanza/Bertoni (Premiere)",
         "Il Vaporetto dell'Immaginario, Venice — April 2025",
         "Teatro Alla Cartiera with Abbondanza/Bertoni, Rovereto — July 2025 + Feb & March 2026",
         "Finalist, Zerogrammi Permutazioni 2025, Casa Luft, Turin — Public showing October 2025"
@@ -65,35 +73,14 @@ Balance In invites viewers to enter a fragile, profound environment where silenc
       { title: "Trailer", url: "https://youtu.be/CSraERodfm4", type: "trailer" },
       { title: "Performance", url: "https://youtu.be/w-kWC1IbUhE", type: "performance" }
     ],
-    type: 'performance'
-  },
-  {
-    id: "the-body-as-border",
-    title: "The Body as Border",
-    subtitle: "Solo Work",
-    year: "2026",
-    description: "A solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens.",
-    fullDescription: `The Body as Border is conceived as a spin-off of the performance Body.light and takes the form of a solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens. 
-
-A male body that explores its own ambiguity, or vice versa, exposes itself as sensitive matter, crossed by opposing forces: control and release, resistance and vulnerability, desire and self-affirmation. The body becomes a plastic surface, both object and subject of the gaze, a place where identity is constructed and dissolves in the time of the action, shaping an intimate discourse that passes not through words but through presence.`,
-    details: {
-      choreography: "Linus Jansner & Antonello Tudisco",
-      performers: "Linus Jansner",
-      premiere: "RAID Festival — Oct 3–4, 2026",
-      themes: ["Identity", "Vulnerability", "Control", "Release"]
-    },
-    videoLinks: [
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=N6AhdyXQatE", type: "trailer" },
-      { title: "Performance", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
-      { title: "Development", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
-    ],
-    type: 'performance'
+    type: 'performance',
+    order: 1
   },
   {
     id: "strangers-in-the-night",
     title: "Strangers in the Night",
     subtitle: "Theatre Performance",
-    year: "2025",
+    year: "2024",
     description: `"The old world is dying. The new one is slow to appear. And in this interregnum, a great variety of morbid symptoms appear." — Antonio Gramsci`,
     fullDescription: `Immersed in a world of tragicomic metatheatre and movement, Strangers in the Night confronts lies, manipulation, deceit, and personal trauma with a striking mix of absurdity, virtuosity, and humor.
 
@@ -117,14 +104,33 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
       performers: "Jos Baker, Linus Jansner, Carlo Massari",
       credits: "Script: Jos Baker. Idea: Carlo Massari. In collaboration with: Martina La Ragione, Chiara Osella. Original music and sound composition: Andreas Moulin. Technical direction: Francesco Massari. Costumes: Chiara Defant",
       premiere: "August 30, 2024",
-      location: "Italy tour"
+      location: "Italy tour",
+      presentations: [
+        "August 30, 2024 — Italy Premiere",
+        "October 2024 — Rome, Teatro India",
+        "November 2024 — Bologna, Teatro delle Moline",
+        "December 2024 — Turin, Teatro Astra",
+        "December 2024 — Milan, Teatro Out Off",
+        "March 1, 2025 — Perugia, Teatro Morlacchi",
+        "March 14-15, 2025 — Modena, Teatro delle Passioni",
+        "April 13, 2025 — Pergine Valsugana, Teatro Comunale",
+        "May 10, 2025 — Napoli, TAN Teatro Area Nord",
+        "June 1, 2025 — Bari, Nuovo Teatro Abeliano",
+        "September 4, 2025 — Venezia, Forte Marghera",
+        "September 19, 2025 — Bolzano, Teatro Cristallo",
+        "September 20, 2025 — Florence, Teatro Cantiere Florida",
+        "October 25, 2025 — Palermo, Teatro Biondo",
+        "November 15, 2025 — Genova, Teatro Akropolis",
+        "December 8, 2025 — Trieste, Teatro Miela"
+      ]
     },
     videoLinks: [
       { title: "Trailer (Vimeo)", url: "https://vimeo.com/1038511084", type: "trailer" },
       { title: "Trailer (YouTube)", url: "https://www.youtube.com/watch?v=Ib9Ci7ij2pE", type: "trailer" },
       { title: "Performance", url: "https://www.youtube.com/watch?v=CvlPeHTxUSo", type: "performance" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 2
   },
   {
     id: "what-falls-doesnt-always-land",
@@ -139,12 +145,13 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       duration: "Approx. 20min",
       choreography: "Linus Jansner, Yamuna Huygen",
       performers: "Linus Jansner, Yamuna Huygen",
-      premiere: "2024",
+      premiere: "December 2024 — RedSapata, Linz, Austria",
+      location: "Austria / Canada",
       presentations: [
-        "Linz, Austria – RedSapata, 20.12.2024",
-        "Eslöv, Sweden – 05.05.2025",
-        "Mannheim, Germany – 28.06.2025",
-        "Montreal, Canada – Festival Quartiers Danses, 10.09.2025"
+        "December 20, 2024 — RedSapata, Linz, Austria (Premiere)",
+        "May 5, 2025 — Eslöv, Sweden",
+        "June 28, 2025 — Mannheim, Germany",
+        "September 10, 2025 — Festival Quartiers Danses, Montreal, Canada"
       ]
     },
     videoLinks: [
@@ -152,7 +159,98 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       { title: "Performance", url: "https://www.youtube.com/watch?v=L33j9ULOvUU", type: "performance" },
       { title: "Outside Version", url: "https://youtu.be/HmtfQQG1c6U", type: "other" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 3
+  },
+  {
+    id: "noise-without-silence",
+    title: "Noise Without Silence",
+    subtitle: "Solo Work",
+    year: "2025",
+    description: "A powerful solo exploring the cacophony of modern existence and the search for stillness.",
+    fullDescription: "Noise Without Silence is a solo work that delves into the relentless noise of contemporary life—both external and internal. The piece examines how we navigate a world filled with constant stimulation and the rare moments of peace we find within the chaos.",
+    details: {
+      choreography: "Linus Jansner",
+      performers: "Linus Jansner",
+      premiere: "2025"
+    },
+    videoLinks: [
+      { title: "Performance", url: "https://www.youtube.com/watch?v=Los37YIz-V8", type: "performance" },
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=jpjV4yIv1ow", type: "trailer" }
+    ],
+    type: 'performance',
+    order: 4
+  },
+  {
+    id: "the-body-as-border",
+    title: "The Body as Border",
+    subtitle: "Solo Work",
+    year: "2026",
+    description: "A solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens.",
+    fullDescription: `The Body as Border is conceived as a spin-off of the performance Body.light and takes the form of a solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens. 
+
+A male body that explores its own ambiguity, or vice versa, exposes itself as sensitive matter, crossed by opposing forces: control and release, resistance and vulnerability, desire and self-affirmation. The body becomes a plastic surface, both object and subject of the gaze, a place where identity is constructed and dissolves in the time of the action, shaping an intimate discourse that passes not through words but through presence.`,
+    details: {
+      choreography: "Linus Jansner & Antonello Tudisco",
+      performers: "Linus Jansner",
+      premiere: "October 3-4, 2026 — RAID Festival",
+      themes: ["Identity", "Vulnerability", "Control", "Release"],
+      presentations: [
+        "October 3-4, 2026 — RAID Festival (Avant-première)"
+      ]
+    },
+    videoLinks: [
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=N6AhdyXQatE", type: "trailer" },
+      { title: "Performance", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
+      { title: "Development", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
+    ],
+    type: 'performance',
+    order: 5
+  },
+  {
+    id: "liminal-phantoms",
+    title: "Liminal Phantoms",
+    subtitle: "Solo Performance",
+    year: "2023",
+    description: "Exploring the fragile boundaries between self-perception and societal expectations.",
+    fullDescription: `Liminal Phantoms is a solo performance that investigates the liminal spaces we inhabit between different states of being. The work explores how we construct and deconstruct our identities in response to external pressures and internal desires, navigating the threshold between who we are and who we are expected to be.
+
+The piece is a growth for each year, presenting a new solo adaptation.`,
+    details: {
+      duration: "35 minutes",
+      choreography: "Linus Jansner",
+      performers: "Linus Jansner",
+      dramaturg: "Linus Jansner & Carla Piris (supported)",
+      costumeDesign: "Christina Bengtsson",
+      premiere: "March 5, 2023",
+      location: "Canada / Europe tour",
+      awards: [
+        "Fringe Festival Winner 1st: Frankfurt, Germany",
+        "Raw and Polished Audience Award Winner: Nuremberg, Germany",
+        "In:vzbl Festival Cultural Award Winner: Timisoara, Romania"
+      ],
+      presentations: [
+        "Las Palmas, Canary Islands — Tanesco",
+        "Montreal, Canada — Festival Quartiers Danses",
+        "Berlin, Germany — Bethanien Creative Quarter",
+        "Tenerife, Spain — MasDanza",
+        "Linz, Austria — RedSapata",
+        "Munich, Germany — TanzFabrik",
+        "Bangalore, India — Beu Festival",
+        "Frankfurt, Germany — Fringe Festival (1st Place Winner)",
+        "Nuremberg, Germany — Raw and Polished (Audience Award Winner)",
+        "Timisoara, Romania — In:vzbl Festival (Cultural Award Winner)",
+        "Victoria Teatro"
+      ]
+    },
+    videoLinks: [
+      { title: "Version 3 (Latest)", url: "https://www.youtube.com/watch?v=pAaMhpiGI2U", type: "performance" },
+      { title: "Version 2", url: "https://youtu.be/AAJyXjCLzYI", type: "performance" },
+      { title: "Version 1 (Original)", url: "https://www.youtube.com/watch?v=OtBTy0RnkXs", type: "performance" },
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=gQ70bPP7rMo", type: "trailer" }
+    ],
+    type: 'performance',
+    order: 6
   },
   {
     id: "fika",
@@ -166,7 +264,7 @@ Developed through public space observations, interviews, and studio research, FI
     details: {
       duration: "1.5h",
       choreography: "Linus Jansner, Geosmin Yang",
-      performers: "Geosmin Yang, Seam Yun, Ben Banc, Chetan Yeragera",
+      performers: "Geosmin Yang, Linus Jansner, Seam Yun",
       premiere: "February 20, 2024"
     },
     videoLinks: [
@@ -174,46 +272,8 @@ Developed through public space observations, interviews, and studio research, FI
       { title: "Video Performance", url: "https://www.youtube.com/watch?v=jhYf1n0j5Ss", type: "performance" },
       { title: "Full Performance", url: "https://www.youtube.com/watch?v=daxFDvaNRc4", type: "performance" }
     ],
-    type: 'performance'
-  },
-  {
-    id: "liminal-phantoms",
-    title: "Liminal Phantoms",
-    subtitle: "Solo Performance",
-    year: "2023",
-    description: "Exploring the fragile boundaries between self-perception and societal expectations.",
-    fullDescription: `Liminal Phantoms is a solo performance that investigates the liminal spaces we inhabit between different states of being. The work explores how we construct and deconstruct our identities in response to external pressures and internal desires, navigating the threshold between who we are and who we are expected to be.
-
-The piece is a growth for each year, presenting a new solo adaptation.`,
-    details: {
-      choreography: "Linus Jansner",
-      premiere: "March 5, 2023",
-      location: "Canada / Europe tour"
-    },
-    videoLinks: [
-      { title: "Version 3 (Latest)", url: "https://www.youtube.com/watch?v=pAaMhpiGI2U", type: "performance" },
-      { title: "Version 2", url: "https://youtu.be/AAJyXjCLzYI", type: "performance" },
-      { title: "Version 1 (Original)", url: "https://www.youtube.com/watch?v=OtBTy0RnkXs", type: "performance" },
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=gQ70bPP7rMo", type: "trailer" }
-    ],
-    type: 'performance'
-  },
-  {
-    id: "noise-without-silence",
-    title: "Noise Without Silence",
-    subtitle: "Solo Work",
-    year: "2022",
-    description: "A powerful solo exploring the cacophony of modern existence and the search for stillness.",
-    fullDescription: "Noise Without Silence is a solo work that delves into the relentless noise of contemporary life—both external and internal. The piece examines how we navigate a world filled with constant stimulation and the rare moments of peace we find within the chaos.",
-    details: {
-      choreography: "Linus Jansner",
-      performers: "Linus Jansner"
-    },
-    videoLinks: [
-      { title: "Performance", url: "https://www.youtube.com/watch?v=Los37YIz-V8", type: "performance" },
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=jpjV4yIv1ow", type: "trailer" }
-    ],
-    type: 'performance'
+    type: 'performance',
+    order: 7
   },
   {
     id: "rorschach",
@@ -230,7 +290,8 @@ The piece is a growth for each year, presenting a new solo adaptation.`,
       { title: "Trailer", url: "https://www.youtube.com/watch?v=-kAOIJwe2GE", type: "trailer" },
       { title: "Performance", url: "https://youtu.be/L2E3BGXpFQo", type: "performance" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 8
   },
   {
     id: "imburte-union",
@@ -251,7 +312,8 @@ Through movement, imagery, and provocative narrative, the piece questions how fa
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=qAgHOvPABGo", type: "trailer" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 9
   },
   {
     id: "gloom",
@@ -275,7 +337,8 @@ The work reflects the fine line between love and anger, creation and destruction
       { title: "Trailer", url: "https://youtu.be/ABTQTlkvWJY", type: "trailer" },
       { title: "Performance", url: "https://youtu.be/l1RJqr9Sy5U", type: "performance" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 10
   },
   {
     id: "just-like-old-days",
@@ -289,10 +352,11 @@ Through dance, acrobatics, classic comedy, stunt work, and multimedia, it invite
     details: {
       choreography: "Linus Jansner & Chetan Yeragera",
       performers: "Chetan Yeragera, Linus Jansner",
-      credits: "Dramaturg: Carla Piris",
-      premiere: "February 30, 2021"
+      dramaturg: "Carla Piris",
+      premiere: "February 2021"
     },
-    type: 'performance'
+    type: 'performance',
+    order: 11
   },
   {
     id: "haitun",
@@ -312,7 +376,8 @@ The performance begins with the dancer restrained within this marked boundary, a
     videoLinks: [
       { title: "Performance", url: "https://www.youtube.com/watch?v=z1K72NAMmdY", type: "performance" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 12
   },
   {
     id: "through-the-looking-glass",
@@ -328,7 +393,8 @@ The performance begins with the dancer restrained within this marked boundary, a
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=ovfFnAsv1vw", type: "trailer" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 13
   },
   {
     id: "stor-fagel",
@@ -343,14 +409,15 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
       duration: "6 minutes",
       choreography: "Linus Jansner",
       performers: "Six Dancers",
-      premiere: "March 10, 2016 – Winner of LDMG Choreographic Competition",
+      premiere: "March 10, 2016 — Winner of LDMG Choreographic Competition",
       music: "Yosi Horikawa"
     },
     videoLinks: [
       { title: "Trailer 1", url: "https://www.youtube.com/watch?v=j7zOkrLJZHE", type: "trailer" },
       { title: "Trailer 2", url: "https://www.youtube.com/watch?v=Mu1HUHUZ7tw", type: "trailer" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 14
   },
   {
     id: "beneath",
@@ -358,15 +425,19 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
     subtitle: "Trio Work",
     year: "2025",
     description: "A collaborative trio work exploring what lies beneath the surface of human interaction.",
-    fullDescription: "Beneath is a trio work created in collaboration with Charlotte Fenn, exploring the hidden layers of human connection and what exists below the surface of our everyday interactions.",
+    fullDescription: `Beneath is a trio work created in collaboration with Charlotte Fenn, exploring the hidden layers of human connection and what exists below the surface of our everyday interactions. The piece delves into the unspoken dynamics between individuals, examining the currents of emotion, memory, and desire that flow beneath our conscious awareness.
+
+Created as an investigation into the spaces between people—the gaps, silences, and tensions that define our relationships—Beneath invites audiences to consider what remains unseen in their own connections with others.`,
     details: {
       choreography: "Linus Jansner & Charlotte Fenn",
-      premiere: "March 17, 2025"
+      premiere: "March 17, 2025",
+      location: "Mannheim"
     },
     videoLinks: [
       { title: "Performance", url: "https://youtu.be/Mdpd_sueJUo", type: "performance" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 15
   },
   {
     id: "vicious-cycle",
@@ -383,7 +454,8 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
       { title: "Performance", url: "https://www.youtube.com/watch?v=nLjXaUn2QJ4", type: "performance" },
       { title: "Trailer", url: "https://www.youtube.com/watch?v=ZNndYB23vHo", type: "trailer" }
     ],
-    type: 'performance'
+    type: 'performance',
+    order: 16
   }
 ];
 
@@ -402,37 +474,8 @@ export const shortFilms: Project[] = [
     videoLinks: [
       { title: "Watch", url: "https://www.youtube.com/watch?v=h6F0nAI-J0s", type: "performance" }
     ],
-    type: 'film'
-  },
-  {
-    id: "jokers-joke",
-    title: "Joker's Joke",
-    subtitle: "Short Film",
-    year: "2022",
-    description: "A playful short film exploring humor and mischief through movement.",
-    fullDescription: "Joker's Joke is a short film that blends humor and movement in a playful exploration of mischief and the unexpected. A fun creative outlet beyond the stage.",
-    details: {
-      credits: "Editing, filming, and production by Linus Jansner"
-    },
-    videoLinks: [
-      { title: "Watch", url: "https://www.youtube.com/watch?v=cD2xklDfGrY", type: "performance" }
-    ],
-    type: 'film'
-  },
-  {
-    id: "trixie",
-    title: "Trixie",
-    subtitle: "Short Film",
-    year: "2021",
-    description: "A creative short film exploring character and movement.",
-    fullDescription: "Trixie is an experimental short film exploring character development through movement and visual storytelling.",
-    details: {
-      credits: "Editing, filming, and production by Linus Jansner"
-    },
-    videoLinks: [
-      { title: "Watch", url: "https://youtu.be/zJuDFyENBN4", type: "performance" }
-    ],
-    type: 'film'
+    type: 'film',
+    order: 1
   },
   {
     id: "why-not-me",
@@ -451,29 +494,49 @@ export const shortFilms: Project[] = [
       { title: "Part 4", url: "https://youtu.be/QFRiAeixpYk", type: "performance" },
       { title: "Part 5", url: "https://youtu.be/6_ebeENp9Ps", type: "performance" }
     ],
-    type: 'film'
+    type: 'film',
+    order: 2
   },
   {
-    id: "empty-phantoms",
-    title: "Empty Phantoms",
-    subtitle: "Dance Film",
-    year: "2024",
-    description: "A haunting dance film exploring absence and presence, memory and forgetting.",
-    fullDescription: "Empty Phantoms is a cinematic exploration of the spaces left behind by those who have gone. Winner at Festival Quartiers Danses, the film captures the ghostly presence of memory and the weight of absence.",
+    id: "jokers-joke",
+    title: "Joker's Joke",
+    subtitle: "Short Film",
+    year: "2022",
+    description: "A visceral expression of isolation during the pandemic—capturing the feeling of being trapped, disconnected, and searching for levity in confinement.",
+    fullDescription: "Joker's Joke is a short film born from the experience of lockdown during COVID-19. It captures the restlessness, absurdity, and dark humor that emerged from prolonged isolation—a creative outlet when the world stood still.",
     details: {
-      premiere: "October 13, 2024",
-      location: "Canada"
+      credits: "Editing, filming, and production by Linus Jansner"
     },
-    type: 'film'
+    videoLinks: [
+      { title: "Watch", url: "https://www.youtube.com/watch?v=cD2xklDfGrY", type: "performance" }
+    ],
+    type: 'film',
+    order: 3
+  },
+  {
+    id: "trixie",
+    title: "Trixie",
+    subtitle: "Short Film",
+    year: "2021",
+    description: "In memory of my most beloved companion.",
+    fullDescription: "Trixie is a personal short film created as a tribute and memorial—a loving remembrance of a cherished companion who left an indelible mark on the artist's life.",
+    details: {
+      credits: "Editing, filming, and production by Linus Jansner"
+    },
+    videoLinks: [
+      { title: "Watch", url: "https://youtu.be/zJuDFyENBN4", type: "performance" }
+    ],
+    type: 'film',
+    order: 4
   }
 ];
 
-// Music Videos
+// Music Videos - now called Drone Music Videos
 export const musicVideos: Project[] = [
   {
     id: "lsd-berlin",
     title: "LSD Berlin",
-    subtitle: "Music Video",
+    subtitle: "Drone Music Video",
     year: "2022",
     description: "A dynamic music video collaboration bringing movement to music.",
     details: {
@@ -487,7 +550,7 @@ export const musicVideos: Project[] = [
   {
     id: "heading-my-way-amsterdam",
     title: "Heading My Way Amsterdam",
-    subtitle: "Music Video",
+    subtitle: "Drone Music Video",
     year: "2022",
     description: "A visual journey through Amsterdam captured through dance.",
     details: {
@@ -500,5 +563,17 @@ export const musicVideos: Project[] = [
   }
 ];
 
-export const getAllWorks = () => [...projects].sort((a, b) => parseInt(b.year) - parseInt(a.year));
-export const getAllFilms = () => [...shortFilms, ...musicVideos].sort((a, b) => parseInt(b.year) - parseInt(a.year));
+// Custom sort function to respect the order property
+export const getAllWorks = () => [...projects].sort((a, b) => {
+  if (a.order !== undefined && b.order !== undefined) {
+    return a.order - b.order;
+  }
+  return parseInt(b.year) - parseInt(a.year);
+});
+
+export const getAllFilms = () => [...shortFilms].sort((a, b) => {
+  if (a.order !== undefined && b.order !== undefined) {
+    return a.order - b.order;
+  }
+  return parseInt(b.year) - parseInt(a.year);
+});
