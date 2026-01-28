@@ -8,8 +8,15 @@ import { useEffect } from "react";
 
 // Import project images
 import balanceInPreview from "@/assets/balance-in-preview.png";
+import balanceIn1 from "@/assets/balance-in-1.jpg";
+import balanceIn2 from "@/assets/balance-in-2.jpg";
+import balanceIn3 from "@/assets/balance-in-3.jpg";
+import balanceIn4 from "@/assets/balance-in-4.jpg";
 import strangers1 from "@/assets/strangers-1.png";
 import strangers2 from "@/assets/strangers-2.png";
+import strangersGallery1 from "@/assets/strangers-gallery-1.jpg";
+import strangersGallery2 from "@/assets/strangers-gallery-2.jpg";
+import strangersGallery3 from "@/assets/strangers-gallery-3.jpg";
 import wfdal1 from "@/assets/wfdal-1.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
 import wfdal3 from "@/assets/wfdal-3.jpg";
@@ -24,6 +31,8 @@ import liminalPhantomsGallery2 from "@/assets/liminal-phantoms-gallery-2.jpg";
 import liminalPhantomsGallery3 from "@/assets/liminal-phantoms-gallery-3.jpg";
 import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.png";
 import noiseWithoutSilenceGallery1 from "@/assets/noise-without-silence-gallery-1.png";
+import noiseWithoutSilenceGallery2 from "@/assets/noise-without-silence-gallery-2.png";
+import noiseWithoutSilenceGallery3 from "@/assets/noise-without-silence-gallery-3.png";
 import gloomPreview from "@/assets/gloom-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
 import haitunPreviewNew from "@/assets/haitun-preview-new.jpg";
@@ -35,20 +44,21 @@ import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import rorschachPreview from "@/assets/rorschach-preview.jpg";
 import rorschachGallery from "@/assets/rorschach-gallery.jpg";
 import storfagelPreview from "@/assets/storfagel-preview.jpg";
+import storfagelGallery from "@/assets/storfagel-gallery.jpg";
 import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 
-// Image mapping for projects - swap strangers preview/gallery
+// Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "balance-in": {
     main: balanceInPreview,
-    gallery: [] // Removed WFDAL images from Balance In
+    gallery: [balanceIn1, balanceIn2, balanceIn3, balanceIn4] // New Balance In gallery images
   },
   "strangers-in-the-night": {
     main: strangers2, // Swapped - gallery image is now preview
-    gallery: [strangers1] // Swapped - preview image is now gallery
+    gallery: [strangers1, strangersGallery1, strangersGallery2, strangersGallery3] // New gallery images
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
@@ -59,12 +69,12 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     gallery: [bodyBorder1, bodyBorder2, bodyBorder3]
   },
   "liminal-phantoms": {
-    main: liminalPhantomsPreview,
-    gallery: [liminalPhantomsGallery, liminalPhantomsGallery2, liminalPhantomsGallery3]
+    main: liminalPhantomsGallery, // Changed to gallery image as preview
+    gallery: [liminalPhantomsPreview, liminalPhantomsGallery2, liminalPhantomsGallery3]
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
-    gallery: [noiseWithoutSilenceGallery1]
+    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3]
   },
   "gloom": {
     main: gloomPreview,
@@ -92,7 +102,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "stor-fagel": {
     main: storfagelPreview,
-    gallery: []
+    gallery: [storfagelGallery]
   },
   "imburte-union": {
     main: imbrutePreview,
@@ -184,7 +194,7 @@ const ProjectPage = () => {
         </section>
 
         {/* Quote Section for Balance In */}
-        {project.quote && (
+        {project.quote && project.quote.author && (
           <section className="container mx-auto px-6 pb-8">
             <AnimatedSection>
               <blockquote className="max-w-3xl mx-auto text-center">
@@ -195,6 +205,32 @@ const ProjectPage = () => {
                   — {project.quote.author}
                 </cite>
               </blockquote>
+            </AnimatedSection>
+          </section>
+        )}
+
+        {/* Quote Section for Vicious Cycle (no author) */}
+        {project.quote && !project.quote.author && (
+          <section className="container mx-auto px-6 pb-8">
+            <AnimatedSection>
+              <blockquote className="max-w-3xl mx-auto text-center">
+                <p className="text-xl md:text-2xl font-light italic text-foreground/80 leading-relaxed">
+                  "{project.quote.text}"
+                </p>
+              </blockquote>
+            </AnimatedSection>
+          </section>
+        )}
+
+        {/* Synopsis Section */}
+        {project.synopsis && (
+          <section className="container mx-auto px-6 pb-8">
+            <AnimatedSection>
+              <div className="max-w-3xl mx-auto text-center">
+                <p className="text-lg text-foreground/80 font-light leading-relaxed italic">
+                  {project.synopsis}
+                </p>
+              </div>
             </AnimatedSection>
           </section>
         )}
@@ -228,6 +264,35 @@ const ProjectPage = () => {
                       <FileText className="w-4 h-4" />
                       View Dossier
                     </a>
+                  </div>
+                )}
+
+                {/* Key Themes */}
+                {project.details?.keyThemes && project.details.keyThemes.length > 0 && (
+                  <div className="mt-8">
+                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-4">Key Themes</h3>
+                    <ul className="space-y-2">
+                      {project.details.keyThemes.map((theme, index) => (
+                        <li key={index} className="text-foreground/80 font-light flex items-start gap-2">
+                          <span className="text-primary">•</span>
+                          {theme}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Residencies */}
+                {project.details?.residencies && project.details.residencies.length > 0 && (
+                  <div className="mt-8">
+                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-4">Residencies & Performances</h3>
+                    <ul className="space-y-2">
+                      {project.details.residencies.map((residency, index) => (
+                        <li key={index} className="text-foreground/80 font-light text-sm">
+                          {residency}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>
@@ -307,7 +372,7 @@ const ProjectPage = () => {
 
                 {/* Gallery under video for Strangers in the Night */}
                 {isStrangers && images?.gallery && images.gallery.length > 0 && (
-                  <div className="grid grid-cols-1 gap-4 mt-4">
+                  <div className="grid grid-cols-2 gap-4 mt-4">
                     {images.gallery.map((img, index) => (
                       <div key={index} className="aspect-[4/3] overflow-hidden group">
                         <img 
@@ -410,6 +475,24 @@ const ProjectPage = () => {
                     <div className="border-l-2 border-primary/30 pl-4">
                       <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Costume Design</h3>
                       <p className="font-light">{project.details.costumeDesign}</p>
+                    </div>
+                  )}
+                  {project.details.scenography && (
+                    <div className="border-l-2 border-primary/30 pl-4">
+                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Scenography</h3>
+                      <p className="font-light">{project.details.scenography}</p>
+                    </div>
+                  )}
+                  {project.details.lightingDesign && (
+                    <div className="border-l-2 border-primary/30 pl-4">
+                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Lighting Design</h3>
+                      <p className="font-light">{project.details.lightingDesign}</p>
+                    </div>
+                  )}
+                  {project.details.soundDesign && (
+                    <div className="border-l-2 border-primary/30 pl-4">
+                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Sound Design</h3>
+                      <p className="font-light">{project.details.soundDesign}</p>
                     </div>
                   )}
                   {project.details.production && (

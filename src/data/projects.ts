@@ -11,6 +11,7 @@ export interface Project {
   year: string;
   description: string;
   fullDescription?: string;
+  synopsis?: string;
   quote?: {
     text: string;
     author: string;
@@ -30,6 +31,11 @@ export interface Project {
     dramaturg?: string;
     costumeDesign?: string;
     awards?: string[];
+    scenography?: string;
+    lightingDesign?: string;
+    soundDesign?: string;
+    residencies?: string[];
+    keyThemes?: string[];
   };
   videoLinks?: VideoLink[];
   imageUrl?: string;
@@ -44,7 +50,7 @@ export const projects: Project[] = [
     title: "Balance In",
     subtitle: "Duet with Live Guitar",
     year: "2026",
-    description: "An intimate encounter between movement and sound—a duet where contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.",
+    description: "An intimate duet where contemporary dance and live classical guitar breathe, collide, and reshape each other in real time.",
     fullDescription: `Balance In explores balance as a living negotiation: between two bodies, between human and instrument, between discipline and instinct, between structure and spontaneity. The performers oscillate between harmony and rupture, revealing how passion can both stabilise and destabilise.
 
 The guitar becomes an extension of the body; the dancer becomes a resonating chamber. Every pluck, slide, and vibration shifts the physical score. Every gesture influences music. The two disciplines compose each other.
@@ -180,10 +186,11 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       choreography: "Linus Jansner",
       performers: "Linus Jansner",
       premiere: "2025",
-      location: "Mannheim"
+      location: "Mannheim",
+      credits: "Developed together with Charlotte Fenn and Vladimir Staicu"
     },
     videoLinks: [
-      { title: "Performance", url: "https://www.youtube.com/watch?v=Los37YIz-V8", type: "performance" },
+      { title: "Performance", url: "https://youtu.be/Los37YIz-V8", type: "performance" },
       { title: "Trailer", url: "https://www.youtube.com/watch?v=jpjV4yIv1ow", type: "trailer" }
     ],
     type: 'performance',
@@ -210,11 +217,31 @@ A male body that explores its own ambiguity, or vice versa, exposes itself as se
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=N6AhdyXQatE", type: "trailer" },
-      { title: "Performance", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
-      { title: "Development", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
+      { title: "The Body as Border (Original Version)", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
+      { title: "New Version / Development", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
     ],
     type: 'performance',
     order: 5
+  },
+  {
+    id: "beneath",
+    title: "Beneath",
+    subtitle: "Trio Work",
+    year: "2025",
+    description: "A collaborative trio work exploring what lies beneath the surface of human interaction.",
+    fullDescription: `Beneath is a trio work created in collaboration with Charlotte Fenn, exploring the hidden layers of human connection and what exists below the surface of our everyday interactions. The piece delves into the unspoken dynamics between individuals, examining the currents of emotion, memory, and desire that flow beneath our conscious awareness.
+
+Created as an investigation into the spaces between people—the gaps, silences, and tensions that define our relationships—Beneath invites audiences to consider what remains unseen in their own connections with others.`,
+    details: {
+      choreography: "Linus Jansner & Charlotte Fenn",
+      premiere: "March 17, 2025",
+      location: "Mannheim"
+    },
+    videoLinks: [
+      { title: "Performance", url: "https://youtu.be/Mdpd_sueJUo", type: "performance" }
+    ],
+    type: 'performance',
+    order: 6
   },
   {
     id: "liminal-phantoms",
@@ -222,9 +249,12 @@ A male body that explores its own ambiguity, or vice versa, exposes itself as se
     subtitle: "Solo Performance",
     year: "2023",
     description: "Exploring the fragile boundaries between self-perception and societal expectations.",
+    synopsis: `Liminal Phantoms delves into the fragile boundaries between self-perception and societal expectations. The piece captures the fleeting, often haunting moments of transition—those "liminal spaces" where identities are questioned, transformed, or lost in the search for authenticity. It reflects the emotional turbulence of breaking free from imposed constraints while unravelling the layers of one's identity.`,
     fullDescription: `Liminal Phantoms is a solo performance that investigates the liminal spaces we inhabit between different states of being. The work explores how we construct and deconstruct our identities in response to external pressures and internal desires, navigating the threshold between who we are and who we are expected to be.
 
-The piece is a growth for each year, presenting a new solo adaptation.`,
+The piece is a growth for each year, presenting a new solo adaptation.
+
+This work invites the audience to confront their hidden phantoms—the expectations they carry and the fragments they leave behind. It is a poetic reflection on what it means to exist between what is expected and what is truly felt.`,
     dossierLink: "https://drive.google.com/file/d/1qNkbLoJMkAOuCzzS24n5RYsvm-8aHDML/view?usp=sharing",
     details: {
       duration: "35 minutes",
@@ -234,6 +264,10 @@ The piece is a growth for each year, presenting a new solo adaptation.`,
       costumeDesign: "Christina Bengtsson",
       premiere: "March 5, 2023",
       location: "Canada / Europe tour",
+      keyThemes: [
+        "Liminality: Exploring transitional phases where the past dissolves and the future is uncertain",
+        "Phantom Self: A metaphor for the personas we adopt to fit societal expectations, often leaving behind traces of our true selves"
+      ],
       awards: [
         "Fringe Festival Winner 1st: Frankfurt, Germany",
         "Raw and Polished Audience Award Winner: Nuremberg, Germany",
@@ -260,26 +294,6 @@ The piece is a growth for each year, presenting a new solo adaptation.`,
       { title: "Trailer", url: "https://www.youtube.com/watch?v=gQ70bPP7rMo", type: "trailer" }
     ],
     type: 'performance',
-    order: 6
-  },
-  {
-    id: "beneath",
-    title: "Beneath",
-    subtitle: "Trio Work",
-    year: "2025",
-    description: "A collaborative trio work exploring what lies beneath the surface of human interaction.",
-    fullDescription: `Beneath is a trio work created in collaboration with Charlotte Fenn, exploring the hidden layers of human connection and what exists below the surface of our everyday interactions. The piece delves into the unspoken dynamics between individuals, examining the currents of emotion, memory, and desire that flow beneath our conscious awareness.
-
-Created as an investigation into the spaces between people—the gaps, silences, and tensions that define our relationships—Beneath invites audiences to consider what remains unseen in their own connections with others.`,
-    details: {
-      choreography: "Linus Jansner & Charlotte Fenn",
-      premiere: "March 17, 2025",
-      location: "Mannheim"
-    },
-    videoLinks: [
-      { title: "Performance", url: "https://youtu.be/Mdpd_sueJUo", type: "performance" }
-    ],
-    type: 'performance',
     order: 7
   },
   {
@@ -288,6 +302,7 @@ Created as an investigation into the spaces between people—the gaps, silences,
     subtitle: "Interactive Performance",
     year: "2024",
     description: "An interactive performance transforming the everyday ritual of sharing a coffee break into an exploration of human connection.",
+    synopsis: `FIKA is an interactive performance that transforms the everyday ritual of sharing a coffee break into an exploration of human connection, cultural habits, and subconscious gestures. Blurring the line between audience and performer, the piece invites participants to engage in small yet profound exchanges that highlight the invisible language of social interaction.`,
     fullDescription: `FIKA is a dance-theatre event that investigates how cultural rituals shape the way we relate to one another. Inspired by the Swedish tradition of fika—a communal coffee break that emphasizes conversation and pause—the piece expands beyond Sweden, incorporating research from Korean, German, and other cultural perspectives to examine how different societies create space for connection. 
 
 Developed through public space observations, interviews, and studio research, FIKA dissects the micro-gestures and subconscious behaviors that occur during moments of social exchange. What happens in silence? How do we express warmth, distance, or hesitation through small movements? And how can we become more aware of the ways we interact with others?`,
@@ -295,7 +310,13 @@ Developed through public space observations, interviews, and studio research, FI
       duration: "1.5h",
       choreography: "Linus Jansner, Geosmin Yang",
       performers: "Geosmin Yang, Linus Jansner, Seam Yun",
-      premiere: "February 20, 2024"
+      premiere: "February 20, 2024",
+      residencies: [
+        "January-February 2024 — Residency & Performance at Tanzfabrik, Munich, Germany. Intensive choreographic and artistic research under the guidance of Micha Purucker, focusing on cultural gestures, human interaction, and the subconscious in social contexts.",
+        "March 2024 — Collaboration & Performance at RegnbogeFabrik, Berlin",
+        "November 2024 — Residency & Performance at Berlin Mitte Theaterhouse",
+        "November 10, 2024 — Workshop in Berlin"
+      ]
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=tRPiVkCgVzQ", type: "trailer" },
@@ -311,9 +332,16 @@ Developed through public space observations, interviews, and studio research, FI
     subtitle: "Immersive Experience",
     year: "2020",
     description: "An interactive performance designed to explore perception and reality.",
-    fullDescription: `The Live Rorschach is an immersive performance experience that transforms the audience into active participants in a living psychological test. The work challenges viewers to confront their own perceptions and biases, revealing how subjective interpretation shapes our understanding of reality.`,
+    fullDescription: `Perception shapes reality. We all see the world through the unique lens of our experiences, emotions, and subconscious. The Live Rorschach is an immersive, interactive performance designed to expose and explore the mind's instinct to impose meaning onto abstract images, much like the psychological Rorschach inkblot test.
+
+Originally developed during the pandemic with limitations on audience interaction, the project now aims to fully engage multiple senses—including touch, smell, and taste—to heighten immersion. The work plays with sensory manipulation to shift emotional and psychological states, using scent to transport, sound to unsettle, and textures to distort the body's relation to space.
+
+At its core, The Live Rorschach is about perception, distortion, and the fragility of reality. What we see, hear, and feel is never objective—it is shaped by everything we have been, everything we fear, and everything we hope to be. The piece invites audiences to step into a world where meaning is fleeting, reality is unstable, and the mind is both the observer and the creator.
+
+Is what you see real—or is your mind simply trying to make sense of the unknown?`,
     details: {
       choreography: "Linus Jansner",
+      performers: "Cast of 6 performers",
       premiere: "September 22, 2020"
     },
     videoLinks: [
@@ -336,7 +364,7 @@ Through movement, imagery, and provocative narrative, the piece questions how fa
       choreography: "Linus Jansner",
       performers: "Kevin Au, Camille Cibort, Hobie Schuppe, Chetan Yeragera, Valeria Saija, Alexandros Kyriazis, Tereza Krejcová, Arianna Berton, Linus Jansner",
       premiere: "July 2, 2021",
-      location: "SEAD Josef Echart Theatre",
+      location: "SEAD Josef Echart Theatre, Austria",
       music: "Linus Jansner (Sound Edit)"
     },
     videoLinks: [
@@ -344,6 +372,34 @@ Through movement, imagery, and provocative narrative, the piece questions how fa
     ],
     type: 'performance',
     order: 10
+  },
+  {
+    id: "gloom",
+    title: "Gloom",
+    subtitle: "Physical Theatre",
+    year: "2021",
+    description: "An intense piece delving into the psychological captivity of the human mind.",
+    synopsis: `In a world where emotional and mental constraints define the boundaries of survival, Gloom invites the audience to witness a struggle against time and personal demons, ultimately questioning whether it's ever too late to restart the journey. The piece highlights the dystopian isolation of individuals trapped in their subconscious, seeking dreams and hope, yet finding only despair.`,
+    fullDescription: `Gloom is an intense physical theatre dance piece that delves into the psychological captivity of the human mind. Through the story of three dancers experiencing trauma, the piece explores themes of isolation, mental health, and the raw emotional struggles that accompany human existence. 
+
+The work reflects the fine line between love and anger, creation and destruction, and community versus isolation. The narrative is told through a unique combination of movement, sound, and lighting, using symbolism and metaphors to explore themes such as time, trauma, and the forbidden.`,
+    details: {
+      duration: "40 minutes",
+      choreography: "Linus Jansner",
+      scenography: "Linus Jansner",
+      lightingDesign: "Linus Jansner",
+      performers: "Kevin Au, Camille Cibort, Geosmin Yang",
+      premiere: "March 5, 2021",
+      location: "SEAD Josef Echart Theatre",
+      music: "Cristobal Tapia De Veer, Lady Vengeance OST, Two Steps from Hell",
+      themes: ["Memory & Trauma", "Isolation & Community", "The Struggle for Identity", "Hope, Despair, and Rebirth"]
+    },
+    videoLinks: [
+      { title: "Trailer", url: "https://youtu.be/ABTQTlkvWJY", type: "trailer" },
+      { title: "Performance", url: "https://youtu.be/l1RJqr9Sy5U", type: "performance" }
+    ],
+    type: 'performance',
+    order: 11
   },
   {
     id: "just-like-old-days",
@@ -358,14 +414,15 @@ Through dance, acrobatics, classic comedy, stunt work, and multimedia, it invite
       choreography: "Linus Jansner & Chetan Yeragera",
       performers: "Chetan Yeragera, Linus Jansner",
       dramaturg: "Carla Piris",
-      premiere: "February 2021"
+      premiere: "February 2021",
+      location: "SEAD, Austria"
     },
     videoLinks: [
       { title: "Performance", url: "https://youtu.be/06X8F6FuvMc", type: "performance" },
       { title: "Extracts", url: "https://youtu.be/jZRIjlUs97A", type: "other" }
     ],
     type: 'performance',
-    order: 11
+    order: 12
   },
   {
     id: "haitun",
@@ -386,31 +443,6 @@ The performance begins with the dancer restrained within this marked boundary, a
       { title: "Performance", url: "https://www.youtube.com/watch?v=z1K72NAMmdY", type: "performance" }
     ],
     type: 'performance',
-    order: 12
-  },
-  {
-    id: "gloom",
-    title: "Gloom",
-    subtitle: "Physical Theatre",
-    year: "2021",
-    description: "An intense piece delving into the psychological captivity of the human mind.",
-    fullDescription: `Gloom is an intense physical theatre dance piece that delves into the psychological captivity of the human mind. Through the story of three dancers experiencing trauma, the piece explores themes of isolation, mental health, and the raw emotional struggles that accompany human existence. 
-
-The work reflects the fine line between love and anger, creation and destruction, and community versus isolation. The narrative is told through a unique combination of movement, sound, and lighting, using symbolism and metaphors to explore themes such as time, trauma, and the forbidden.`,
-    details: {
-      duration: "40 minutes",
-      choreography: "Linus Jansner",
-      performers: "Kevin Au, Camille Cibort, Geosmin Yang",
-      premiere: "March 5, 2021",
-      location: "SEAD Josef Echart Theatre",
-      music: "Cristobal Tapia De Veer, Lady Vengeance OST, Two Steps from Hell",
-      themes: ["Memory & Trauma", "Isolation & Community", "The Struggle for Identity", "Hope, Despair, and Rebirth"]
-    },
-    videoLinks: [
-      { title: "Trailer", url: "https://youtu.be/ABTQTlkvWJY", type: "trailer" },
-      { title: "Performance", url: "https://youtu.be/l1RJqr9Sy5U", type: "performance" }
-    ],
-    type: 'performance',
     order: 13
   },
   {
@@ -425,9 +457,11 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
     details: {
       duration: "6 minutes",
       choreography: "Linus Jansner",
+      scenography: "Linus Jansner",
       performers: "Six Dancers",
       premiere: "March 10, 2016 — Winner of LDMG Choreographic Competition",
-      music: "Yosi Horikawa"
+      music: "Yosi Horikawa",
+      soundDesign: "Yosi Horikawa"
     },
     videoLinks: [
       { title: "Trailer 1", url: "https://www.youtube.com/watch?v=j7zOkrLJZHE", type: "trailer" },
@@ -442,11 +476,20 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
     subtitle: "Dance Performance",
     year: "2019",
     description: "Exploring how modern distractions create bewilderment and disconnection.",
+    synopsis: `The characters in Through the Looking Glass unknowingly travel down paths that seem full of promise but ultimately lead them further away from their true desires. Guided by oblivion, they live between reality and the imagined, caught in a web of distractions. The piece creates a dark, comedic atmosphere, using a unique movement language and striking imagery to highlight the absurdity of our disconnection in a digitally dominated world. Through this exploration, the piece invites the audience to reflect on the impact of modern distractions on their own lives and relationships.`,
     fullDescription: `Through the Looking Glass is a dance performance that examines our relationship with reflection, perception, and the distorted realities we create for ourselves. The work explores how modern life and its constant distractions can lead to bewilderment and a sense of disconnection from our authentic selves.`,
     details: {
+      duration: "8 minutes",
       choreography: "Linus Jansner",
       premiere: "November 9, 2019",
-      location: "SEAD Josef Echart Theatre"
+      location: "SEAD Josef Echart Theatre",
+      keyThemes: [
+        "Disconnection in Relationships",
+        "The Impact of Technology on Human Interaction",
+        "Denial and the Craving for Attention",
+        "Bewilderment and its Effect on Mental Health",
+        "The Journey Between Reality and the Imagined"
+      ]
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=ovfFnAsv1vw", type: "trailer" }
@@ -460,10 +503,19 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
     subtitle: "Solo with Paul Blackman",
     year: "2021",
     description: "A gripping dance piece delving into the relentless loop of human suffering and repetition.",
+    quote: {
+      text: "Trapped in repetition. Searching for escape. But what happens when the cycle becomes the only thing we know?",
+      author: ""
+    },
     fullDescription: "Vicious Cycle is a dance piece created with Paul Blackman that explores the cyclical nature of human suffering and our tendency to repeat patterns even when we know they cause us harm. The work captures the visceral struggle of breaking free from destructive cycles.",
     details: {
+      duration: "15 minutes",
       choreography: "Paul Blackman & Linus Jansner",
-      performers: "Linus Jansner"
+      performers: "Linus Jansner",
+      lightingDesign: "Paul Blackman",
+      soundDesign: "Paul Blackman",
+      music: "Jonny Greenwood - Able Bodied Seamen",
+      premiere: "June 20, 2021"
     },
     videoLinks: [
       { title: "Performance", url: "https://www.youtube.com/watch?v=nLjXaUn2QJ4", type: "performance" },
@@ -497,32 +549,20 @@ export const shortFilms: Project[] = [
     order: 1
   },
   {
-    id: "jokers-joke",
-    title: "Joker's Joke",
-    subtitle: "Short Film",
+    id: "zenith",
+    title: "ZENITH",
+    subtitle: "Feature Film",
     year: "2022",
-    description: "A visceral expression of isolation during the pandemic—capturing the feeling of being trapped, disconnected, and searching for levity in confinement.",
-    fullDescription: "Joker's Joke is a short film born from the experience of lockdown during COVID-19. It captures the restlessness, absurdity, and dark humor that emerged from prolonged isolation—a creative outlet when the world stood still.",
+    description: "Lead actor role as 'Hungry' in the feature film directed by György Kristof.",
+    fullDescription: "ZENITH is an international feature film in which Linus Jansner plays the lead role of 'Hungry'. Directed by György Kristof with choreography by Anton Lachky.",
     details: {
-      credits: "Editing, filming, and production by Linus Jansner"
+      credits: "Director: György Kristof. Choreography: Anton Lachky. Lead Actor: Linus Jansner as 'Hungry'"
     },
-    videoLinks: [],
+    videoLinks: [
+      { title: "Watch", url: "https://youtu.be/h6F0nAI-J0s", type: "performance" }
+    ],
     type: 'film',
     order: 2
-  },
-  {
-    id: "trixie",
-    title: "Trixie",
-    subtitle: "Short Film",
-    year: "2021",
-    description: "In memory of my most beloved companion.",
-    fullDescription: "Trixie is a personal short film created as a tribute and memorial—a loving remembrance of a cherished companion who left an indelible mark on the artist's life.",
-    details: {
-      credits: "Editing, filming, and production by Linus Jansner"
-    },
-    videoLinks: [],
-    type: 'film',
-    order: 3
   }
 ];
 

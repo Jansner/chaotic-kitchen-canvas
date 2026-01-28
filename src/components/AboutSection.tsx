@@ -42,7 +42,7 @@ const AboutSection = () => {
               </p>
 
               <p>
-                His choreographic work, characterised by its raw emotionality and narrative physicality, has been presented at major festivals and venues across Europe, North and South America, and Asia. These include Festival Quartiers Danses (Montréal), MasDanza Festival (Spain), Beu Festival (India), and the Hannover (Germany), establishing an international footprint for his artistic inquiry.
+                His choreographic work, characterised by its raw emotionality and narrative physicality, has been presented at major festivals and venues across Europe, North and South America, and Asia. These include Festival Quartiers Danses (Montréal), MasDanza Festival (Spain), Beu Festival (India), and Hannover (Germany), establishing an international footprint for his artistic inquiry.
               </p>
 
               <p>

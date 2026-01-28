@@ -14,8 +14,10 @@ const getYouTubeThumbnail = (url: string) => {
 };
 
 const ShortMoviesPage = () => {
-  // Sort films by order
-  const sortedFilms = [...shortFilms].sort((a, b) => (a.order || 999) - (b.order || 999));
+  // Sort films by order and filter out any films without video links
+  const sortedFilms = [...shortFilms]
+    .filter(film => film.videoLinks && film.videoLinks.length > 0)
+    .sort((a, b) => (a.order || 999) - (b.order || 999));
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -94,8 +96,8 @@ const ShortMoviesPage = () => {
                           {film.description}
                         </p>
                         
-                        {/* Video Links - only show if film has links */}
-                        {hasLinks && (
+                        {/* Video Links - only show if film has multiple links */}
+                        {hasLinks && film.videoLinks!.length > 1 && (
                           <div className="flex flex-wrap gap-2">
                             {film.videoLinks!.map((link, idx) => (
                               <a
