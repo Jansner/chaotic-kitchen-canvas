@@ -72,6 +72,14 @@ Co-produced with Interon5Danza • Residency May 2026`
     projectId: "the-body-as-border"
   },
   {
+    id: "liminal-phantoms-graz",
+    title: "Liminal Phantoms - Evening of Wonders, Graz",
+    date: "2025-03-10",
+    category: "upcoming",
+    description: "Liminal Phantoms presented at Evening of Wonders in Graz, Austria.",
+    projectId: "liminal-phantoms"
+  },
+  {
     id: "wfdal-tour-2025",
     title: "What Falls Doesn't Always Land - Tour 2025",
     date: "2025-09-10",

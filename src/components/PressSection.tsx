@@ -35,18 +35,20 @@ const PressSection = () => {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {latestNews.map((item) => (
             <StaggerItem key={item.id}>
-              <article className="group p-6 bg-background border border-border hover:border-primary/30 transition-all duration-300 h-full">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                  <Calendar className="w-4 h-4" />
-                  {formatDate(item.date)}
-                </div>
-                <h3 className="text-xl font-light tracking-wide group-hover:text-primary transition-colors mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground font-light">
-                  {item.description}
-                </p>
-              </article>
+              <Link to="/news">
+                <article className="group p-6 bg-background border border-border hover:border-primary/30 transition-all duration-300 h-full cursor-pointer">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <Calendar className="w-4 h-4" />
+                    {formatDate(item.date)}
+                  </div>
+                  <h3 className="text-xl font-light tracking-wide group-hover:text-primary transition-colors mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-light">
+                    {item.description}
+                  </p>
+                </article>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>

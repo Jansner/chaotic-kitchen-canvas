@@ -9,7 +9,7 @@ import strangers2 from "@/assets/strangers-2.png";
 import wfdal1 from "@/assets/wfdal-1.jpg";
 import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import throughLookingGlassPreviewNew from "@/assets/through-looking-glass-preview-new.jpg";
-import liminalPhantomsPreview from "@/assets/liminal-phantoms-preview.jpg";
+import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.png";
 import gloomPreview from "@/assets/gloom-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
@@ -20,6 +20,7 @@ import storfagelPreview from "@/assets/storfagel-preview.jpg";
 import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
+import bodyBorderPreview from "@/assets/body-border-preview.jpg";
 
 // Image mapping for projects - updated with swaps
 const projectImages: Record<string, string> = {
@@ -27,7 +28,7 @@ const projectImages: Record<string, string> = {
   "strangers-in-the-night": strangers2, // Swapped
   "what-falls-doesnt-always-land": wfdal1,
   "the-body-as-border": throughLookingGlassPreview, // Using Through Looking Glass preview for Body as Border
-  "liminal-phantoms": liminalPhantomsPreview,
+  "liminal-phantoms": liminalPhantomsGallery, // Changed to gallery image
   "noise-without-silence": noiseWithoutSilencePreview,
   "gloom": gloomPreview,
   "through-the-looking-glass": throughLookingGlassPreviewNew, // New preview
