@@ -138,6 +138,7 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
     },
     videoLinks: [
       { title: "Trailer", url: "https://youtu.be/vf9GpwhjLfs", type: "trailer" },
+      { title: "Trailer 2", url: "https://youtu.be/Ib9Ci7ij2pE", type: "trailer" },
       { title: "Performance", url: "https://www.youtube.com/watch?v=CvlPeHTxUSo", type: "performance" }
     ],
     type: 'performance',
@@ -578,6 +579,21 @@ export const shortFilms: Project[] = [
     ],
     type: 'film',
     order: 3
+  },
+  {
+    id: "here-is-me",
+    title: "Here is me",
+    subtitle: "Short Film",
+    year: "2021",
+    description: "A personal short film exploring identity and self-expression.",
+    details: {
+      credits: "Editing, filming, and production by Linus Jansner"
+    },
+    videoLinks: [
+      { title: "Watch", url: "https://www.youtube.com/watch?v=QFRiAeixpYk", type: "performance" }
+    ],
+    type: 'film',
+    order: 4
   }
 ];
 
