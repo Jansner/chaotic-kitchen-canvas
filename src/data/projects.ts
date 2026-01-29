@@ -190,8 +190,8 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       credits: "Developed together with Charlotte Fenn and Vladimir Staicu"
     },
     videoLinks: [
-      { title: "Performance", url: "https://youtu.be/Los37YIz-V8", type: "performance" },
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=jpjV4yIv1ow", type: "trailer" }
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=jpjV4yIv1ow", type: "trailer" },
+      { title: "Performance", url: "https://youtu.be/Los37YIz-V8", type: "performance" }
     ],
     type: 'performance',
     order: 4
@@ -217,8 +217,8 @@ A male body that explores its own ambiguity, or vice versa, exposes itself as se
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=N6AhdyXQatE", type: "trailer" },
-      { title: "The Body as Border (Original Version)", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
-      { title: "New Version / Development", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
+      { title: "New Version / Development", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
+      { title: "Original Version", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
     ],
     type: 'performance',
     order: 5
@@ -288,10 +288,10 @@ This work invites the audience to confront their hidden phantoms—the expectati
       ]
     },
     videoLinks: [
-      { title: "Version 3 (Latest)", url: "https://www.youtube.com/watch?v=pAaMhpiGI2U", type: "performance" },
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=gQ70bPP7rMo", type: "trailer" },
+      { title: "Version 3 (Current)", url: "https://youtu.be/1h3Hj6aMkkA", type: "performance" },
       { title: "Version 2", url: "https://youtu.be/AAJyXjCLzYI", type: "performance" },
-      { title: "Version 1 (Original)", url: "https://www.youtube.com/watch?v=OtBTy0RnkXs", type: "performance" },
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=gQ70bPP7rMo", type: "trailer" }
+      { title: "Version 1 (Original)", url: "https://www.youtube.com/watch?v=OtBTy0RnkXs", type: "performance" }
     ],
     type: 'performance',
     order: 7
@@ -464,11 +464,11 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
       soundDesign: "Yosi Horikawa"
     },
     videoLinks: [
-      { title: "Trailer 1", url: "https://www.youtube.com/watch?v=j7zOkrLJZHE", type: "trailer" },
-      { title: "Trailer 2", url: "https://www.youtube.com/watch?v=Mu1HUHUZ7tw", type: "trailer" }
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=Mu1HUHUZ7tw", type: "trailer" },
+      { title: "Performance", url: "https://www.youtube.com/watch?v=j7zOkrLJZHE", type: "performance" }
     ],
     type: 'performance',
-    order: 14
+    order: 17
   },
   {
     id: "through-the-looking-glass",
@@ -518,8 +518,8 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
       premiere: "June 20, 2021"
     },
     videoLinks: [
-      { title: "Performance", url: "https://www.youtube.com/watch?v=nLjXaUn2QJ4", type: "performance" },
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=ZNndYB23vHo", type: "trailer" }
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=ZNndYB23vHo", type: "trailer" },
+      { title: "Performance", url: "https://youtu.be/FhFZ18Wj0DA", type: "performance" }
     ],
     type: 'performance',
     order: 16
