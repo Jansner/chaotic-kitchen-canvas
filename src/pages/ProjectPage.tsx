@@ -118,11 +118,11 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
 };
 
-// Helper to get YouTube thumbnail from URL
+// Helper to get YouTube thumbnail from URL - use hqdefault for better availability
 const getYouTubeThumbnail = (url: string) => {
   const videoIdMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
   if (videoIdMatch && videoIdMatch[1]) {
-    return `https://img.youtube.com/vi/${videoIdMatch[1]}/maxresdefault.jpg`;
+    return `https://img.youtube.com/vi/${videoIdMatch[1]}/hqdefault.jpg`;
   }
   return null;
 };
