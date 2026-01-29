@@ -38,8 +38,10 @@ import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
 import haitunPreviewNew from "@/assets/haitun-preview-new.jpg";
 import fikaPreviewNew from "@/assets/fika-preview-new.png";
 import fikaPreview from "@/assets/fika-preview.png";
-import fikaGallery1 from "@/assets/fika-gallery-1.png";
-import fikaGallery2 from "@/assets/fika-gallery-2.jpg";
+import fikaGalleryPoster from "@/assets/fika-gallery-poster.jpg";
+import fikaGallery4 from "@/assets/fika-gallery-4.jpg";
+import fikaGallery5 from "@/assets/fika-gallery-5.jpg";
+import fikaGallery6 from "@/assets/fika-gallery-6.jpg";
 import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import rorschachPreview from "@/assets/rorschach-preview.jpg";
 import rorschachGallery from "@/assets/rorschach-gallery.jpg";
@@ -94,7 +96,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "fika": {
     main: fikaPreviewNew, // New preview
-    gallery: [fikaPreview, fikaGallery1, fikaGallery2, fikaGallery3] // Old preview goes to gallery
+    gallery: [fikaGalleryPoster, fikaGallery4, fikaGallery5, fikaGallery6, fikaGallery3] // New gallery images replacing old ones
   },
   "rorschach": {
     main: rorschachPreview,

@@ -85,6 +85,7 @@ Co-produced with Interon5Danza • Residency May 2026`
     date: "2025-09-10",
     category: "upcoming",
     description: "The acclaimed duet with Yamuna Huygen continues its international tour across Canada and Europe, including Festival Quartiers Danses in Montreal.",
+    link: "https://www.youtube.com/watch?v=QFRiAeixpYk",
     projectId: "what-falls-doesnt-always-land"
   },
   {
