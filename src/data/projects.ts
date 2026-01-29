@@ -563,6 +563,21 @@ export const shortFilms: Project[] = [
     ],
     type: 'film',
     order: 2
+  },
+  {
+    id: "wfdal-outside-version",
+    title: "What Falls Doesn't Always Land - Outside Version",
+    subtitle: "Short Film",
+    year: "2024",
+    description: "An outdoor adaptation of the stage work, reimagined for film.",
+    details: {
+      credits: "Choreography: Jos Baker and Linus Jansner"
+    },
+    videoLinks: [
+      { title: "Watch", url: "https://youtu.be/HmtfQQG1c6U", type: "performance" }
+    ],
+    type: 'film',
+    order: 3
   }
 ];
 
