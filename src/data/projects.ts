@@ -137,8 +137,7 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
       ]
     },
     videoLinks: [
-      { title: "Trailer (Vimeo)", url: "https://vimeo.com/1038511084", type: "trailer" },
-      { title: "Trailer (YouTube)", url: "https://www.youtube.com/watch?v=Ib9Ci7ij2pE", type: "trailer" },
+      { title: "Trailer", url: "https://youtu.be/vf9GpwhjLfs", type: "trailer" },
       { title: "Performance", url: "https://www.youtube.com/watch?v=CvlPeHTxUSo", type: "performance" }
     ],
     type: 'performance',
@@ -492,7 +491,8 @@ At the heart of the piece is a large-scale, living puzzle—hands and feet paint
       ]
     },
     videoLinks: [
-      { title: "Trailer", url: "https://www.youtube.com/watch?v=ovfFnAsv1vw", type: "trailer" }
+      { title: "Trailer", url: "https://www.youtube.com/watch?v=ovfFnAsv1vw", type: "trailer" },
+      { title: "Performance", url: "https://youtu.be/kkFE1EcaQJE", type: "performance" }
     ],
     type: 'performance',
     order: 15
