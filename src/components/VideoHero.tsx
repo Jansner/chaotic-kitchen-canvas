@@ -70,6 +70,13 @@ const VideoHero = () => {
         </motion.h1>
       </div>
 
+      {/* Showreel Disclaimer */}
+      <div className="absolute bottom-3 right-3 z-20">
+        <span className="text-[10px] text-foreground/20 font-light">
+          Showreel — Linus Jansner
+        </span>
+      </div>
+
       {/* Scroll Indicator */}
       <motion.button
         initial={{ opacity: 0 }}

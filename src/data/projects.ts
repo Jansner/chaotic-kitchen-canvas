@@ -65,7 +65,7 @@ The work is site-responsive, shaped by each venue's architectural character. A t
     dossierLink: "https://drive.google.com/file/d/1J74j57lBwxKl-jsATKhjb4J2LMMm6sCI/view?usp=sharing",
     details: {
       duration: "30-45 minutes",
-      choreography: "Linus Jansner & Emily Heather Manica",
+      choreography: "Linus Jansner. Co-author: Emily Heather Manica",
       performers: "Linus Jansner & Emily Heather Manica",
       music: "Emily Heather Manica (Original, live)",
       premiere: "June 28, 2026 — Pergine Festival, Italy",
@@ -163,7 +163,8 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       presentations: [
         "December 20, 2024 — RedSapata, Linz, Austria (Premiere)",
         "May 5, 2025 — Eslöv, Sweden",
-        "September 10, 2025 — Festival Quartiers Danses, Montreal, Canada"
+        "September 10, 2025 — Festival Quartiers Danses, Montreal, Canada",
+        "2027 — Upcoming Tour (dates TBC)"
       ]
     },
     videoLinks: [
@@ -187,7 +188,11 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       performers: "Linus Jansner",
       premiere: "2025",
       location: "Mannheim",
-      credits: "Developed together with Charlotte Fenn and Vladimir Staicu"
+      credits: "Developed together with Charlotte Fenn and Vladimir Staicu",
+      presentations: [
+        "2025 — Mannheim (Premiere)",
+        "September 2026 — Valencia"
+      ]
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=jpjV4yIv1ow", type: "trailer" },
@@ -204,20 +209,32 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
     description: "A solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens.",
     fullDescription: `The Body as Border is conceived as a spin-off of the performance Body.light and takes the form of a solo that moves through the body as an unstable territory—an open threshold where identity does not settle but happens. 
 
-A male body that explores its own ambiguity, or vice versa, exposes itself as sensitive matter, crossed by opposing forces: control and release, resistance and vulnerability, desire and self-affirmation. The body becomes a plastic surface, both object and subject of the gaze, a place where identity is constructed and dissolves in the time of the action, shaping an intimate discourse that passes not through words but through presence.`,
+A male body that explores its own ambiguity, or vice versa, exposes itself as sensitive matter, crossed by opposing forces: control and release, resistance and vulnerability, desire and self-affirmation. The body becomes a plastic surface, both object and subject of the gaze, a place where identity is constructed and dissolves in the time of the action, shaping an intimate discourse that passes not through words but through presence.
+
+CREATION STATUS — WORK IN PROGRESS (2026).
+
+Origin: Artistic encounter during Body.light (performance for the National Museum Museo e Real Bosco di Capodimonte, Naples).
+
+Looking for: Residencies / Co-production / Premiere partners.`,
     dossierLink: "https://drive.google.com/file/d/1cNMFnNZU30tWBwXGwML-gRB5BptS7urL/view?usp=sharing",
     details: {
       choreography: "Linus Jansner & Antonello Tudisco",
       performers: "Linus Jansner",
       premiere: "October 3-4, 2026 — RAID Festival",
       themes: ["Identity", "Vulnerability", "Control", "Release"],
+      residencies: [
+        "TAN (Naples) — December 2025 (Completed)",
+        "TAN (Naples) — May 2026 (Scheduled)",
+        "Verdello (MI) — August 2026 (Scheduled)"
+      ],
       presentations: [
-        "October 3-4, 2026 — RAID Festival (Avant-première)"
+        "October 3-4, 2026 — RAID Festival (Avant-première)",
+        "Further dates TBC"
       ]
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=N6AhdyXQatE", type: "trailer" },
-      { title: "New Version / Development", url: "https://youtu.be/BcfKNi4RRtA", type: "performance" },
+      { title: "New Version / Development", url: "https://youtu.be/J0e_1xLKLkM", type: "performance" },
       { title: "Original Version", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
     ],
     type: 'performance',
@@ -346,7 +363,7 @@ Is what you see real—or is your mind simply trying to make sense of the unknow
     },
     videoLinks: [
       { title: "Trailer", url: "https://www.youtube.com/watch?v=-kAOIJwe2GE", type: "trailer" },
-      { title: "Performance", url: "https://youtu.be/L2E3BGXpFQo", type: "performance" }
+      { title: "Performance", url: "https://youtu.be/14EEy0ANG3k", type: "performance" }
     ],
     type: 'performance',
     order: 9
