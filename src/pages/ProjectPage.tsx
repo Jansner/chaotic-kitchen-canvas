@@ -3,8 +3,9 @@ import { ArrowLeft, ArrowRight, Calendar, MapPin, Users, Clock, FileText, Extern
 import { projects, shortFilms, musicVideos, getAllWorks } from "@/data/projects";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Lightbox from "@/components/Lightbox";
 import { AnimatedSection, FadeInSection, StaggerContainer, StaggerItem } from "@/components/ScrollAnimations";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Import project images
 import balanceInPreview from "@/assets/balance-in-preview.png";
@@ -56,22 +57,22 @@ import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "balance-in": {
     main: balanceInPreview,
-    gallery: [balanceIn1, balanceIn2, balanceIn3, balanceIn4] // New Balance In gallery images
+    gallery: [balanceIn1, balanceIn2, balanceIn3, balanceIn4]
   },
   "strangers-in-the-night": {
-    main: strangers2, // Swapped - gallery image is now preview
-    gallery: [strangers1, strangersGallery1, strangersGallery2, strangersGallery3] // New gallery images
+    main: strangers2,
+    gallery: [strangers1, strangersGallery1, strangersGallery2, strangersGallery3]
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
     gallery: [wfdal2, wfdal3]
   },
   "the-body-as-border": {
-    main: throughLookingGlassPreview, // Using Through the Looking Glass preview for Body as Border
+    main: throughLookingGlassPreview,
     gallery: [bodyBorder1, bodyBorder2, bodyBorder3]
   },
   "liminal-phantoms": {
-    main: liminalPhantomsGallery, // Changed to gallery image as preview
+    main: liminalPhantomsGallery,
     gallery: [liminalPhantomsPreview, liminalPhantomsGallery2, liminalPhantomsGallery3]
   },
   "noise-without-silence": {
@@ -83,7 +84,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     gallery: []
   },
   "through-the-looking-glass": {
-    main: throughLookingGlassPreviewNew, // New preview for Through the Looking Glass
+    main: throughLookingGlassPreviewNew,
     gallery: []
   },
   "just-like-old-days": {
@@ -95,8 +96,8 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     gallery: []
   },
   "fika": {
-    main: fikaPreviewNew, // New preview
-    gallery: [fikaGalleryPoster, fikaGallery4, fikaGallery5, fikaGallery6, fikaGallery3] // New gallery images replacing old ones
+    main: fikaPreviewNew,
+    gallery: [fikaGalleryPoster, fikaGallery4, fikaGallery5, fikaGallery6, fikaGallery3]
   },
   "rorschach": {
     main: rorschachPreview,
@@ -115,8 +116,8 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
     gallery: []
   },
   "beneath": {
-    main: beneathPreviewNew, // New preview
-    gallery: [beneathPreview] // Old preview goes to gallery
+    main: beneathPreviewNew,
+    gallery: [beneathPreview]
   },
 };
 
@@ -141,6 +142,10 @@ const ProjectPage = () => {
   const prevProject = currentIndex > 0 ? orderedWorks[currentIndex - 1] : null;
   const nextProject = currentIndex < orderedWorks.length - 1 ? orderedWorks[currentIndex + 1] : null;
 
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
   // Scroll to top when project changes
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -164,6 +169,13 @@ const ProjectPage = () => {
 
   // Check if this is Strangers in the Night - special gallery layout
   const isStrangers = project.id === "strangers-in-the-night";
+  // Check if this is Balance In - presentations shown higher
+  const isBalanceIn = project.id === "balance-in";
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -181,6 +193,17 @@ const ProjectPage = () => {
         </div>
       )}
       
+      {/* Lightbox */}
+      {images?.gallery && images.gallery.length > 0 && (
+        <Lightbox
+          images={images.gallery}
+          initialIndex={lightboxIndex}
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+          alt={project.title}
+        />
+      )}
+
       <main className="pt-24 relative z-10">
         {/* Back Button */}
         <section className="container mx-auto px-6 py-8">
@@ -376,7 +399,11 @@ const ProjectPage = () => {
                 {isStrangers && images?.gallery && images.gallery.length > 0 && (
                   <div className="grid grid-cols-2 gap-4 mt-4">
                     {images.gallery.map((img, index) => (
-                      <div key={index} className="aspect-[4/3] overflow-hidden group">
+                      <div 
+                        key={index} 
+                        className="aspect-[4/3] overflow-hidden group cursor-pointer"
+                        onClick={() => openLightbox(index)}
+                      >
                         <img 
                           src={img} 
                           alt={`${project.title} - Image ${index + 1}`}
@@ -448,67 +475,162 @@ const ProjectPage = () => {
           </section>
         )}
 
-        {/* Credits Section */}
+        {/* Credits Section - Special layout for Strangers in the Night */}
         {project.details && (
           <section className="py-16">
             <div className="container mx-auto px-6">
               <AnimatedSection>
                 <h2 className="text-3xl font-light tracking-wide mb-8">Credits</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-                  {project.details.choreography && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Choreography</h3>
-                      <p className="font-light">{project.details.choreography}</p>
+                
+                {isStrangers ? (
+                  <div className="max-w-3xl space-y-8">
+                    {/* Choreographers section */}
+                    <div>
+                      <h3 className="text-lg font-light tracking-wide mb-4 text-primary/80">Choreographers</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {project.details.choreography && (
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Choreography</h3>
+                            <p className="font-light">{project.details.choreography}</p>
+                          </div>
+                        )}
+                        {project.details.performers && (
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Performers</h3>
+                            <p className="font-light">{project.details.performers}</p>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                  {project.details.dramaturg && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Dramaturgy</h3>
-                      <p className="font-light">{project.details.dramaturg}</p>
+
+                    {/* Presentations in between */}
+                    {project.details.presentations && project.details.presentations.length > 0 && (
+                      <div>
+                        <h3 className="text-lg font-light tracking-wide mb-4 text-primary/80">Presentations</h3>
+                        <div className="space-y-3 max-w-2xl">
+                          {project.details.presentations.map((presentation, index) => (
+                            <div key={index} className="flex items-center gap-3 py-2 border-b border-border/30">
+                              <Calendar className="w-4 h-4 text-primary" />
+                              <span className="font-light">{presentation}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Additional Credits */}
+                    <div>
+                      <h3 className="text-lg font-light tracking-wide mb-4 text-primary/80">Additional Credits</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {project.details.dramaturg && (
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Dramaturgy</h3>
+                            <p className="font-light">{project.details.dramaturg}</p>
+                          </div>
+                        )}
+                        {project.details.music && (
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Music</h3>
+                            <p className="font-light">{project.details.music}</p>
+                          </div>
+                        )}
+                        {project.details.costumeDesign && (
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Costume Design</h3>
+                            <p className="font-light">{project.details.costumeDesign}</p>
+                          </div>
+                        )}
+                        {project.details.production && (
+                          <div className="border-l-2 border-primary/30 pl-4">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Production</h3>
+                            <p className="font-light">{project.details.production}</p>
+                          </div>
+                        )}
+                        {project.details.credits && (
+                          <div className="border-l-2 border-primary/30 pl-4 md:col-span-2">
+                            <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Additional Credits</h3>
+                            <p className="font-light">{project.details.credits}</p>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                  {project.details.music && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Music</h3>
-                      <p className="font-light">{project.details.music}</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+                    {project.details.choreography && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Choreography</h3>
+                        <p className="font-light">{project.details.choreography}</p>
+                      </div>
+                    )}
+                    {project.details.dramaturg && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Dramaturgy</h3>
+                        <p className="font-light">{project.details.dramaturg}</p>
+                      </div>
+                    )}
+                    {project.details.music && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Music</h3>
+                        <p className="font-light">{project.details.music}</p>
+                      </div>
+                    )}
+                    {project.details.costumeDesign && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Costume Design</h3>
+                        <p className="font-light">{project.details.costumeDesign}</p>
+                      </div>
+                    )}
+                    {project.details.scenography && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Scenography</h3>
+                        <p className="font-light">{project.details.scenography}</p>
+                      </div>
+                    )}
+                    {project.details.lightingDesign && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Lighting Design</h3>
+                        <p className="font-light">{project.details.lightingDesign}</p>
+                      </div>
+                    )}
+                    {project.details.soundDesign && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Sound Design</h3>
+                        <p className="font-light">{project.details.soundDesign}</p>
+                      </div>
+                    )}
+                    {project.details.production && (
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Production</h3>
+                        <p className="font-light">{project.details.production}</p>
+                      </div>
+                    )}
+                    {project.details.credits && (
+                      <div className="border-l-2 border-primary/30 pl-4 md:col-span-2">
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Additional Credits</h3>
+                        <p className="font-light">{project.details.credits}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </AnimatedSection>
+            </div>
+          </section>
+        )}
+
+        {/* Presentations Section for Balance In - shown right after credits */}
+        {isBalanceIn && project.details?.presentations && project.details.presentations.length > 0 && (
+          <section className="py-16 bg-card">
+            <div className="container mx-auto px-6">
+              <AnimatedSection>
+                <h2 className="text-3xl font-light tracking-wide mb-8">Performance Dates</h2>
+                <div className="space-y-3 max-w-2xl">
+                  {project.details.presentations.map((presentation, index) => (
+                    <div key={index} className="flex items-center gap-3 py-2 border-b border-border/30">
+                      <Calendar className="w-4 h-4 text-primary" />
+                      <span className="font-light">{presentation}</span>
                     </div>
-                  )}
-                  {project.details.costumeDesign && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Costume Design</h3>
-                      <p className="font-light">{project.details.costumeDesign}</p>
-                    </div>
-                  )}
-                  {project.details.scenography && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Scenography</h3>
-                      <p className="font-light">{project.details.scenography}</p>
-                    </div>
-                  )}
-                  {project.details.lightingDesign && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Lighting Design</h3>
-                      <p className="font-light">{project.details.lightingDesign}</p>
-                    </div>
-                  )}
-                  {project.details.soundDesign && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Sound Design</h3>
-                      <p className="font-light">{project.details.soundDesign}</p>
-                    </div>
-                  )}
-                  {project.details.production && (
-                    <div className="border-l-2 border-primary/30 pl-4">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Production</h3>
-                      <p className="font-light">{project.details.production}</p>
-                    </div>
-                  )}
-                  {project.details.credits && (
-                    <div className="border-l-2 border-primary/30 pl-4 md:col-span-2">
-                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Additional Credits</h3>
-                      <p className="font-light">{project.details.credits}</p>
-                    </div>
-                  )}
+                  ))}
                 </div>
               </AnimatedSection>
             </div>
@@ -536,13 +658,17 @@ const ProjectPage = () => {
 
         {/* Gallery Section - Skip for Strangers as gallery is shown next to video */}
         {!isStrangers && images?.gallery && images.gallery.length > 0 && (
-          <section className="py-16 bg-card">
+          <section className={`py-16 ${isBalanceIn ? '' : 'bg-card'}`}>
             <div className="container mx-auto px-6">
               <AnimatedSection>
                 <h2 className="text-3xl font-light tracking-wide mb-8">Gallery</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {images.gallery.map((img, index) => (
-                    <div key={index} className="aspect-[4/3] overflow-hidden group">
+                    <div 
+                      key={index} 
+                      className="aspect-[4/3] overflow-hidden group cursor-pointer"
+                      onClick={() => openLightbox(index)}
+                    >
                       <img 
                         src={img} 
                         alt={`${project.title} - Image ${index + 1}`}
@@ -556,8 +682,8 @@ const ProjectPage = () => {
           </section>
         )}
 
-        {/* Presentations Section */}
-        {project.details?.presentations && project.details.presentations.length > 0 && (
+        {/* Presentations Section - Skip for Balance In (shown earlier) and Strangers (shown in credits) */}
+        {!isBalanceIn && !isStrangers && project.details?.presentations && project.details.presentations.length > 0 && (
           <section className="py-16">
             <div className="container mx-auto px-6">
               <AnimatedSection>

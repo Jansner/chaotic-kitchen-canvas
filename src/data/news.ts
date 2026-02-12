@@ -23,11 +23,11 @@ The show will have elements of humour and magic, but ultimately dive into some d
 This project follows on from Strangers in the Night, combining physical and image-based storytelling with scripted theatre.
 
 TEAM:
-Concept, direction and script: Jos Baker
-Choreography: Jos Baker and Linus Jansner
-Performers: Jos Baker, Linus Jansner, and TBA
-Outside eye/dramaturgy: Antonello Tudisco
-Music: Christos Parapagidis
+Conceived, written and directed by Jos Baker
+Co-created and performed by Jos Baker, Linus Jansner
+Outside eye and Dramaturg: Antonello Tudisco
+Music and sound design: Chris Parapagidis
+Producer: Katrien Dubois
 
 Co-produced with Interon5Danza • Residency May 2026`
   },
@@ -72,12 +72,36 @@ Co-produced with Interon5Danza • Residency May 2026`
     projectId: "the-body-as-border"
   },
   {
+    id: "body-as-border-napoli-residency",
+    title: "The Body as Border - Residency at TAN Naples",
+    date: "2026-05-01",
+    category: "upcoming",
+    description: "Residency at Teatro Area Nord (TAN), Naples. Origin: artistic encounter during Body.light at Museo e Real Bosco di Capodimonte.",
+    projectId: "the-body-as-border"
+  },
+  {
     id: "liminal-phantoms-graz",
     title: "Liminal Phantoms - Evening of Wonders, Graz",
     date: "2026-03-10",
     category: "upcoming",
     description: "Liminal Phantoms presented at Evening of Wonders in Graz, Austria.",
     projectId: "liminal-phantoms"
+  },
+  {
+    id: "wfdal-tour-2027",
+    title: "What Falls Doesn't Always Land - Upcoming Tour 2027",
+    date: "2027-01-01",
+    category: "upcoming",
+    description: "The acclaimed duet with Yamuna Huygen announces an upcoming tour in 2027. Dates to be confirmed.",
+    projectId: "what-falls-doesnt-always-land"
+  },
+  {
+    id: "noise-without-silence-valencia",
+    title: "Noise Without Silence - Valencia 2026",
+    date: "2026-09-01",
+    category: "upcoming",
+    description: "Noise Without Silence will be presented in Valencia, Spain in September 2026.",
+    projectId: "noise-without-silence"
   },
   {
     id: "wfdal-tour-2025",
