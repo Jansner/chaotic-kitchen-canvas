@@ -97,8 +97,12 @@ export const coProducingPartners = [
   "MIC - Ministero della Cultura (Italian Ministry of Culture)",
   "Assessorato alla Cultura - Regione Emilia Romagna",
   "Compagnia Abbondanza/Bertoni",
-  "RedSapata Tanzfabrik (AT)",
-  "C&C Company (Strangers in the Night)"
+  "RedSapata Tanzfabrik (AT)"
+];
+
+// Partners specific to Strangers in the Night (through C&C Company)
+export const strangersPartners = [
+  "C&C Company"
 ];
 
 export const producingPartners = [
