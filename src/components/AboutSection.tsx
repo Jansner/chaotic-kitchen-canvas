@@ -112,7 +112,7 @@ const AboutSection = () => {
           {/* Strangers in the Night — through C&C Company */}
           <AnimatedSection className="text-center mb-6">
             <p className="text-xs text-muted-foreground/60 font-light italic">
-              Strangers in the Night — through C&C Company
+              Strangers in the Night
             </p>
             <div className="flex flex-wrap justify-center gap-3 mt-2">
               {strangersPartners.map((partner, index) => (
