@@ -554,6 +554,12 @@ const ProjectPage = () => {
                         )}
                       </div>
                     </div>
+
+                    {/* Co-producing & Partners for Strangers */}
+                    <div className="mt-6 pt-6 border-t border-border/30">
+                      <h3 className="text-sm uppercase tracking-wider text-muted-foreground/60 mb-2">Co-producing & Partners</h3>
+                      <p className="font-light text-sm text-muted-foreground/70 italic">Through C&C Company</p>
+                    </div>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">

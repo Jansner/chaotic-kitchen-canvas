@@ -1,5 +1,5 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink } from "@/data/cv";
+import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, strangersPartners } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 
@@ -99,7 +99,7 @@ const AboutSection = () => {
             <div className="section-divider" />
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-12">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
             {coProducingPartners.map((partner, index) => (
               <StaggerItem key={index}>
                 <div className="p-4 border border-border/50 text-center font-light text-sm">
@@ -108,6 +108,20 @@ const AboutSection = () => {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* Strangers in the Night — through C&C Company */}
+          <AnimatedSection className="text-center mb-12">
+            <p className="text-xs text-muted-foreground/60 font-light italic">
+              Strangers in the Night — through C&C Company
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-2">
+              {strangersPartners.map((partner, index) => (
+                <span key={index} className="px-3 py-1.5 border border-border/30 text-center font-light text-xs text-muted-foreground">
+                  {partner}
+                </span>
+              ))}
+            </div>
+          </AnimatedSection>
 
           {/* Producing Partners */}
           <AnimatedSection className="text-center mb-8">
