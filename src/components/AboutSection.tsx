@@ -109,17 +109,8 @@ const AboutSection = () => {
             ))}
           </StaggerContainer>
 
-          {/* Direct partners (not through C&C) */}
-          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-8">
-            {directPartners.map((partner, index) => (
-              <div key={index} className="p-4 border border-border/50 text-center font-light text-sm">
-                {partner}
-              </div>
-            ))}
-          </div>
-
           {/* Strangers in the Night — through C&C Company */}
-          <AnimatedSection className="text-center mb-12">
+          <AnimatedSection className="text-center mb-6">
             <p className="text-xs text-muted-foreground/60 font-light italic">
               Strangers in the Night — through C&C Company
             </p>
@@ -131,6 +122,15 @@ const AboutSection = () => {
               ))}
             </div>
           </AnimatedSection>
+
+          {/* Direct partners (not through C&C) */}
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-12">
+            {directPartners.map((partner, index) => (
+              <div key={index} className="p-4 border border-border/50 text-center font-light text-sm">
+                {partner}
+              </div>
+            ))}
+          </div>
 
           {/* Producing Partners */}
           <AnimatedSection className="text-center mb-8">
