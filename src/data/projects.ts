@@ -114,7 +114,7 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
     details: {
       choreography: "Jos Baker, Linus Jansner, Carlo Massari",
       performers: "Jos Baker, Linus Jansner, Carlo Massari",
-      credits: "Script: Jos Baker. Idea: Carlo Massari. In collaboration with: Martina La Ragione, Chiara Osella. Original music and sound composition: Andreas Moulin. Technical direction: Francesco Massari. Costumes: Chiara Defant",
+      credits: "Script: Jos Baker. Idea: Carlo Massari. In collaboration with: Martina La Ragione, Chiara Osella. Original music and sound composition: Andreas Moulin. Technical direction: Francesco Massari. Costumes: Chiara Defant. Production through C&C Company",
       premiere: "August 30, 2024",
       location: "Italy tour",
       presentations: [
