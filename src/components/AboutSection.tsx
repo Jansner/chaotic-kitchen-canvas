@@ -1,5 +1,5 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, strangersPartners } from "@/data/cv";
+import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, strangersPartners } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 
@@ -99,7 +99,7 @@ const AboutSection = () => {
             <div className="section-divider" />
           </AnimatedSection>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-6">
             {coProducingPartners.map((partner, index) => (
               <StaggerItem key={index}>
                 <div className="p-4 border border-border/50 text-center font-light text-sm">
@@ -108,6 +108,15 @@ const AboutSection = () => {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* Direct partners (not through C&C) */}
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-8">
+            {directPartners.map((partner, index) => (
+              <div key={index} className="p-4 border border-border/50 text-center font-light text-sm">
+                {partner}
+              </div>
+            ))}
+          </div>
 
           {/* Strangers in the Night — through C&C Company */}
           <AnimatedSection className="text-center mb-12">
