@@ -95,7 +95,11 @@ export const coProducingPartners = [
   "ERT Emilia-Romagna Teatro / Teatro Nazionale - focus CARNE",
   "Associazione Culturale SPaCCa (Production Company)",
   "MIC - Ministero della Cultura (Italian Ministry of Culture)",
-  "Assessorato alla Cultura - Regione Emilia Romagna",
+  "Assessorato alla Cultura - Regione Emilia Romagna"
+];
+
+// Partners NOT through C&C — separate from Strangers in the Night
+export const directPartners = [
   "Compagnia Abbondanza/Bertoni",
   "RedSapata Tanzfabrik (AT)"
 ];
