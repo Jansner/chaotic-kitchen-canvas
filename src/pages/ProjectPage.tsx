@@ -52,9 +52,14 @@ import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
+import capodimonteHands from "@/assets/capodimonte-hands.jpg";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
+  "capodimonte-site-specific": {
+    main: capodimonteHands,
+    gallery: [capodimonteHands]
+  },
   "balance-in": {
     main: balanceInPreview,
     gallery: [balanceIn1, balanceIn2, balanceIn3, balanceIn4]
