@@ -1,5 +1,5 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, strangersPartners } from "@/data/cv";
+import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, strangersPartners, networkOrganisations } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 
@@ -147,10 +147,18 @@ const AboutSection = () => {
           </AnimatedSection>
 
           {/* Supported By */}
-          <AnimatedSection className="text-center">
+          <AnimatedSection className="text-center mb-8">
             <h4 className="text-xl font-light tracking-wide text-primary mb-4">Supported by</h4>
             <p className="text-foreground/80 font-light">
               {supportedBy.join(" • ")}
+            </p>
+          </AnimatedSection>
+
+          {/* Network / Organisations */}
+          <AnimatedSection className="text-center">
+            <h4 className="text-xl font-light tracking-wide text-primary mb-4">Network / Organisations</h4>
+            <p className="text-foreground/80 font-light">
+              {networkOrganisations.join(" • ")}
             </p>
           </AnimatedSection>
         </div>
