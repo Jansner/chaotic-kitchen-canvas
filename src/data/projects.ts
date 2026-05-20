@@ -75,6 +75,7 @@ Performances: 23–24 [Month TBC] 2026.`,
       ]
     },
     type: 'performance',
+    imageUrl: "/src/assets/capodimonte-hands.jpg",
     order: 0
   },
   {
