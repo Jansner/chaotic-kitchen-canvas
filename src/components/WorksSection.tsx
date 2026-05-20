@@ -51,6 +51,9 @@ const WorksSection = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <AnimatedSection className="text-center mb-16 md:mb-24">
+          <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground/80 font-light mb-4">
+            Choreographic &amp; collaborative work by Linus Jansner
+          </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide">
             Works
           </h2>

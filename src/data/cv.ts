@@ -109,6 +109,11 @@ export const strangersPartners = [
   "C&C Company"
 ];
 
+// Network / organisations (reference only — not producers or hosts)
+export const networkOrganisations = [
+  "Vitlycke – Centre for Performing Arts (Tanumshede, Sweden)"
+];
+
 export const producingPartners = [
   "Oriente Occidente (IT)",
   "ATER Balletto (IT)",

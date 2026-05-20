@@ -46,6 +46,38 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "capodimonte-site-specific",
+    title: "Capodimonte Site-Specific Creation",
+    subtitle: "New site-specific performance in development for Festival Movimentale, Napoli",
+    year: "2026",
+    description: "A new site-specific performance by Linus Jansner, developed for Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.",
+    fullDescription: `A new site-specific performance by Linus Jansner, developed for Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.
+
+The work responds to the relationship between body, environment, museum space, and visual memory. Created in dialogue with Capodimonte's permanent collection, the project approaches the museum not as a neutral container, but as a living landscape of images, histories, gestures, bodies, and atmospheres.
+
+The performance will be developed from a selected artwork in the collection and translated into a physical, choreographic, and spatial encounter. It continues Linus Jansner's wider research into the body as a psychological landscape, the body as image, and performance as a dialogue between place, perception, and transformation.
+
+The project is currently in development.
+
+CREATION STATUS — IN DEVELOPMENT.
+
+Format: Site-specific performance.
+Presentation: Festival Movimentale — 20th anniversary edition.
+Performances: 23–24 [Month TBC] 2026.`,
+    details: {
+      duration: "Approx. 30 minutes",
+      choreography: "Linus Jansner",
+      location: "Museo e Real Bosco di Capodimonte, Napoli, Italy",
+      premiere: "23–24 [Month TBC] 2026 — Festival Movimentale, 20th anniversary edition",
+      credits: "Concept / Choreography: Linus Jansner. Created for: Festival Movimentale — 20th anniversary edition. In dialogue with: Museo e Real Bosco di Capodimonte, Napoli.",
+      presentations: [
+        "23–24 [Month TBC] 2026 — Festival Movimentale, Museo e Real Bosco di Capodimonte, Napoli"
+      ]
+    },
+    type: 'performance',
+    order: 0
+  },
+  {
     id: "balance-in",
     title: "Balance In",
     subtitle: "Duet with Live Guitar",
