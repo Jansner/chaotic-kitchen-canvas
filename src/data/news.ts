@@ -11,6 +11,40 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    id: "capodimonte-movimentale-2026",
+    title: "New site-specific creation for Festival Movimentale at Museo e Real Bosco di Capodimonte, Napoli",
+    date: "2026-01-01",
+    category: "upcoming",
+    description: "Linus Jansner has been invited to develop a new site-specific performance for a special edition of Festival Movimentale in Napoli, celebrating the festival's 20th anniversary.",
+    fullDescription: `Linus Jansner has been invited to develop a new site-specific performance for a special edition of Festival Movimentale in Napoli, celebrating the festival's 20th anniversary.
+
+The project will be created in dialogue with Museo e Real Bosco di Capodimonte and its permanent collection, responding to the relationship between artist, environment, body, architecture, and landscape.
+
+The work is currently in development and will be presented at Capodimonte, Napoli, on 23–24 [Month TBC] 2026.
+
+Status: In development.
+Location: Museo e Real Bosco di Capodimonte, Napoli, Italy.
+Upcoming 2026.`,
+    projectId: "capodimonte-site-specific"
+  },
+  {
+    id: "liminal-phantoms-romania-2026",
+    title: "Liminal Phantoms — Romania, 15–22 June",
+    date: "2026-06-15",
+    category: "upcoming",
+    description: "Liminal Phantoms continues its international journey with new dates in Romania from 15–22 June 2026.",
+    fullDescription: `Liminal Phantoms continues its international journey with new dates in Romania from 15–22 June.
+
+The solo performance by Linus Jansner investigates identity, transformation, self-perception, and the fragile space between who we are and who we are expected to become.
+
+More details will be announced soon.
+
+Dates: 15–22 June 2026.
+Location: Romania.
+Status: Upcoming.`,
+    projectId: "liminal-phantoms"
+  },
+  {
     id: "manosphere-2026",
     title: "Manosphere - New Creation with Jos Baker",
     date: "2026-05-01",
