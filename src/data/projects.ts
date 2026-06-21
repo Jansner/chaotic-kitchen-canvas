@@ -114,8 +114,9 @@ The work is site-responsive, shaped by each venue's architectural character. A t
       ]
     },
     videoLinks: [
-      { title: "Trailer", url: "https://youtu.be/CSraERodfm4", type: "trailer" },
-      { title: "Performance", url: "https://youtu.be/w-kWC1IbUhE", type: "performance" }
+      { title: "Official Trailer", url: "https://youtu.be/SiBl7MHmmwk", type: "trailer" },
+      { title: "Full Length Work", url: "https://youtu.be/XbY0vqj1EHs", type: "performance" },
+      { title: "Work in Progress", url: "https://youtu.be/w-kWC1IbUhE", type: "other" }
     ],
     type: 'performance',
     order: 1
