@@ -42,6 +42,7 @@ export interface Project {
   galleryImages?: string[];
   type: 'performance' | 'film';
   order?: number; // For custom ordering
+  hidden?: boolean; // When true, the work is kept in the data but not shown on the website
 }
 
 export const projects: Project[] = [
@@ -232,7 +233,8 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       { title: "Performance", url: "https://youtu.be/Los37YIz-V8", type: "performance" }
     ],
     type: 'performance',
-    order: 4
+    order: 4,
+    hidden: true
   },
   {
     id: "the-body-as-border",
@@ -665,7 +667,7 @@ export const musicVideos: Project[] = [
 ];
 
 // Custom sort function to respect the order property
-export const getAllWorks = () => [...projects].sort((a, b) => {
+export const getAllWorks = () => [...projects].filter(p => !p.hidden).sort((a, b) => {
   if (a.order !== undefined && b.order !== undefined) {
     return a.order - b.order;
   }
