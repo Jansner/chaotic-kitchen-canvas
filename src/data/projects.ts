@@ -42,6 +42,7 @@ export interface Project {
   galleryImages?: string[];
   type: 'performance' | 'film';
   order?: number; // For custom ordering
+  hidden?: boolean; // When true, the work is kept in the data but not shown on the website
 }
 
 export const projects: Project[] = [
