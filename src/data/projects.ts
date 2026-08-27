@@ -233,7 +233,8 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
       { title: "Performance", url: "https://youtu.be/Los37YIz-V8", type: "performance" }
     ],
     type: 'performance',
-    order: 4
+    order: 4,
+    hidden: true
   },
   {
     id: "the-body-as-border",
