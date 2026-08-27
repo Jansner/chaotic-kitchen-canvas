@@ -667,7 +667,7 @@ export const musicVideos: Project[] = [
 ];
 
 // Custom sort function to respect the order property
-export const getAllWorks = () => [...projects].sort((a, b) => {
+export const getAllWorks = () => [...projects].filter(p => !p.hidden).sort((a, b) => {
   if (a.order !== undefined && b.order !== undefined) {
     return a.order - b.order;
   }
