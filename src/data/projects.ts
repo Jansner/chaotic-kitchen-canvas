@@ -18,6 +18,7 @@ export interface Project {
   };
   dossierLink?: string;
   details?: {
+    format?: string;
     duration?: string;
     premiere?: string;
     location?: string;
@@ -48,31 +49,30 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "capodimonte-site-specific",
-    title: "Capodimonte Site-Specific Creation",
-    subtitle: "New site-specific performance in development for Festival Movimentale, Napoli",
+    title: "Don’t You Hear?",
+    subtitle: "Site-specific performance for Festival Movimentale at Museo e Real Bosco di Capodimonte, Napoli",
     year: "2026",
-    description: "A new site-specific performance by Linus Jansner, developed for Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.",
-    fullDescription: `A new site-specific performance by Linus Jansner, developed for Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.
+    description: "A site-specific performance created for the twentieth-anniversary edition of Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.",
+    fullDescription: `Don’t You Hear? Created for the twentieth-anniversary edition of Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.
 
-The work responds to the relationship between body, environment, museum space, and visual memory. Created in dialogue with Capodimonte's permanent collection, the project approaches the museum not as a neutral container, but as a living landscape of images, histories, gestures, bodies, and atmospheres.
+Developed in dialogue with Jusepe de Ribera’s painting Apollo and Marsyas and the architectural constellation of Capodimonte’s Belvedere courtyard, the work relocates the Greek myth within a contemporary social landscape. It examines how violence can be disguised as procedure, how responsibility passes from one body to another, and how betrayal continues through hierarchy, silence, complicity, and the collective decision not to see.
 
-The performance will be developed from a selected artwork in the collection and translated into a physical, choreographic, and spatial encounter. It continues Linus Jansner's wider research into the body as a psychological landscape, the body as image, and performance as a dialogue between place, perception, and transformation.
+Through choreography, physical theatre, live music, and a shifting constellation of bodies and objects, the performers move between workers, witnesses, and figures of authority. The museum becomes an active part of the work: its architecture, visual memory, and accumulated histories shape how the audience encounters the performance.
 
-The project is currently in development.
-
-CREATION STATUS — IN DEVELOPMENT.
-
-Format: Site-specific performance.
-Presentation: Festival Movimentale — 20th anniversary edition.
-Performances: 23–24 [Month TBC] 2026.`,
+Don’t You Hear? continues Linus Jansner’s research into the body as a psychological landscape, the body as image, and performance as a dialogue between place, perception, and transformation.`,
     details: {
-      duration: "Approx. 30 minutes",
+      format: "Site-specific performance and theatre",
+      duration: "Approximately 40 minutes",
       choreography: "Linus Jansner",
+      performers: "Linus Jansner\nLotta Sandborgh, Ultima Vez\nJoelina Rietsche\nMartina Persico\nMary Rizzo\nJulia Carafa",
+      music: "Julia Carafa — original composition and live music",
+      lightingDesign: "Marco Scappa",
       location: "Museo e Real Bosco di Capodimonte, Napoli, Italy",
-      premiere: "23–24 [Month TBC] 2026 — Festival Movimentale, 20th anniversary edition",
-      credits: "Concept / Choreography: Linus Jansner. Created for: Festival Movimentale — 20th anniversary edition. In dialogue with: Museo e Real Bosco di Capodimonte, Napoli.",
+      premiere: "23–24 July 2026 — Festival Movimentale, twentieth-anniversary edition",
+      production: "Interno 5 Danza\nChaotic Kitchen\nMuseo e Real Bosco di Capodimonte",
+      credits: "Created for Festival Movimentale — twentieth-anniversary edition. In dialogue with Museo e Real Bosco di Capodimonte, Napoli.",
       presentations: [
-        "23–24 [Month TBC] 2026 — Festival Movimentale, Museo e Real Bosco di Capodimonte, Napoli"
+        "23–24 July 2026 — Festival Movimentale, twentieth-anniversary edition — Museo e Real Bosco di Capodimonte, Napoli"
       ]
     },
     type: 'performance',
