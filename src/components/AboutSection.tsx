@@ -1,5 +1,5 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, strangersPartners, networkOrganisations } from "@/data/cv";
+import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, portfolioLink, workshopsLink, strangersPartners, networkOrganisations } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 
@@ -71,6 +71,22 @@ const AboutSection = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 Full CV <ExternalLink className="w-4 h-4" />
+              </a>
+              <a
+                href={workshopsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Workshops <ExternalLink className="w-4 h-4" />
+              </a>
+              <a
+                href={portfolioLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Portfolio <ExternalLink className="w-4 h-4" />
               </a>
             </div>
 

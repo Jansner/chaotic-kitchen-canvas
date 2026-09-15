@@ -12,19 +12,15 @@ export interface NewsItem {
 export const newsItems: NewsItem[] = [
   {
     id: "capodimonte-movimentale-2026",
-    title: "New site-specific creation for Festival Movimentale at Museo e Real Bosco di Capodimonte, Napoli",
-    date: "2026-01-01",
+    title: "Don’t You Hear? — Festival Movimentale at Capodimonte, Napoli",
+    date: "2026-07-23",
     category: "upcoming",
-    description: "Linus Jansner has been invited to develop a new site-specific performance for a special edition of Festival Movimentale in Napoli, celebrating the festival's 20th anniversary.",
-    fullDescription: `Linus Jansner has been invited to develop a new site-specific performance for a special edition of Festival Movimentale in Napoli, celebrating the festival's 20th anniversary.
+    description: "Don’t You Hear? will be presented on 23–24 July 2026 for Festival Movimentale’s twentieth-anniversary edition in Napoli.",
+    fullDescription: `Don’t You Hear? is a site-specific performance created for Festival Movimentale’s twentieth-anniversary edition at Museo e Real Bosco di Capodimonte in Napoli.
 
-The project will be created in dialogue with Museo e Real Bosco di Capodimonte and its permanent collection, responding to the relationship between artist, environment, body, architecture, and landscape.
+Developed in dialogue with Jusepe de Ribera’s Apollo and Marsyas and Capodimonte’s Belvedere courtyard, the work examines violence, hierarchy, silence, complicity, and the collective decision not to see.
 
-The work is currently in development and will be presented at Capodimonte, Napoli, on 23–24 [Month TBC] 2026.
-
-Status: In development.
-Location: Museo e Real Bosco di Capodimonte, Napoli, Italy.
-Upcoming 2026.`,
+Presented 23–24 July 2026 at Museo e Real Bosco di Capodimonte, Napoli, Italy.`,
     projectId: "capodimonte-site-specific"
   },
   {

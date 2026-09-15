@@ -4,7 +4,7 @@ import { getAllWorks } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem, HoverScale } from "./ScrollAnimations";
 
 // Import project images
-import balanceInPreview from "@/assets/balance-in-preview.png";
+import balanceInFrontAsset from "@/assets/uploads/balance-in-front-page.jpg.asset.json";
 import strangers2 from "@/assets/strangers-2.png";
 import wfdal1 from "@/assets/wfdal-1.jpg";
 import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
@@ -26,7 +26,7 @@ import capodimonteHands from "@/assets/capodimonte-hands.jpg";
 // Image mapping for projects - updated with swaps
 const projectImages: Record<string, string> = {
   "capodimonte-site-specific": capodimonteHands,
-  "balance-in": balanceInPreview,
+  "balance-in": balanceInFrontAsset.url,
   "strangers-in-the-night": strangers2, // Swapped
   "what-falls-doesnt-always-land": wfdal1,
   "the-body-as-border": throughLookingGlassPreview, // Using Through Looking Glass preview for Body as Border
