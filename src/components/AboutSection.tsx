@@ -2,6 +2,10 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimatio
 import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, portfolioLink, workshopsLink, strangersPartners, networkOrganisations } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
+import linusProfile from "@/assets/project-media/linus-profile.webp";
+import workshop1 from "@/assets/project-media/workshop-1.webp";
+import workshop2 from "@/assets/project-media/workshop-2.webp";
+import workshop3 from "@/assets/project-media/workshop-3.webp";
 
 const AboutSection = () => {
   return (
@@ -13,7 +17,7 @@ const AboutSection = () => {
           <AnimatedSection className="relative">
             <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
               <img 
-                src={artistPortrait}
+                src={linusProfile}
                 alt="Linus Jansner"
                 className="w-full h-full object-cover"
               />

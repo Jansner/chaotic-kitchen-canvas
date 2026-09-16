@@ -24,12 +24,26 @@ import wfdal6 from "@/assets/project-media/wfdal-6.webp";
 import wfdal7 from "@/assets/project-media/wfdal-7.webp";
 import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
 import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
+import topGallery1 from "@/assets/project-media/top-gallery-1.webp";
+import topGallery3 from "@/assets/project-media/top-gallery-3.webp";
+import topGallery4 from "@/assets/project-media/top-gallery-4.webp";
+import topGallery5 from "@/assets/project-media/top-gallery-5.webp";
+import topGallery6 from "@/assets/project-media/top-gallery-6.webp";
+import topGallery7 from "@/assets/project-media/top-gallery-7.webp";
+import topGalleryDsmr from "@/assets/project-media/top-gallery-dsmr.webp";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
 import bodyBorder2 from "@/assets/body-border-2.jpg";
 
 const galleryImages = [
+  topGallery1,
+  topGallery3,
+  topGallery4,
+  topGallery5,
+  topGallery6,
+  topGallery7,
+  topGalleryDsmr,
   dontYouHearGallery1,
   dontYouHearGallery2,
   dontYouHearGallery3,
