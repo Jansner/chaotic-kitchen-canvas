@@ -199,5 +199,7 @@ The work has been presented across Europe, North America, and Asia, including fe
   }
 ];
 
-export const getUpcomingEvents = () => newsItems.filter(item => item.category === 'upcoming').sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-export const getLatestNews = () => newsItems.filter(item => item.category === 'news');
+const byNewestFirst = (a: NewsItem, b: NewsItem) => new Date(b.date).getTime() - new Date(a.date).getTime();
+
+export const getUpcomingEvents = () => newsItems.filter(item => item.category === 'upcoming').sort(byNewestFirst);
+export const getLatestNews = () => newsItems.filter(item => item.category === 'news').sort(byNewestFirst);

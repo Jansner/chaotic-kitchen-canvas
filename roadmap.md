@@ -5,3 +5,6 @@
 - [x] Add verified reviews and clearly labelled multilingual press material.
 - [x] Move Noise Without Silence videos directly beneath its dossier.
 - [x] Add the two newly supplied WFDAL photographs beneath its videos.
+- [x] Swap Liminal Phantoms and The Body as Border in Works.
+- [x] Import project gallery photos from the Google Drive folders.
+- [x] Reverse News and Press order to newest first and clarify press statements.

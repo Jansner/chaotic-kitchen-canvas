@@ -36,8 +36,10 @@ const NewsPage = () => {
     }
   };
 
-  const upcomingEvents = newsItems.filter(item => item.category === 'upcoming').sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  const newsAndUpdates = newsItems.filter(item => item.category !== 'upcoming');
+  // Newest and furthest-ahead items first, oldest at the bottom of the page
+  const byNewestFirst = (a: NewsItem, b: NewsItem) => new Date(b.date).getTime() - new Date(a.date).getTime();
+  const upcomingEvents = newsItems.filter(item => item.category === 'upcoming').sort(byNewestFirst);
+  const newsAndUpdates = newsItems.filter(item => item.category !== 'upcoming').sort(byNewestFirst);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -131,27 +133,34 @@ const NewsPage = () => {
               <h2 className="text-3xl md:text-4xl font-light tracking-wide">Press & Reviews</h2>
               <div className="section-divider !mx-0 !mt-4" />
               <p className="mt-6 max-w-2xl text-muted-foreground font-light">
-                Published criticism and multilingual press material for programmers, presenters and media.
+                Two clearly separated kinds of text. <span className="text-foreground">Published reviews</span> are quoted
+                statements written by named critics in named publications, each with a link to the original article.
+                <span className="text-foreground"> Press material</span> is promotional copy written by Chaotic Kitchen
+                itself, free to quote and reproduce.
               </p>
             </AnimatedSection>
 
             <div className="mt-14">
               <AnimatedSection>
-                <h3 className="text-xl font-light tracking-wide mb-6">Published Reviews</h3>
+                <h3 className="text-xl font-light tracking-wide mb-2">Published Reviews</h3>
+                <p className="text-sm text-muted-foreground font-light mb-8">
+                  Quoted statements from published articles, newest first.
+                </p>
               </AnimatedSection>
               <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {publishedReviews.map((review) => (
+                {[...publishedReviews].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((review) => (
                   <StaggerItem key={review.id}>
                     <article className="h-full border border-border p-6 flex flex-col">
                       <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-wider text-muted-foreground mb-5">
                         <span>{review.project}</span>
                         <span>{review.language}</span>
                       </div>
+                      <span className="text-[0.65rem] uppercase tracking-[0.2em] text-primary mb-4">Published review</span>
                       <blockquote className="text-lg font-light leading-relaxed">“{review.quote}”</blockquote>
                       {review.translation && <p className="mt-4 text-sm text-muted-foreground font-light italic">{review.translation}</p>}
                       <div className="mt-auto pt-6 text-sm text-muted-foreground">
-                        <p>{review.publication} · {review.author}</p>
-                        <p>{review.date}</p>
+                        <p>Written by {review.author} for {review.publication}</p>
+                        <p>Published {review.date}</p>
                         <a href={review.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 text-primary hover:gap-3 transition-all">
                           Read original <ExternalLink className="w-4 h-4" />
                         </a>
@@ -168,7 +177,7 @@ const NewsPage = () => {
                   <Languages className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-light tracking-wide">Press Material</h3>
                 </div>
-                <p className="text-sm text-muted-foreground font-light mb-8">Promotional copy by Chaotic Kitchen — not independent reviews.</p>
+                <p className="text-sm text-muted-foreground font-light mb-8">Written by Chaotic Kitchen for press use. These are not independent reviews and are not attributed to any critic or publication.</p>
               </AnimatedSection>
               <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {pressTexts.map((item) => (
@@ -178,6 +187,7 @@ const NewsPage = () => {
                         <h4 className="text-2xl font-light">{item.project}</h4>
                         <span className="text-xs uppercase tracking-wider text-primary">{item.language}</span>
                       </div>
+                      <span className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-4">Press material — Chaotic Kitchen</span>
                       <p className="font-light italic leading-relaxed">{item.short}</p>
                       <div className="my-5 border-t border-border/60" />
                       <p className="text-sm text-muted-foreground font-light leading-relaxed whitespace-pre-line">{item.long}</p>
