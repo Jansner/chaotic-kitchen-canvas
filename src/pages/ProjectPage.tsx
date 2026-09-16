@@ -23,7 +23,6 @@ import liminalPhantomsGallery3 from "@/assets/liminal-phantoms-gallery-3.jpg";
 import noiseWithoutSilencePreview from "@/assets/noise-without-silence-preview.png";
 import noiseWithoutSilenceGallery1 from "@/assets/noise-without-silence-gallery-1.png";
 import noiseWithoutSilenceGallery2 from "@/assets/noise-without-silence-gallery-2.png";
-import noiseWithoutSilenceGallery3 from "@/assets/noise-without-silence-gallery-3.png";
 import gloomPreview from "@/assets/gloom-preview.jpg";
 import justLikeOldDaysPreview from "@/assets/just-like-old-days-preview.jpg";
 import haitunPreviewNew from "@/assets/haitun-preview-new.jpg";
@@ -62,7 +61,6 @@ import wfdal6 from "@/assets/project-media/wfdal-6.webp";
 import wfdal7 from "@/assets/project-media/wfdal-7.webp";
 import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
 import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
-import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
 import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
 import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gallery-4.webp";
@@ -91,7 +89,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
-    gallery: [wfdal2, wfdal3, wfdal4, wfdal5, wfdal6, wfdal7]
+    gallery: [wfdal2, wfdal3, wfdal4, wfdal7]
   },
   "the-body-as-border": {
     main: throughLookingGlassPreview,
@@ -103,7 +101,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
-    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5, noiseWithoutSilenceGallery6]
+    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5]
   },
   "gloom": {
     main: gloomPreview,
