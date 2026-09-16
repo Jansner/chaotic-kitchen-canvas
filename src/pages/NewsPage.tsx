@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, ArrowRight, X } from "lucide-react";
+import { ArrowLeft, Calendar, ArrowRight, ExternalLink, Languages, X } from "lucide-react";
 import { newsItems, NewsItem } from "@/data/news";
+import { pressTexts, publishedReviews } from "@/data/press";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ScrollAnimations";
@@ -90,7 +91,7 @@ const NewsPage = () => {
                           </span>
                           <span className="flex items-center gap-1 text-sm text-muted-foreground">
                             <Calendar className="w-4 h-4" />
-                            {formatDate(item.date)}
+                            {item.dateLabel || formatDate(item.date)}
                           </span>
                         </div>
                         <h3 className="text-2xl font-light tracking-wide group-hover:text-primary transition-colors mb-2">
@@ -120,6 +121,74 @@ const NewsPage = () => {
                 </StaggerItem>
               ))}
             </StaggerContainer>
+          </div>
+        </section>
+
+        {/* Press & Reviews */}
+        <section className="py-20 bg-card">
+          <div className="container mx-auto px-6">
+            <AnimatedSection>
+              <h2 className="text-3xl md:text-4xl font-light tracking-wide">Press & Reviews</h2>
+              <div className="section-divider !mx-0 !mt-4" />
+              <p className="mt-6 max-w-2xl text-muted-foreground font-light">
+                Published criticism and multilingual press material for programmers, presenters and media.
+              </p>
+            </AnimatedSection>
+
+            <div className="mt-14">
+              <AnimatedSection>
+                <h3 className="text-xl font-light tracking-wide mb-6">Published Reviews</h3>
+              </AnimatedSection>
+              <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {publishedReviews.map((review) => (
+                  <StaggerItem key={review.id}>
+                    <article className="h-full border border-border p-6 flex flex-col">
+                      <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-wider text-muted-foreground mb-5">
+                        <span>{review.project}</span>
+                        <span>{review.language}</span>
+                      </div>
+                      <blockquote className="text-lg font-light leading-relaxed">“{review.quote}”</blockquote>
+                      {review.translation && <p className="mt-4 text-sm text-muted-foreground font-light italic">{review.translation}</p>}
+                      <div className="mt-auto pt-6 text-sm text-muted-foreground">
+                        <p>{review.publication} · {review.author}</p>
+                        <p>{review.date}</p>
+                        <a href={review.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 text-primary hover:gap-3 transition-all">
+                          Read original <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </article>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
+
+            <div className="mt-16">
+              <AnimatedSection>
+                <div className="flex items-center gap-3 mb-3">
+                  <Languages className="w-5 h-5 text-primary" />
+                  <h3 className="text-xl font-light tracking-wide">Press Material</h3>
+                </div>
+                <p className="text-sm text-muted-foreground font-light mb-8">Promotional copy by Chaotic Kitchen — not independent reviews.</p>
+              </AnimatedSection>
+              <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {pressTexts.map((item) => (
+                  <StaggerItem key={item.id}>
+                    <article className="h-full border border-border p-6">
+                      <div className="flex items-start justify-between gap-4 mb-5">
+                        <h4 className="text-2xl font-light">{item.project}</h4>
+                        <span className="text-xs uppercase tracking-wider text-primary">{item.language}</span>
+                      </div>
+                      <p className="font-light italic leading-relaxed">{item.short}</p>
+                      <div className="my-5 border-t border-border/60" />
+                      <p className="text-sm text-muted-foreground font-light leading-relaxed whitespace-pre-line">{item.long}</p>
+                      <Link to={`/project/${item.projectId}`} className="inline-flex items-center gap-2 mt-6 text-sm text-primary hover:gap-3 transition-all">
+                        View Project <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </article>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
           </div>
         </section>
 
@@ -200,7 +269,7 @@ const NewsPage = () => {
                 </span>
                 <span className="flex items-center gap-1 text-sm text-muted-foreground">
                   <Calendar className="w-4 h-4" />
-                  {formatDate(selectedNews.date)}
+                  {selectedNews.dateLabel || formatDate(selectedNews.date)}
                 </span>
               </div>
 
