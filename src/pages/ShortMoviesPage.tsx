@@ -5,32 +5,32 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/Scr
 import Lightbox from "@/components/Lightbox";
 import { useState } from "react";
 import { Play, Film, Music, Images } from "lucide-react";
-import balanceInFrontAsset from "@/assets/uploads/balance-in-front-page.jpg.asset.json";
-import balanceInGallery1Asset from "@/assets/uploads/balance-in-gallery-2026-1.jpg.asset.json";
-import balanceInGallery2Asset from "@/assets/uploads/balance-in-gallery-2026-2.jpg.asset.json";
-import balanceInGallery3Asset from "@/assets/uploads/balance-in-gallery-2026-3.jpg.asset.json";
-import balanceInGallery5Asset from "@/assets/uploads/balance-in-gallery-2026-5.jpg.asset.json";
-import balanceInGallery6Asset from "@/assets/uploads/balance-in-gallery-2026-6.jpg.asset.json";
-import strangersGallery4Asset from "@/assets/uploads/strangers-gallery-4.jpg.asset.json";
-import strangersGallery5Asset from "@/assets/uploads/strangers-gallery-5.jpg.asset.json";
-import strangersGallery6Asset from "@/assets/uploads/strangers-gallery-6.jpg.asset.json";
-import dontYouHearGallery1Asset from "@/assets/uploads/dont-you-hear-gallery-1.jpg.asset.json";
+import balanceInCover from "@/assets/project-media/balance-in-cover.webp";
+import balanceInGallery1 from "@/assets/project-media/balance-in-1.webp";
+import balanceInGallery2 from "@/assets/project-media/balance-in-2.webp";
+import balanceInGallery3 from "@/assets/project-media/balance-in-3.webp";
+import balanceInGallery5 from "@/assets/project-media/balance-in-5.webp";
+import balanceInGallery6 from "@/assets/project-media/balance-in-6.webp";
+import strangersGallery4 from "@/assets/project-media/strangers-4.webp";
+import strangersGallery5 from "@/assets/project-media/strangers-5.webp";
+import strangersGallery6 from "@/assets/project-media/strangers-6.webp";
+import dontYouHearGallery1 from "@/assets/project-media/dont-you-hear-1.webp";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
 import bodyBorder2 from "@/assets/body-border-2.jpg";
 
 const galleryImages = [
-  dontYouHearGallery1Asset.url,
-  balanceInFrontAsset.url,
-  balanceInGallery1Asset.url,
-  balanceInGallery2Asset.url,
-  balanceInGallery3Asset.url,
-  balanceInGallery5Asset.url,
-  balanceInGallery6Asset.url,
-  strangersGallery4Asset.url,
-  strangersGallery5Asset.url,
-  strangersGallery6Asset.url,
+  dontYouHearGallery1,
+  balanceInCover,
+  balanceInGallery1,
+  balanceInGallery2,
+  balanceInGallery3,
+  balanceInGallery5,
+  balanceInGallery6,
+  strangersGallery4,
+  strangersGallery5,
+  strangersGallery6,
   liminalPhantomsGallery,
   fikaGallery3,
   wfdal2,
