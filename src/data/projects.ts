@@ -202,6 +202,7 @@ This piece is a sculptural and bodily exploration of identity, grief, and the si
         "December 20, 2024 — RedSapata, Linz, Austria (Premiere)",
         "May 5, 2025 — Eslöv, Sweden",
         "September 10, 2025 — Festival Quartiers Danses, Montreal, Canada",
+        "October 2026 — Wiesbaden, Germany",
         "2027 — Upcoming Tour (dates TBC)"
       ]
     },
@@ -267,6 +268,7 @@ Looking for: Residencies / Co-production / Premiere partners.`,
       ],
       presentations: [
         "October 3-4, 2026 — RAID Festival (Avant-première)",
+        "February 28, 2027 — Sweden (venue TBC)",
         "Further dates TBC"
       ]
     },

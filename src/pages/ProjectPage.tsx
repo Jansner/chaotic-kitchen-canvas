@@ -67,6 +67,8 @@ import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
 import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gallery-4.webp";
 import liminalPhantomsGallery5 from "@/assets/project-media/liminal-phantoms-gallery-5.webp";
+import wfdalFeature1 from "@/assets/project-media/wfdal-feature-1.webp";
+import wfdalFeature2 from "@/assets/project-media/wfdal-feature-2.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -191,6 +193,8 @@ const ProjectPage = () => {
   // Check if this is Balance In - presentations shown higher
   const isBalanceIn = project.id === "balance-in";
   const isLiminalPhantoms = project.id === "liminal-phantoms";
+  const isNoiseWithoutSilence = project.id === "noise-without-silence";
+  const isWfdal = project.id === "what-falls-doesnt-always-land";
   const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence";
 
   const openLightbox = (index: number) => {
@@ -217,7 +221,7 @@ const ProjectPage = () => {
       {/* Lightbox */}
       {images?.gallery && images.gallery.length > 0 && (
         <Lightbox
-          images={images.gallery}
+          images={isWfdal ? [...images.gallery, wfdalFeature1, wfdalFeature2] : images.gallery}
           initialIndex={lightboxIndex}
           isOpen={lightboxOpen}
           onClose={() => setLightboxOpen(false)}
@@ -313,6 +317,30 @@ const ProjectPage = () => {
                   </div>
                 )}
 
+                {/* Noise Without Silence relies on its films, so feature them with the dossier. */}
+                {isNoiseWithoutSilence && project.videoLinks && project.videoLinks.length > 0 && (
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {project.videoLinks.map((video) => {
+                      const thumbnail = getYouTubeThumbnail(video.url);
+                      return (
+                        <a
+                          key={video.url}
+                          href={video.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative aspect-video bg-secondary overflow-hidden group"
+                        >
+                          {thumbnail && <img src={thumbnail} alt={`${project.title} — ${video.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
+                          <div className="absolute inset-0 bg-background/40 flex items-center justify-center">
+                            <Play className="w-9 h-9 text-foreground" />
+                          </div>
+                          <span className="absolute bottom-2 left-2 bg-background/90 px-2 py-1 text-xs">{video.title}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {/* Key Themes */}
                 {project.details?.keyThemes && project.details.keyThemes.length > 0 && (
                   <div className="mt-8">
@@ -401,7 +429,7 @@ const ProjectPage = () => {
                 )}
                 
                 {/* Video links, placed beneath images in featured media bundles */}
-                {project.videoLinks && project.videoLinks.length > 0 && (
+                {!isNoiseWithoutSilence && project.videoLinks && project.videoLinks.length > 0 && (
                   <div className="grid grid-cols-2 gap-2">
                     {project.videoLinks.slice(hasBundledMedia ? 0 : 1).map((video, index) => {
                       const thumbnail = getYouTubeThumbnail(video.url);
@@ -433,6 +461,22 @@ const ProjectPage = () => {
                         </a>
                       );
                     })}
+                  </div>
+                )}
+
+                {isWfdal && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    {[wfdalFeature1, wfdalFeature2].map((img, index) => (
+                      <button
+                        key={img}
+                        type="button"
+                        className="aspect-[4/3] overflow-hidden group cursor-pointer"
+                        onClick={() => openLightbox((images?.gallery.length ?? 0) + index)}
+                        aria-label={`Open ${project.title} featured image ${index + 1}`}
+                      >
+                        <img src={img} alt={`${project.title} — Montreal performance ${index + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      </button>
+                    ))}
                   </div>
                 )}
 

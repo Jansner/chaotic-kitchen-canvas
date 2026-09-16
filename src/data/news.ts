@@ -5,11 +5,35 @@ export interface NewsItem {
   category: 'upcoming' | 'news' | 'update';
   description: string;
   fullDescription?: string;
+  dateLabel?: string;
   link?: string;
   projectId?: string;
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    id: "body-as-border-sweden-2027",
+    title: "The Body as Border — Sweden, 28 February 2027",
+    date: "2027-02-28",
+    category: "upcoming",
+    description: "The Body as Border will be presented in Sweden on 28 February 2027.",
+    fullDescription: `The Body as Border continues its development and presentation journey with a performance in Sweden on 28 February 2027.
+
+Venue details will be announced when confirmed.`,
+    projectId: "the-body-as-border"
+  },
+  {
+    id: "wfdal-wiesbaden-2026",
+    title: "What Falls Doesn't Always Land — Wiesbaden, Germany",
+    date: "2026-10-01",
+    dateLabel: "October 2026",
+    category: "upcoming",
+    description: "What Falls Doesn't Always Land travels to Wiesbaden, Germany, in October 2026.",
+    fullDescription: `What Falls Doesn't Always Land continues its international tour in Wiesbaden, Germany, in October 2026.
+
+The precise performance date and venue will be announced when confirmed.`,
+    projectId: "what-falls-doesnt-always-land"
+  },
   {
     id: "capodimonte-movimentale-2026",
     title: "Don’t You Hear? — Festival Movimentale at Capodimonte, Napoli",
