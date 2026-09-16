@@ -54,12 +54,21 @@ import strangersGallery4 from "@/assets/project-media/strangers-4.webp";
 import strangersGallery5 from "@/assets/project-media/strangers-5.webp";
 import strangersGallery6 from "@/assets/project-media/strangers-6.webp";
 import dontYouHearGallery1 from "@/assets/project-media/dont-you-hear-1.webp";
+import dontYouHearGallery2 from "@/assets/project-media/dont-you-hear-2.webp";
+import dontYouHearGallery3 from "@/assets/project-media/dont-you-hear-3.webp";
+import dontYouHearGallery9 from "@/assets/project-media/dont-you-hear-9.webp";
+import wfdal4 from "@/assets/project-media/wfdal-4.webp";
+import wfdal5 from "@/assets/project-media/wfdal-5.webp";
+import wfdal6 from "@/assets/project-media/wfdal-6.webp";
+import wfdal7 from "@/assets/project-media/wfdal-7.webp";
+import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
+import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "capodimonte-site-specific": {
     main: capodimonteHands,
-    gallery: [dontYouHearGallery1]
+    gallery: [dontYouHearGallery1, dontYouHearGallery2, dontYouHearGallery3, dontYouHearGallery9]
   },
   "balance-in": {
     main: balanceInCover,
@@ -71,7 +80,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
-    gallery: [wfdal2, wfdal3]
+    gallery: [wfdal2, wfdal3, wfdal4, wfdal5, wfdal6, wfdal7]
   },
   "the-body-as-border": {
     main: throughLookingGlassPreview,
@@ -83,7 +92,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
-    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3]
+    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5]
   },
   "gloom": {
     main: gloomPreview,

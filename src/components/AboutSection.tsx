@@ -2,6 +2,10 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimatio
 import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, portfolioLink, workshopsLink, strangersPartners, networkOrganisations } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
+import linusProfile from "@/assets/project-media/linus-profile.webp";
+import workshop1 from "@/assets/project-media/workshop-1.webp";
+import workshop2 from "@/assets/project-media/workshop-2.webp";
+import workshop3 from "@/assets/project-media/workshop-3.webp";
 
 const AboutSection = () => {
   return (
@@ -13,7 +17,7 @@ const AboutSection = () => {
           <AnimatedSection className="relative">
             <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
               <img 
-                src={artistPortrait}
+                src={linusProfile}
                 alt="Linus Jansner"
                 className="w-full h-full object-cover"
               />
@@ -88,6 +92,26 @@ const AboutSection = () => {
               >
                 Portfolio <ExternalLink className="w-4 h-4" />
               </a>
+            </div>
+
+            {/* Workshops — Unfolding Character */}
+            <div className="mt-12 pt-8 border-t border-border/50">
+              <h4 className="text-xl font-light tracking-wide text-primary mb-3">Unfolding Character</h4>
+              <p className="text-sm text-foreground/70 font-light leading-relaxed mb-5">
+                The Chaotic Kitchen workshop unfolds character through improvisation, physical theatre, and interdisciplinary creation — a research space where movement, image, and narrative emerge from the body.
+              </p>
+              <div className="grid grid-cols-3 gap-3 max-w-md">
+                <div className="aspect-[3/2] overflow-hidden bg-secondary">
+                  <img src={workshop1} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />
+                </div>
+                <div className="aspect-[3/2] overflow-hidden bg-secondary">
+                  <img src={workshop2} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />
+                </div>
+                <div className="aspect-[3/2] overflow-hidden bg-secondary">
+                  <img src={workshop3} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground/60 font-light mt-2">Photos: Marek Jančúch — Tanecno, 2025</p>
             </div>
 
             {/* Stats */}

@@ -75,8 +75,11 @@ Don’t You Hear? continues Linus Jansner’s research into the body as a psycho
         "23–24 July 2026 — Festival Movimentale, twentieth-anniversary edition — Museo e Real Bosco di Capodimonte, Napoli"
       ]
     },
+    videoLinks: [
+      { title: "Performance", url: "https://youtu.be/hTsvFTEqo4k", type: "performance" }
+    ],
     type: 'performance',
-    order: 0
+    order: 2
   },
   {
     id: "balance-in",
@@ -116,6 +119,7 @@ The work is site-responsive, shaped by each venue's architectural character. A t
     },
     videoLinks: [
       { title: "Official Trailer", url: "https://youtu.be/SiBl7MHmmwk", type: "trailer" },
+      { title: "Trailer 2", url: "https://youtu.be/7K98tnFIUBI", type: "trailer" },
       { title: "Full Length Work", url: "https://youtu.be/XbY0vqj1EHs", type: "performance" },
       { title: "Work in Progress", url: "https://youtu.be/w-kWC1IbUhE", type: "other" }
     ],
@@ -176,7 +180,7 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
       { title: "Performance", url: "https://www.youtube.com/watch?v=CvlPeHTxUSo", type: "performance" }
     ],
     type: 'performance',
-    order: 2
+    order: 0
   },
   {
     id: "what-falls-doesnt-always-land",
