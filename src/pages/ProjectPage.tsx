@@ -44,28 +44,30 @@ import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 import capodimonteHands from "@/assets/capodimonte-hands.jpg";
-import balanceInFrontAsset from "@/assets/uploads/balance-in-front-page.jpg.asset.json";
-import balanceInGallery1Asset from "@/assets/uploads/balance-in-gallery-2026-1.jpg.asset.json";
-import balanceInGallery2Asset from "@/assets/uploads/balance-in-gallery-2026-2.jpg.asset.json";
-import balanceInGallery3Asset from "@/assets/uploads/balance-in-gallery-2026-3.jpg.asset.json";
-import strangersGallery4Asset from "@/assets/uploads/strangers-gallery-4.jpg.asset.json";
-import strangersGallery5Asset from "@/assets/uploads/strangers-gallery-5.jpg.asset.json";
-import strangersGallery6Asset from "@/assets/uploads/strangers-gallery-6.jpg.asset.json";
-import dontYouHearGallery1Asset from "@/assets/uploads/dont-you-hear-gallery-1.jpg.asset.json";
+import balanceInCover from "@/assets/project-media/balance-in-cover.webp";
+import balanceInGallery1 from "@/assets/project-media/balance-in-1.webp";
+import balanceInGallery2 from "@/assets/project-media/balance-in-2.webp";
+import balanceInGallery3 from "@/assets/project-media/balance-in-3.webp";
+import balanceInGallery5 from "@/assets/project-media/balance-in-5.webp";
+import balanceInGallery6 from "@/assets/project-media/balance-in-6.webp";
+import strangersGallery4 from "@/assets/project-media/strangers-4.webp";
+import strangersGallery5 from "@/assets/project-media/strangers-5.webp";
+import strangersGallery6 from "@/assets/project-media/strangers-6.webp";
+import dontYouHearGallery1 from "@/assets/project-media/dont-you-hear-1.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "capodimonte-site-specific": {
     main: capodimonteHands,
-    gallery: [dontYouHearGallery1Asset.url]
+    gallery: [dontYouHearGallery1]
   },
   "balance-in": {
-    main: balanceInFrontAsset.url,
-    gallery: [balanceInGallery1Asset.url, balanceInGallery2Asset.url, balanceInGallery3Asset.url]
+    main: balanceInCover,
+    gallery: [balanceInGallery1, balanceInGallery2, balanceInGallery3, balanceInGallery5, balanceInGallery6]
   },
   "strangers-in-the-night": {
     main: strangers2,
-    gallery: [strangersGallery4Asset.url, strangersGallery5Asset.url, strangersGallery6Asset.url]
+    gallery: [strangersGallery4, strangersGallery5, strangersGallery6]
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
@@ -334,7 +336,7 @@ const ProjectPage = () => {
               <div className="sticky top-32 space-y-4">
                 {hasBundledMedia && images?.gallery && images.gallery.length > 0 && (
                   <div className="grid grid-cols-2 gap-3">
-                    {images.gallery.slice(0, Math.max(1, 6 - (project.videoLinks?.length ?? 0))).map((img, index) => (
+                    {images.gallery.map((img, index) => (
                       <button
                         key={img}
                         type="button"
