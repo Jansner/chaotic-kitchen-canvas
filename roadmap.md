@@ -10,3 +10,4 @@
 - [x] Reverse News and Press order to newest first and clarify press statements.
 - [x] Add four new Just Like Old Days photographs at the top of its gallery.
 - [x] Remove duplicate photographs from every work gallery and Films & Gallery.
+- [x] Add compact linked press reviews beneath the Strangers in the Night media.

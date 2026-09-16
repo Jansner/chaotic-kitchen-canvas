@@ -70,6 +70,7 @@ import justLikeOldDaysNew2 from "@/assets/project-media/just-like-old-days-new-2
 import justLikeOldDaysNew3 from "@/assets/project-media/just-like-old-days-new-3.webp";
 import justLikeOldDaysNew4 from "@/assets/project-media/just-like-old-days-new-4.webp";
 import { driveGalleries } from "@/data/driveGalleries";
+import { publishedReviews } from "@/data/press";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -203,6 +204,9 @@ const ProjectPage = () => {
   const isNoiseWithoutSilence = project.id === "noise-without-silence";
   const isWfdal = project.id === "what-falls-doesnt-always-land";
   const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence";
+  const projectReviews = isStrangers
+    ? publishedReviews.filter((review) => review.project === project.title)
+    : [];
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -469,6 +473,32 @@ const ProjectPage = () => {
                       );
                     })}
                   </div>
+                )}
+
+                {projectReviews.length > 0 && (
+                  <aside className="pt-3 border-t border-border/60" aria-labelledby="project-reviews-heading">
+                    <h2 id="project-reviews-heading" className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                      Press reviews
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      {projectReviews.map((review) => (
+                        <a
+                          key={review.id}
+                          href={review.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group border border-border/70 p-3 hover:border-primary/50 transition-colors"
+                          aria-label={`Read ${review.publication} review of ${project.title}`}
+                        >
+                          <span className="flex items-start justify-between gap-2 text-sm font-light leading-snug group-hover:text-primary transition-colors">
+                            {review.publication}
+                            <ExternalLink className="w-3.5 h-3.5 shrink-0 mt-0.5 text-primary" />
+                          </span>
+                          <span className="block mt-1 text-xs text-muted-foreground">{review.author}</span>
+                        </a>
+                      ))}
+                    </div>
+                  </aside>
                 )}
 
                 {isWfdal && (
