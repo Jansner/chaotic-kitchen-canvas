@@ -43,7 +43,7 @@ import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
-import capodimonteHands from "@/assets/capodimonte-hands.jpg";
+
 import balanceInCover from "@/assets/project-media/balance-in-cover.webp";
 import balanceInGallery1 from "@/assets/project-media/balance-in-1.webp";
 import balanceInGallery2 from "@/assets/project-media/balance-in-2.webp";
@@ -65,11 +65,12 @@ import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-si
 import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
 import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
 import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
+import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "capodimonte-site-specific": {
-    main: capodimonteHands,
+    main: dontYouHearFront,
     gallery: [dontYouHearGallery1, dontYouHearGallery2, dontYouHearGallery3, dontYouHearGallery9, dontYouHearGallery10]
   },
   "balance-in": {
@@ -189,7 +190,7 @@ const ProjectPage = () => {
   // Check if this is Balance In - presentations shown higher
   const isBalanceIn = project.id === "balance-in";
   const isLiminalPhantoms = project.id === "liminal-phantoms";
-  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific";
+  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence";
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);

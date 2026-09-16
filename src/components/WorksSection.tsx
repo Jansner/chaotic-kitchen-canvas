@@ -21,11 +21,11 @@ import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 import bodyBorderPreview from "@/assets/body-border-preview.jpg";
-import capodimonteHands from "@/assets/capodimonte-hands.jpg";
+import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
 
 // Image mapping for projects - updated with swaps
 const projectImages: Record<string, string> = {
-  "capodimonte-site-specific": capodimonteHands,
+  "capodimonte-site-specific": dontYouHearFront,
   "balance-in": balanceInCover,
   "strangers-in-the-night": strangers2, // Swapped
   "what-falls-doesnt-always-land": wfdal1,
