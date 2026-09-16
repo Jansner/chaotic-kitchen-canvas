@@ -2,7 +2,36 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { shortFilms, musicVideos } from "@/data/projects";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ScrollAnimations";
-import { Play, Film, Music } from "lucide-react";
+import Lightbox from "@/components/Lightbox";
+import { useState } from "react";
+import { Play, Film, Music, Images } from "lucide-react";
+import balanceInFrontAsset from "@/assets/uploads/balance-in-front-page.jpg.asset.json";
+import balanceInGallery1Asset from "@/assets/uploads/balance-in-gallery-2026-1.jpg.asset.json";
+import balanceInGallery2Asset from "@/assets/uploads/balance-in-gallery-2026-2.jpg.asset.json";
+import balanceInGallery3Asset from "@/assets/uploads/balance-in-gallery-2026-3.jpg.asset.json";
+import strangersGallery4Asset from "@/assets/uploads/strangers-gallery-4.jpg.asset.json";
+import strangersGallery5Asset from "@/assets/uploads/strangers-gallery-5.jpg.asset.json";
+import strangersGallery6Asset from "@/assets/uploads/strangers-gallery-6.jpg.asset.json";
+import dontYouHearGallery1Asset from "@/assets/uploads/dont-you-hear-gallery-1.jpg.asset.json";
+import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
+import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
+import wfdal2 from "@/assets/wfdal-2.jpg";
+import bodyBorder2 from "@/assets/body-border-2.jpg";
+
+const galleryImages = [
+  dontYouHearGallery1Asset.url,
+  balanceInFrontAsset.url,
+  balanceInGallery1Asset.url,
+  balanceInGallery2Asset.url,
+  balanceInGallery3Asset.url,
+  strangersGallery4Asset.url,
+  strangersGallery5Asset.url,
+  strangersGallery6Asset.url,
+  liminalPhantomsGallery,
+  fikaGallery3,
+  wfdal2,
+  bodyBorder2,
+];
 
 // Helper to get YouTube thumbnail from URL - use hqdefault for better availability
 const getYouTubeThumbnail = (url: string) => {
@@ -14,6 +43,8 @@ const getYouTubeThumbnail = (url: string) => {
 };
 
 const ShortMoviesPage = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   // Sort films by order and filter out any films without video links
   const sortedFilms = [...shortFilms]
     .filter(film => film.videoLinks && film.videoLinks.length > 0)
@@ -22,6 +53,13 @@ const ShortMoviesPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <Lightbox
+        images={galleryImages}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        alt="Chaotic Kitchen gallery"
+      />
       <main className="pt-24">
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-secondary">
@@ -118,6 +156,40 @@ const ShortMoviesPage = () => {
                   </StaggerItem>
                 );
               })}
+            </StaggerContainer>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 bg-card">
+          <div className="container mx-auto px-6">
+            <AnimatedSection className="mb-12">
+              <div className="flex items-center gap-3 mb-4">
+                <Images className="w-6 h-6 text-primary" />
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide">Gallery</h2>
+              </div>
+              <div className="section-divider !mx-0" />
+            </AnimatedSection>
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+              {galleryImages.map((image, index) => (
+                <StaggerItem key={image}>
+                  <button
+                    type="button"
+                    className="group block w-full aspect-[4/3] overflow-hidden bg-secondary"
+                    onClick={() => {
+                      setLightboxIndex(index);
+                      setLightboxOpen(true);
+                    }}
+                    aria-label={`Open gallery image ${index + 1}`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Chaotic Kitchen performance image ${index + 1}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </button>
+                </StaggerItem>
+              ))}
             </StaggerContainer>
           </div>
         </section>
