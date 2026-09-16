@@ -9,6 +9,8 @@ import balanceInFrontAsset from "@/assets/uploads/balance-in-front-page.jpg.asse
 import balanceInGallery1Asset from "@/assets/uploads/balance-in-gallery-2026-1.jpg.asset.json";
 import balanceInGallery2Asset from "@/assets/uploads/balance-in-gallery-2026-2.jpg.asset.json";
 import balanceInGallery3Asset from "@/assets/uploads/balance-in-gallery-2026-3.jpg.asset.json";
+import balanceInGallery5Asset from "@/assets/uploads/balance-in-gallery-2026-5.jpg.asset.json";
+import balanceInGallery6Asset from "@/assets/uploads/balance-in-gallery-2026-6.jpg.asset.json";
 import strangersGallery4Asset from "@/assets/uploads/strangers-gallery-4.jpg.asset.json";
 import strangersGallery5Asset from "@/assets/uploads/strangers-gallery-5.jpg.asset.json";
 import strangersGallery6Asset from "@/assets/uploads/strangers-gallery-6.jpg.asset.json";
@@ -24,6 +26,8 @@ const galleryImages = [
   balanceInGallery1Asset.url,
   balanceInGallery2Asset.url,
   balanceInGallery3Asset.url,
+  balanceInGallery5Asset.url,
+  balanceInGallery6Asset.url,
   strangersGallery4Asset.url,
   strangersGallery5Asset.url,
   strangersGallery6Asset.url,
