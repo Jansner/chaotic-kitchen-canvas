@@ -1,7 +1,7 @@
 // Gallery photographs imported from the project folders in Google Drive.
 // Files live in src/assets/drive and are named "<project-id>-<n>.webp".
 
-const modules = import.meta.glob("@/assets/drive/*.webp", {
+const modules = import.meta.glob("../assets/drive/*.webp", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
