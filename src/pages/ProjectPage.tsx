@@ -56,8 +56,6 @@ import dontYouHearGallery2 from "@/assets/project-media/dont-you-hear-2.webp";
 import dontYouHearGallery3 from "@/assets/project-media/dont-you-hear-3.webp";
 import dontYouHearGallery9 from "@/assets/project-media/dont-you-hear-9.webp";
 import wfdal4 from "@/assets/project-media/wfdal-4.webp";
-import wfdal5 from "@/assets/project-media/wfdal-5.webp";
-import wfdal6 from "@/assets/project-media/wfdal-6.webp";
 import wfdal7 from "@/assets/project-media/wfdal-7.webp";
 import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
 import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
