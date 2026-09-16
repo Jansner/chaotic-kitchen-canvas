@@ -17,7 +17,6 @@ import bodyBorder2 from "@/assets/body-border-2.jpg";
 import bodyBorder3 from "@/assets/body-border-3.jpg";
 import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import throughLookingGlassPreviewNew from "@/assets/through-looking-glass-preview-new.jpg";
-import liminalPhantomsPreview from "@/assets/liminal-phantoms-preview.jpg";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import liminalPhantomsGallery2 from "@/assets/liminal-phantoms-gallery-2.jpg";
 import liminalPhantomsGallery3 from "@/assets/liminal-phantoms-gallery-3.jpg";
