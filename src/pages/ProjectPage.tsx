@@ -67,8 +67,8 @@ import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
 import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gallery-4.webp";
 import liminalPhantomsGallery5 from "@/assets/project-media/liminal-phantoms-gallery-5.webp";
-import wfdalFeature1Asset from "@/assets/uploads/wfdal-feature-1.webp.asset.json";
-import wfdalFeature2Asset from "@/assets/uploads/wfdal-feature-2.webp.asset.json";
+import wfdalFeature1 from "@/assets/project-media/wfdal-feature-1.webp";
+import wfdalFeature2 from "@/assets/project-media/wfdal-feature-2.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -221,7 +221,7 @@ const ProjectPage = () => {
       {/* Lightbox */}
       {images?.gallery && images.gallery.length > 0 && (
         <Lightbox
-          images={isWfdal ? [...images.gallery, wfdalFeature1Asset.url, wfdalFeature2Asset.url] : images.gallery}
+          images={isWfdal ? [...images.gallery, wfdalFeature1, wfdalFeature2] : images.gallery}
           initialIndex={lightboxIndex}
           isOpen={lightboxOpen}
           onClose={() => setLightboxOpen(false)}
@@ -466,7 +466,7 @@ const ProjectPage = () => {
 
                 {isWfdal && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                    {[wfdalFeature1Asset.url, wfdalFeature2Asset.url].map((img, index) => (
+                    {[wfdalFeature1, wfdalFeature2].map((img, index) => (
                       <button
                         key={img}
                         type="button"
