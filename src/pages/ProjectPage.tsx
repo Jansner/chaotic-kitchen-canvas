@@ -17,7 +17,6 @@ import bodyBorder2 from "@/assets/body-border-2.jpg";
 import bodyBorder3 from "@/assets/body-border-3.jpg";
 import throughLookingGlassPreview from "@/assets/through-looking-glass-preview.jpg";
 import throughLookingGlassPreviewNew from "@/assets/through-looking-glass-preview-new.jpg";
-import liminalPhantomsPreview from "@/assets/liminal-phantoms-preview.jpg";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import liminalPhantomsGallery2 from "@/assets/liminal-phantoms-gallery-2.jpg";
 import liminalPhantomsGallery3 from "@/assets/liminal-phantoms-gallery-3.jpg";
@@ -66,6 +65,8 @@ import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-si
 import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
 import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
+import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gallery-4.webp";
+import liminalPhantomsGallery5 from "@/assets/project-media/liminal-phantoms-gallery-5.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -91,7 +92,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "liminal-phantoms": {
     main: liminalPhantomsGallery,
-    gallery: [liminalPhantomsPreview, liminalPhantomsGallery2, liminalPhantomsGallery3]
+    gallery: [liminalPhantomsGallery4, liminalPhantomsGallery5, liminalPhantomsGallery2, liminalPhantomsGallery3]
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
