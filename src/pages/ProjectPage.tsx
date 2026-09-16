@@ -70,7 +70,7 @@ import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "capodimonte-site-specific": {
     main: capodimonteHands,
-    gallery: [dontYouHearGallery1, dontYouHearGallery2, dontYouHearGallery3, dontYouHearGallery9]
+    gallery: [dontYouHearGallery1, dontYouHearGallery2, dontYouHearGallery3, dontYouHearGallery9, dontYouHearGallery10]
   },
   "balance-in": {
     main: balanceInCover,
@@ -94,7 +94,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
-    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5]
+    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5, noiseWithoutSilenceGallery6]
   },
   "gloom": {
     main: gloomPreview,

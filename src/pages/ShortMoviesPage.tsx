@@ -43,6 +43,10 @@ import wfdal2 from "@/assets/wfdal-2.jpg";
 import bodyBorder2 from "@/assets/body-border-2.jpg";
 
 const galleryImages = [
+  topGallery2,
+  topGallery3b,
+  topGallery4b,
+  topGallery7b,
   topGallery1,
   topGallery3,
   topGallery4,
@@ -54,6 +58,7 @@ const galleryImages = [
   dontYouHearGallery2,
   dontYouHearGallery3,
   dontYouHearGallery9,
+  dontYouHearGallery10,
   balanceInCover,
   balanceInGallery1,
   balanceInGallery2,
@@ -69,6 +74,7 @@ const galleryImages = [
   wfdal7,
   noiseWithoutSilenceGallery4,
   noiseWithoutSilenceGallery5,
+  noiseWithoutSilenceGallery6,
   liminalPhantomsGallery,
   fikaGallery3,
   wfdal2,
