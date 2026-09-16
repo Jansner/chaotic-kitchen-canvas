@@ -63,12 +63,14 @@ import wfdal6 from "@/assets/project-media/wfdal-6.webp";
 import wfdal7 from "@/assets/project-media/wfdal-7.webp";
 import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
 import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
+import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
+import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "capodimonte-site-specific": {
     main: capodimonteHands,
-    gallery: [dontYouHearGallery1, dontYouHearGallery2, dontYouHearGallery3, dontYouHearGallery9]
+    gallery: [dontYouHearGallery1, dontYouHearGallery2, dontYouHearGallery3, dontYouHearGallery9, dontYouHearGallery10]
   },
   "balance-in": {
     main: balanceInCover,
@@ -92,7 +94,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
-    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5]
+    gallery: [noiseWithoutSilenceGallery1, noiseWithoutSilenceGallery2, noiseWithoutSilenceGallery3, noiseWithoutSilenceGallery4, noiseWithoutSilenceGallery5, noiseWithoutSilenceGallery6]
   },
   "gloom": {
     main: gloomPreview,
