@@ -8,3 +8,4 @@
 - [x] Swap Liminal Phantoms and The Body as Border in Works.
 - [x] Import project gallery photos from the Google Drive folders.
 - [x] Reverse News and Press order to newest first and clarify press statements.
+- [x] Add four new Just Like Old Days photographs at the top of its gallery.
