@@ -94,6 +94,26 @@ const AboutSection = () => {
               </a>
             </div>
 
+            {/* Workshops — Unfolding Character */}
+            <div className="mt-12 pt-8 border-t border-border/50">
+              <h4 className="text-xl font-light tracking-wide text-primary mb-3">Unfolding Character</h4>
+              <p className="text-sm text-foreground/70 font-light leading-relaxed mb-5">
+                The Chaotic Kitchen workshop unfolds character through improvisation, physical theatre, and interdisciplinary creation — a research space where movement, image, and narrative emerge from the body.
+              </p>
+              <div className="grid grid-cols-3 gap-3 max-w-md">
+                <div className="aspect-[3/2] overflow-hidden bg-secondary">
+                  <img src={workshop1} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />
+                </div>
+                <div className="aspect-[3/2] overflow-hidden bg-secondary">
+                  <img src={workshop2} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />
+                </div>
+                <div className="aspect-[3/2] overflow-hidden bg-secondary">
+                  <img src={workshop3} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground/60 font-light mt-2">Photos: Marek Jančúch — Tanecno, 2025</p>
+            </div>
+
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border">
               <div>
