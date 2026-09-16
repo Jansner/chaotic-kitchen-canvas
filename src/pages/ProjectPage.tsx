@@ -43,7 +43,7 @@ import imbrutePreview from "@/assets/imbrute-preview.png";
 import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
-import capodimonteHands from "@/assets/capodimonte-hands.jpg";
+
 import balanceInCover from "@/assets/project-media/balance-in-cover.webp";
 import balanceInGallery1 from "@/assets/project-media/balance-in-1.webp";
 import balanceInGallery2 from "@/assets/project-media/balance-in-2.webp";
