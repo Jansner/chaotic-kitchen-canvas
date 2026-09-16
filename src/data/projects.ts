@@ -278,7 +278,7 @@ Looking for: Residencies / Co-production / Premiere partners.`,
       { title: "Original Version", url: "https://youtu.be/elnVH_UjGCU", type: "other" }
     ],
     type: 'performance',
-    order: 5
+    order: 7
   },
   {
     id: "beneath",
@@ -351,7 +351,7 @@ This work invites the audience to confront their hidden phantoms—the expectati
       { title: "Version 1 (Original)", url: "https://www.youtube.com/watch?v=OtBTy0RnkXs", type: "performance" }
     ],
     type: 'performance',
-    order: 7
+    order: 5
   },
   {
     id: "fika",
