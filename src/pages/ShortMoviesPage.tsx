@@ -32,7 +32,7 @@ import topGalleryDsmr from "@/assets/project-media/top-gallery-dsmr.webp";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
-import bodyBorder2 from "@/assets/body-border-2.jpg";
+import bodyBorder2 from "@/assets/drive/the-body-as-border-3.webp";
 
 const galleryImages = [
   topGallery2,
