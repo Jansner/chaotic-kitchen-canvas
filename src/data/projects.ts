@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     id: "capodimonte-site-specific",
     title: "Don’t You Hear?",
-    subtitle: "Site-specific performance for Festival Movimentale at Museo e Real Bosco di Capodimonte, Napoli",
+    subtitle: "Capodimonte site-specific",
     year: "2026",
     description: "A site-specific performance created for the twentieth-anniversary edition of Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.",
     fullDescription: `Don’t You Hear? Created for the twentieth-anniversary edition of Festival Movimentale at Museo e Real Bosco di Capodimonte in Napoli.
