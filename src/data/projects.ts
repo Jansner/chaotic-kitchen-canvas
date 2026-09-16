@@ -101,7 +101,7 @@ The work is site-responsive, shaped by each venue's architectural character. A t
     dossierLink: "https://drive.google.com/file/d/1J74j57lBwxKl-jsATKhjb4J2LMMm6sCI/view?usp=sharing",
     details: {
       duration: "30-45 minutes",
-      choreography: "Linus Jansner. Co-author: Emily Heather Manica",
+      choreography: "Linus Jansner. Co-creator: Emily Heather Manica",
       performers: "Linus Jansner & Emily Heather Manica",
       music: "Emily Heather Manica (Original, live)",
       premiere: "June 28, 2026 — Pergine Festival, Italy",
