@@ -69,6 +69,10 @@ import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gal
 import liminalPhantomsGallery5 from "@/assets/project-media/liminal-phantoms-gallery-5.webp";
 import wfdalFeature1 from "@/assets/project-media/wfdal-feature-1.webp";
 import wfdalFeature2 from "@/assets/project-media/wfdal-feature-2.webp";
+import justLikeOldDaysNew1 from "@/assets/project-media/just-like-old-days-new-1.webp";
+import justLikeOldDaysNew2 from "@/assets/project-media/just-like-old-days-new-2.webp";
+import justLikeOldDaysNew3 from "@/assets/project-media/just-like-old-days-new-3.webp";
+import justLikeOldDaysNew4 from "@/assets/project-media/just-like-old-days-new-4.webp";
 import { driveGalleries } from "@/data/driveGalleries";
 
 // Image mapping for projects
@@ -111,7 +115,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "just-like-old-days": {
     main: justLikeOldDaysPreview,
-    gallery: []
+    gallery: [justLikeOldDaysNew1, justLikeOldDaysNew2, justLikeOldDaysNew3, justLikeOldDaysNew4]
   },
   "haitun": {
     main: haitunPreviewNew,
