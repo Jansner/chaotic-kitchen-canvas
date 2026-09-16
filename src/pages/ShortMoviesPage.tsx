@@ -10,10 +10,8 @@ import balanceInGallery1 from "@/assets/project-media/balance-in-1.webp";
 import balanceInGallery2 from "@/assets/project-media/balance-in-2.webp";
 import balanceInGallery3 from "@/assets/project-media/balance-in-3.webp";
 import balanceInGallery5 from "@/assets/project-media/balance-in-5.webp";
-import balanceInGallery6 from "@/assets/project-media/balance-in-6.webp";
 import strangersGallery4 from "@/assets/project-media/strangers-4.webp";
 import strangersGallery5 from "@/assets/project-media/strangers-5.webp";
-import strangersGallery6 from "@/assets/project-media/strangers-6.webp";
 import dontYouHearGallery1 from "@/assets/project-media/dont-you-hear-1.webp";
 import dontYouHearGallery2 from "@/assets/project-media/dont-you-hear-2.webp";
 import dontYouHearGallery3 from "@/assets/project-media/dont-you-hear-3.webp";
@@ -23,36 +21,26 @@ import wfdal5 from "@/assets/project-media/wfdal-5.webp";
 import wfdal6 from "@/assets/project-media/wfdal-6.webp";
 import wfdal7 from "@/assets/project-media/wfdal-7.webp";
 import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
-import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
 import topGallery2 from "@/assets/project-media/top-gallery-2.webp";
 import topGallery3b from "@/assets/project-media/top-gallery-3b.webp";
 import topGallery4b from "@/assets/project-media/top-gallery-4b.webp";
 import topGallery7b from "@/assets/project-media/top-gallery-7b.webp";
 import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
-import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
-import topGallery1 from "@/assets/project-media/top-gallery-1.webp";
-import topGallery3 from "@/assets/project-media/top-gallery-3.webp";
-import topGallery4 from "@/assets/project-media/top-gallery-4.webp";
 import topGallery5 from "@/assets/project-media/top-gallery-5.webp";
 import topGallery6 from "@/assets/project-media/top-gallery-6.webp";
-import topGallery7 from "@/assets/project-media/top-gallery-7.webp";
 import topGalleryDsmr from "@/assets/project-media/top-gallery-dsmr.webp";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
-import bodyBorder2 from "@/assets/body-border-2.jpg";
+import bodyBorder2 from "@/assets/drive/the-body-as-border-3.webp";
 
 const galleryImages = [
   topGallery2,
   topGallery3b,
   topGallery4b,
   topGallery7b,
-  topGallery1,
-  topGallery3,
-  topGallery4,
   topGallery5,
   topGallery6,
-  topGallery7,
   topGalleryDsmr,
   dontYouHearGallery1,
   dontYouHearGallery2,
@@ -64,17 +52,13 @@ const galleryImages = [
   balanceInGallery2,
   balanceInGallery3,
   balanceInGallery5,
-  balanceInGallery6,
   strangersGallery4,
   strangersGallery5,
-  strangersGallery6,
   wfdal4,
   wfdal5,
   wfdal6,
   wfdal7,
   noiseWithoutSilenceGallery4,
-  noiseWithoutSilenceGallery5,
-  noiseWithoutSilenceGallery6,
   liminalPhantomsGallery,
   fikaGallery3,
   wfdal2,

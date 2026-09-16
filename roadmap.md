@@ -9,3 +9,4 @@
 - [x] Import project gallery photos from the Google Drive folders.
 - [x] Reverse News and Press order to newest first and clarify press statements.
 - [x] Add four new Just Like Old Days photographs at the top of its gallery.
+- [x] Remove duplicate photographs from every work gallery and Films & Gallery.
