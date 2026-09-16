@@ -69,6 +69,7 @@ import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gal
 import liminalPhantomsGallery5 from "@/assets/project-media/liminal-phantoms-gallery-5.webp";
 import wfdalFeature1 from "@/assets/project-media/wfdal-feature-1.webp";
 import wfdalFeature2 from "@/assets/project-media/wfdal-feature-2.webp";
+import { driveGalleries } from "@/data/driveGalleries";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -185,7 +186,13 @@ const ProjectPage = () => {
     );
   }
 
-  const images = projectImages[project.id];
+  const baseImages = projectImages[project.id];
+  const driveGallery = driveGalleries[project.id] ?? [];
+  const images = baseImages
+    ? { main: baseImages.main, gallery: [...baseImages.gallery, ...driveGallery] }
+    : driveGallery.length > 0
+      ? { main: driveGallery[0], gallery: driveGallery }
+      : undefined;
   const trailerVideo = project.videoLinks?.find(v => v.type === 'trailer') || project.videoLinks?.[0];
 
   // Check if this is Strangers in the Night - special gallery layout
