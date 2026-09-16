@@ -66,6 +66,8 @@ import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-si
 import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
 import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 import dontYouHearFront from "@/assets/project-media/dont-you-hear-front-new.webp";
+import liminalPhantomsGallery4 from "@/assets/project-media/liminal-phantoms-gallery-4.webp";
+import liminalPhantomsGallery5 from "@/assets/project-media/liminal-phantoms-gallery-5.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
