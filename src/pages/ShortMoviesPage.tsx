@@ -15,6 +15,15 @@ import strangersGallery4 from "@/assets/project-media/strangers-4.webp";
 import strangersGallery5 from "@/assets/project-media/strangers-5.webp";
 import strangersGallery6 from "@/assets/project-media/strangers-6.webp";
 import dontYouHearGallery1 from "@/assets/project-media/dont-you-hear-1.webp";
+import dontYouHearGallery2 from "@/assets/project-media/dont-you-hear-2.webp";
+import dontYouHearGallery3 from "@/assets/project-media/dont-you-hear-3.webp";
+import dontYouHearGallery9 from "@/assets/project-media/dont-you-hear-9.webp";
+import wfdal4 from "@/assets/project-media/wfdal-4.webp";
+import wfdal5 from "@/assets/project-media/wfdal-5.webp";
+import wfdal6 from "@/assets/project-media/wfdal-6.webp";
+import wfdal7 from "@/assets/project-media/wfdal-7.webp";
+import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
+import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
 import liminalPhantomsGallery from "@/assets/liminal-phantoms-gallery.jpg";
 import fikaGallery3 from "@/assets/fika-gallery-3.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
@@ -22,6 +31,9 @@ import bodyBorder2 from "@/assets/body-border-2.jpg";
 
 const galleryImages = [
   dontYouHearGallery1,
+  dontYouHearGallery2,
+  dontYouHearGallery3,
+  dontYouHearGallery9,
   balanceInCover,
   balanceInGallery1,
   balanceInGallery2,
@@ -31,6 +43,12 @@ const galleryImages = [
   strangersGallery4,
   strangersGallery5,
   strangersGallery6,
+  wfdal4,
+  wfdal5,
+  wfdal6,
+  wfdal7,
+  noiseWithoutSilenceGallery4,
+  noiseWithoutSilenceGallery5,
   liminalPhantomsGallery,
   fikaGallery3,
   wfdal2,
