@@ -187,6 +187,7 @@ const NewsPage = () => {
                         <h4 className="text-2xl font-light">{item.project}</h4>
                         <span className="text-xs uppercase tracking-wider text-primary">{item.language}</span>
                       </div>
+                      <span className="text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-4">Press material — Chaotic Kitchen</span>
                       <p className="font-light italic leading-relaxed">{item.short}</p>
                       <div className="my-5 border-t border-border/60" />
                       <p className="text-sm text-muted-foreground font-light leading-relaxed whitespace-pre-line">{item.long}</p>
