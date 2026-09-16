@@ -8,16 +8,7 @@ import { AnimatedSection, FadeInSection, StaggerContainer, StaggerItem } from "@
 import { useEffect, useState } from "react";
 
 // Import project images
-import balanceInPreview from "@/assets/balance-in-preview.png";
-import balanceIn1 from "@/assets/balance-in-1.jpg";
-import balanceIn2 from "@/assets/balance-in-2.jpg";
-import balanceIn3 from "@/assets/balance-in-3.jpg";
-import balanceIn4 from "@/assets/balance-in-4.jpg";
-import strangers1 from "@/assets/strangers-1.png";
 import strangers2 from "@/assets/strangers-2.png";
-import strangersGallery1 from "@/assets/strangers-gallery-1.jpg";
-import strangersGallery2 from "@/assets/strangers-gallery-2.jpg";
-import strangersGallery3 from "@/assets/strangers-gallery-3.jpg";
 import wfdal1 from "@/assets/wfdal-1.jpg";
 import wfdal2 from "@/assets/wfdal-2.jpg";
 import wfdal3 from "@/assets/wfdal-3.jpg";
@@ -53,20 +44,28 @@ import viciousCyclePreview from "@/assets/vicious-cycle-preview.jpg";
 import beneathPreview from "@/assets/beneath-preview.jpg";
 import beneathPreviewNew from "@/assets/beneath-preview-new.png";
 import capodimonteHands from "@/assets/capodimonte-hands.jpg";
+import balanceInFrontAsset from "@/assets/uploads/balance-in-front-page.jpg.asset.json";
+import balanceInGallery1Asset from "@/assets/uploads/balance-in-gallery-2026-1.jpg.asset.json";
+import balanceInGallery2Asset from "@/assets/uploads/balance-in-gallery-2026-2.jpg.asset.json";
+import balanceInGallery3Asset from "@/assets/uploads/balance-in-gallery-2026-3.jpg.asset.json";
+import strangersGallery4Asset from "@/assets/uploads/strangers-gallery-4.jpg.asset.json";
+import strangersGallery5Asset from "@/assets/uploads/strangers-gallery-5.jpg.asset.json";
+import strangersGallery6Asset from "@/assets/uploads/strangers-gallery-6.jpg.asset.json";
+import dontYouHearGallery1Asset from "@/assets/uploads/dont-you-hear-gallery-1.jpg.asset.json";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
   "capodimonte-site-specific": {
     main: capodimonteHands,
-    gallery: [capodimonteHands]
+    gallery: [dontYouHearGallery1Asset.url]
   },
   "balance-in": {
-    main: balanceInPreview,
-    gallery: [balanceIn1, balanceIn2, balanceIn3, balanceIn4]
+    main: balanceInFrontAsset.url,
+    gallery: [balanceInGallery1Asset.url, balanceInGallery2Asset.url, balanceInGallery3Asset.url]
   },
   "strangers-in-the-night": {
     main: strangers2,
-    gallery: [strangers1, strangersGallery1, strangersGallery2, strangersGallery3]
+    gallery: [strangersGallery4Asset.url, strangersGallery5Asset.url, strangersGallery6Asset.url]
   },
   "what-falls-doesnt-always-land": {
     main: wfdal1,
@@ -176,6 +175,8 @@ const ProjectPage = () => {
   const isStrangers = project.id === "strangers-in-the-night";
   // Check if this is Balance In - presentations shown higher
   const isBalanceIn = project.id === "balance-in";
+  const isLiminalPhantoms = project.id === "liminal-phantoms";
+  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific";
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -328,10 +329,30 @@ const ProjectPage = () => {
               </div>
             </AnimatedSection>
 
-            {/* Right: Video Embed or Thumbnail + Gallery for Strangers */}
+            {/* Right: unified image and video bundle for featured projects */}
             <AnimatedSection delay={0.2}>
               <div className="sticky top-32 space-y-4">
-                {trailerVideo && (
+                {hasBundledMedia && images?.gallery && images.gallery.length > 0 && (
+                  <div className="grid grid-cols-2 gap-3">
+                    {images.gallery.slice(0, Math.max(1, 6 - (project.videoLinks?.length ?? 0))).map((img, index) => (
+                      <button
+                        key={img}
+                        type="button"
+                        className={`${images.gallery.length === 1 ? "col-span-2 aspect-[4/3]" : "aspect-[4/3]"} overflow-hidden group cursor-pointer`}
+                        onClick={() => openLightbox(index)}
+                        aria-label={`Open ${project.title} image ${index + 1}`}
+                      >
+                        <img
+                          src={img}
+                          alt={`${project.title} - Image ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {!hasBundledMedia && trailerVideo && (
                   <a
                     href={trailerVideo.url}
                     target="_blank"
@@ -340,7 +361,7 @@ const ProjectPage = () => {
                   >
                     {getYouTubeThumbnail(trailerVideo.url) ? (
                       <img 
-                        src={getYouTubeThumbnail(trailerVideo.url)!}
+                        src={getYouTubeThumbnail(trailerVideo.url) ?? ""}
                         alt={`${project.title} - Video`}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
@@ -364,10 +385,10 @@ const ProjectPage = () => {
                   </a>
                 )}
                 
-                {/* Additional video links as thumbnails */}
-                {project.videoLinks && project.videoLinks.length > 1 && (
+                {/* Video links, placed beneath images in featured media bundles */}
+                {project.videoLinks && project.videoLinks.length > 0 && (
                   <div className="grid grid-cols-2 gap-2">
-                    {project.videoLinks.slice(1).map((video, index) => {
+                    {project.videoLinks.slice(hasBundledMedia ? 0 : 1).map((video, index) => {
                       const thumbnail = getYouTubeThumbnail(video.url);
                       return (
                         <a
@@ -400,24 +421,6 @@ const ProjectPage = () => {
                   </div>
                 )}
 
-                {/* Gallery under video for Strangers in the Night */}
-                {isStrangers && images?.gallery && images.gallery.length > 0 && (
-                  <div className="grid grid-cols-2 gap-4 mt-4">
-                    {images.gallery.map((img, index) => (
-                      <div 
-                        key={index} 
-                        className="aspect-[4/3] overflow-hidden group cursor-pointer"
-                        onClick={() => openLightbox(index)}
-                      >
-                        <img 
-                          src={img} 
-                          alt={`${project.title} - Image ${index + 1}`}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             </AnimatedSection>
           </div>
@@ -428,6 +431,17 @@ const ProjectPage = () => {
           <section className="py-16 bg-card">
             <div className="container mx-auto px-6">
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {project.details.format && (
+                  <StaggerItem>
+                    <div className="flex items-start gap-4">
+                      <FileText className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Format</h3>
+                        <p className="font-light">{project.details.format}</p>
+                      </div>
+                    </div>
+                  </StaggerItem>
+                )}
                 {project.details.duration && (
                   <StaggerItem>
                     <div className="flex items-start gap-4">
@@ -470,7 +484,7 @@ const ProjectPage = () => {
                       <Users className="w-5 h-5 text-primary mt-1" />
                       <div>
                         <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Performers</h3>
-                        <p className="font-light">{project.details.performers}</p>
+                        <p className="font-light whitespace-pre-line">{project.details.performers}</p>
                       </div>
                     </div>
                   </StaggerItem>
@@ -548,7 +562,7 @@ const ProjectPage = () => {
                         {project.details.production && (
                           <div className="border-l-2 border-primary/30 pl-4">
                             <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Production</h3>
-                            <p className="font-light">{project.details.production}</p>
+                            <p className="font-light whitespace-pre-line">{project.details.production}</p>
                           </div>
                         )}
                         {project.details.credits && (
@@ -613,7 +627,7 @@ const ProjectPage = () => {
                     {project.details.production && (
                       <div className="border-l-2 border-primary/30 pl-4">
                         <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Production</h3>
-                        <p className="font-light">{project.details.production}</p>
+                       <p className="font-light whitespace-pre-line">{project.details.production}</p>
                       </div>
                     )}
                     {project.details.credits && (
@@ -648,27 +662,44 @@ const ProjectPage = () => {
           </section>
         )}
 
-        {/* Awards Section */}
+        {/* Awards and Liminal Phantoms presentation history */}
         {project.details?.awards && project.details.awards.length > 0 && (
           <section className="py-16 bg-card">
             <div className="container mx-auto px-6">
               <AnimatedSection>
-                <h2 className="text-3xl font-light tracking-wide mb-8">Awards & Recognition</h2>
-                <div className="space-y-4 max-w-2xl">
-                  {project.details.awards.map((award, index) => (
-                    <div key={index} className="flex items-center gap-3 py-3 border-b border-border/30">
-                      <Award className="w-5 h-5 text-primary" />
-                      <span className="font-light">{award}</span>
+                <div className={isLiminalPhantoms ? "grid grid-cols-1 lg:grid-cols-2 gap-12" : ""}>
+                  <div>
+                    <h2 className="text-3xl font-light tracking-wide mb-8">Awards & Recognition</h2>
+                    <div className="space-y-4 max-w-2xl">
+                      {project.details.awards.map((award, index) => (
+                        <div key={index} className="flex items-center gap-3 py-3 border-b border-border/30">
+                          <Award className="w-5 h-5 text-primary shrink-0" />
+                          <span className="font-light">{award}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+                  {isLiminalPhantoms && project.details.presentations && (
+                    <div>
+                      <h2 className="text-3xl font-light tracking-wide mb-8">Presentations</h2>
+                      <div className="space-y-3">
+                        {project.details.presentations.map((presentation, index) => (
+                          <div key={index} className="flex items-center gap-3 py-2 border-b border-border/30">
+                            <Calendar className="w-4 h-4 text-primary shrink-0" />
+                            <span className="font-light">{presentation}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </AnimatedSection>
             </div>
           </section>
         )}
 
-        {/* Gallery Section - Skip for Strangers as gallery is shown next to video */}
-        {!isStrangers && images?.gallery && images.gallery.length > 0 && (
+        {/* Gallery Section - featured media galleries are shown beside project text */}
+        {!hasBundledMedia && images?.gallery && images.gallery.length > 0 && (
           <section className={`py-16 ${isBalanceIn ? '' : 'bg-card'}`}>
             <div className="container mx-auto px-6">
               <AnimatedSection>
@@ -694,7 +725,7 @@ const ProjectPage = () => {
         )}
 
         {/* Presentations Section - Skip for Balance In (shown earlier) and Strangers (shown in credits) */}
-        {!isBalanceIn && !isStrangers && project.details?.presentations && project.details.presentations.length > 0 && (
+        {!isBalanceIn && !isStrangers && !isLiminalPhantoms && project.details?.presentations && project.details.presentations.length > 0 && (
           <section className="py-16">
             <div className="container mx-auto px-6">
               <AnimatedSection>
