@@ -63,6 +63,8 @@ import wfdal6 from "@/assets/project-media/wfdal-6.webp";
 import wfdal7 from "@/assets/project-media/wfdal-7.webp";
 import noiseWithoutSilenceGallery4 from "@/assets/project-media/noise-without-silence-4.webp";
 import noiseWithoutSilenceGallery5 from "@/assets/project-media/noise-without-silence-5.webp";
+import noiseWithoutSilenceGallery6 from "@/assets/project-media/noise-without-silence-6.webp";
+import dontYouHearGallery10 from "@/assets/project-media/dont-you-hear-10.webp";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
