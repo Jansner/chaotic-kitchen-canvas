@@ -36,8 +36,10 @@ const NewsPage = () => {
     }
   };
 
-  const upcomingEvents = newsItems.filter(item => item.category === 'upcoming').sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  const newsAndUpdates = newsItems.filter(item => item.category !== 'upcoming');
+  // Newest and furthest-ahead items first, oldest at the bottom of the page
+  const byNewestFirst = (a: NewsItem, b: NewsItem) => new Date(b.date).getTime() - new Date(a.date).getTime();
+  const upcomingEvents = newsItems.filter(item => item.category === 'upcoming').sort(byNewestFirst);
+  const newsAndUpdates = newsItems.filter(item => item.category !== 'upcoming').sort(byNewestFirst);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -131,7 +133,10 @@ const NewsPage = () => {
               <h2 className="text-3xl md:text-4xl font-light tracking-wide">Press & Reviews</h2>
               <div className="section-divider !mx-0 !mt-4" />
               <p className="mt-6 max-w-2xl text-muted-foreground font-light">
-                Published criticism and multilingual press material for programmers, presenters and media.
+                Two clearly separated kinds of text. <span className="text-foreground">Published reviews</span> are quoted
+                statements written by named critics in named publications, each with a link to the original article.
+                <span className="text-foreground"> Press material</span> is promotional copy written by Chaotic Kitchen
+                itself, free to quote and reproduce.
               </p>
             </AnimatedSection>
 
