@@ -142,21 +142,25 @@ const NewsPage = () => {
 
             <div className="mt-14">
               <AnimatedSection>
-                <h3 className="text-xl font-light tracking-wide mb-6">Published Reviews</h3>
+                <h3 className="text-xl font-light tracking-wide mb-2">Published Reviews</h3>
+                <p className="text-sm text-muted-foreground font-light mb-8">
+                  Quoted statements from published articles, newest first.
+                </p>
               </AnimatedSection>
               <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {publishedReviews.map((review) => (
+                {[...publishedReviews].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((review) => (
                   <StaggerItem key={review.id}>
                     <article className="h-full border border-border p-6 flex flex-col">
                       <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-wider text-muted-foreground mb-5">
                         <span>{review.project}</span>
                         <span>{review.language}</span>
                       </div>
+                      <span className="text-[0.65rem] uppercase tracking-[0.2em] text-primary mb-4">Published review</span>
                       <blockquote className="text-lg font-light leading-relaxed">“{review.quote}”</blockquote>
                       {review.translation && <p className="mt-4 text-sm text-muted-foreground font-light italic">{review.translation}</p>}
                       <div className="mt-auto pt-6 text-sm text-muted-foreground">
-                        <p>{review.publication} · {review.author}</p>
-                        <p>{review.date}</p>
+                        <p>Written by {review.author} for {review.publication}</p>
+                        <p>Published {review.date}</p>
                         <a href={review.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 text-primary hover:gap-3 transition-all">
                           Read original <ExternalLink className="w-4 h-4" />
                         </a>
@@ -173,7 +177,7 @@ const NewsPage = () => {
                   <Languages className="w-5 h-5 text-primary" />
                   <h3 className="text-xl font-light tracking-wide">Press Material</h3>
                 </div>
-                <p className="text-sm text-muted-foreground font-light mb-8">Promotional copy by Chaotic Kitchen — not independent reviews.</p>
+                <p className="text-sm text-muted-foreground font-light mb-8">Written by Chaotic Kitchen for press use. These are not independent reviews and are not attributed to any critic or publication.</p>
               </AnimatedSection>
               <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {pressTexts.map((item) => (
