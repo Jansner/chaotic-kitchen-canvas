@@ -93,7 +93,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "liminal-phantoms": {
     main: liminalPhantomsGallery,
-    gallery: [liminalPhantomsPreview, liminalPhantomsGallery2, liminalPhantomsGallery3]
+    gallery: [liminalPhantomsGallery4, liminalPhantomsGallery5, liminalPhantomsGallery2, liminalPhantomsGallery3]
   },
   "noise-without-silence": {
     main: noiseWithoutSilencePreview,
