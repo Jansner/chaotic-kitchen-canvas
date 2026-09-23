@@ -69,6 +69,16 @@ import justLikeOldDaysNew1 from "@/assets/project-media/just-like-old-days-new-1
 import justLikeOldDaysNew2 from "@/assets/project-media/just-like-old-days-new-2.webp";
 import justLikeOldDaysNew3 from "@/assets/project-media/just-like-old-days-new-3.webp";
 import justLikeOldDaysNew4 from "@/assets/project-media/just-like-old-days-new-4.webp";
+import balanceInGallery10 from "@/assets/project-media/balance-in-10.webp";
+import balanceInGallery12 from "@/assets/project-media/balance-in-12.webp";
+import beneath1 from "@/assets/project-media/beneath-1.webp";
+import beneath2 from "@/assets/project-media/beneath-2.webp";
+import beneath3 from "@/assets/project-media/beneath-3.webp";
+import beneath4 from "@/assets/project-media/beneath-4.webp";
+import beneath5 from "@/assets/project-media/beneath-5.webp";
+import beneath6 from "@/assets/project-media/beneath-6.webp";
+import beneath7 from "@/assets/project-media/beneath-7.webp";
+import beneath8 from "@/assets/project-media/beneath-8.webp";
 import { driveGalleries } from "@/data/driveGalleries";
 import { publishedReviews } from "@/data/press";
 
