@@ -150,7 +150,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "beneath": {
     main: beneathPreviewNew,
-    gallery: [beneathPreview]
+    gallery: [beneath1, beneath2, beneath3, beneath4, beneath5, beneath6, beneath7, beneath8, beneathPreview]
   },
 };
 
