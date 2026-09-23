@@ -213,7 +213,7 @@ const ProjectPage = () => {
   const isLiminalPhantoms = project.id === "liminal-phantoms";
   const isNoiseWithoutSilence = project.id === "noise-without-silence";
   const isWfdal = project.id === "what-falls-doesnt-always-land";
-  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence";
+  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence" || project.id === "beneath";
   const projectReviews = isStrangers
     ? publishedReviews.filter((review) => review.project === project.title)
     : [];
