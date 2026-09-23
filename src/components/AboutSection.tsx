@@ -3,6 +3,7 @@ import { mentors, selectedProfessionalExperience, choreographies, education, ski
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 import linusProfile from "@/assets/project-media/linus-profile.webp";
+import workshopPoster from "@/assets/project-media/workshop-unfolding-poster.webp";
 import workshop1 from "@/assets/project-media/workshop-1.webp";
 import workshop2 from "@/assets/project-media/workshop-2.webp";
 import workshop3 from "@/assets/project-media/workshop-3.webp";
