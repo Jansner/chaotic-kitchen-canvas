@@ -90,7 +90,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "balance-in": {
     main: balanceInCover,
-    gallery: [balanceInGallery1, balanceInGallery2, balanceInGallery3, balanceInGallery5, balanceInGallery6]
+    gallery: [balanceInGallery1, balanceInGallery2, balanceInGallery3, balanceInGallery5, balanceInGallery6, balanceInGallery10, balanceInGallery12]
   },
   "strangers-in-the-night": {
     main: strangers2,
