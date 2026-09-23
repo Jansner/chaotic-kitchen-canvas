@@ -3,6 +3,7 @@ import { mentors, selectedProfessionalExperience, choreographies, education, ski
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 import linusProfile from "@/assets/project-media/linus-profile.webp";
+import workshopPoster from "@/assets/project-media/workshop-unfolding-poster.webp";
 import workshop1 from "@/assets/project-media/workshop-1.webp";
 import workshop2 from "@/assets/project-media/workshop-2.webp";
 import workshop3 from "@/assets/project-media/workshop-3.webp";
@@ -100,6 +101,14 @@ const AboutSection = () => {
               <p className="text-sm text-foreground/70 font-light leading-relaxed mb-5">
                 The Chaotic Kitchen workshop unfolds character through improvisation, physical theatre, and interdisciplinary creation — a research space where movement, image, and narrative emerge from the body.
               </p>
+              <div className="max-w-md mb-4">
+                <div className="aspect-[4/5] overflow-hidden bg-secondary">
+                  <img src={workshopPoster} alt="Unfolding Character — workshop with Linus Jansner, Tanecno Námestovo 2025" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <p className="text-xs text-muted-foreground/70 font-light mt-2 leading-relaxed">
+                  Unfolding Character — led by Linus Jansner at Tanecno, Námestovo, 13–17 August 2025. A five-day intensive in improvisation, character development, and physical composition for dancers and movers.
+                </p>
+              </div>
               <div className="grid grid-cols-3 gap-3 max-w-md">
                 <div className="aspect-[3/2] overflow-hidden bg-secondary">
                   <img src={workshop1} alt="Chaotic Kitchen workshop — Unfolding Character" className="w-full h-full object-cover opacity-80" loading="lazy" />

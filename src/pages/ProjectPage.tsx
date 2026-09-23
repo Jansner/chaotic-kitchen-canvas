@@ -79,6 +79,9 @@ import beneath5 from "@/assets/project-media/beneath-5.webp";
 import beneath6 from "@/assets/project-media/beneath-6.webp";
 import beneath7 from "@/assets/project-media/beneath-7.webp";
 import beneath8 from "@/assets/project-media/beneath-8.webp";
+import beneath9 from "@/assets/project-media/beneath-9.webp";
+import beneath10 from "@/assets/project-media/beneath-10.webp";
+import beneath11 from "@/assets/project-media/beneath-11.webp";
 import { driveGalleries } from "@/data/driveGalleries";
 import { publishedReviews } from "@/data/press";
 
@@ -150,7 +153,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "beneath": {
     main: beneathPreviewNew,
-    gallery: [beneath1, beneath2, beneath3, beneath4, beneath5, beneath6, beneath7, beneath8, beneathPreview]
+    gallery: [beneath1, beneath2, beneath3, beneath4, beneath5, beneath6, beneath7, beneath8, beneath9, beneath10, beneath11, beneathPreview]
   },
 };
 
