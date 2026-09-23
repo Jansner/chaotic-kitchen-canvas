@@ -69,6 +69,16 @@ import justLikeOldDaysNew1 from "@/assets/project-media/just-like-old-days-new-1
 import justLikeOldDaysNew2 from "@/assets/project-media/just-like-old-days-new-2.webp";
 import justLikeOldDaysNew3 from "@/assets/project-media/just-like-old-days-new-3.webp";
 import justLikeOldDaysNew4 from "@/assets/project-media/just-like-old-days-new-4.webp";
+import balanceInGallery10 from "@/assets/project-media/balance-in-10.webp";
+import balanceInGallery12 from "@/assets/project-media/balance-in-12.webp";
+import beneath1 from "@/assets/project-media/beneath-1.webp";
+import beneath2 from "@/assets/project-media/beneath-2.webp";
+import beneath3 from "@/assets/project-media/beneath-3.webp";
+import beneath4 from "@/assets/project-media/beneath-4.webp";
+import beneath5 from "@/assets/project-media/beneath-5.webp";
+import beneath6 from "@/assets/project-media/beneath-6.webp";
+import beneath7 from "@/assets/project-media/beneath-7.webp";
+import beneath8 from "@/assets/project-media/beneath-8.webp";
 import { driveGalleries } from "@/data/driveGalleries";
 import { publishedReviews } from "@/data/press";
 
@@ -80,7 +90,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "balance-in": {
     main: balanceInCover,
-    gallery: [balanceInGallery1, balanceInGallery2, balanceInGallery3, balanceInGallery5, balanceInGallery6]
+    gallery: [balanceInGallery1, balanceInGallery2, balanceInGallery3, balanceInGallery5, balanceInGallery6, balanceInGallery10, balanceInGallery12]
   },
   "strangers-in-the-night": {
     main: strangers2,
@@ -140,7 +150,7 @@ const projectImages: Record<string, { main: string; gallery: string[] }> = {
   },
   "beneath": {
     main: beneathPreviewNew,
-    gallery: [beneathPreview]
+    gallery: [beneath1, beneath2, beneath3, beneath4, beneath5, beneath6, beneath7, beneath8, beneathPreview]
   },
 };
 
@@ -203,7 +213,7 @@ const ProjectPage = () => {
   const isLiminalPhantoms = project.id === "liminal-phantoms";
   const isNoiseWithoutSilence = project.id === "noise-without-silence";
   const isWfdal = project.id === "what-falls-doesnt-always-land";
-  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence";
+  const hasBundledMedia = isStrangers || isBalanceIn || project.id === "capodimonte-site-specific" || project.id === "noise-without-silence" || project.id === "beneath";
   const projectReviews = isStrangers
     ? publishedReviews.filter((review) => review.project === project.title)
     : [];
