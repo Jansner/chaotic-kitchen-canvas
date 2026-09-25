@@ -196,6 +196,17 @@ The work has been presented across Europe, North America, and Asia, including fe
     category: "news",
     description: "The interactive performance FIKA expands its research to include Korean cultural perspectives on human connection.",
     projectId: "fika"
+  },
+  {
+    id: "nipai-acting-award-2024",
+    title: "Linus Jansner Wins Best Theatrical Acting Performance — NIPAI",
+    date: "2024-05-10",
+    category: "news",
+    description: "Linus Jansner won the theatre competition of the New International Performing Arts Institute (NIPAI) for Best Theatrical Acting Performance.",
+    fullDescription: `On 10 May 2024, Linus Jansner won the theatre competition of the New International Performing Arts Institute (NIPAI) in the category Best Theatrical Acting Performance.
+
+NIPAI is an international institute for performing arts training, working with theatre directors, choreographers, and performers from more than 25 countries.`,
+    link: "https://www.nipai.org/"
   }
 ];
 

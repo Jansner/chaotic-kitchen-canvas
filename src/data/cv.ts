@@ -62,6 +62,22 @@ export const choreographies: CVChoreography[] = [
   { title: "Stor Fågel", date: "10/03/2016", details: "Winner" }
 ];
 
+export interface CVAward {
+  title: string;
+  detail: string;
+  date: string;
+  link?: string;
+}
+
+export const awards: CVAward[] = [
+  {
+    title: "NIPAI Theatre Competition — Best Theatrical Acting Performance",
+    detail: "Winner — New International Performing Arts Institute (NIPAI)",
+    date: "10 May 2024",
+    link: "https://www.nipai.org/"
+  }
+];
+
 export const education: CVEducation[] = [
   { years: "2017–2021", institution: "Salzburg Experimental Academy of Dance", major: "Dance Major" },
   { years: "2019–2021", institution: "Salzburg Experimental Academy of Dance", major: "Choreographic Major" },
