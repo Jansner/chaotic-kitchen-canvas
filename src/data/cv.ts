@@ -152,7 +152,7 @@ export const presentations2025 = [
 ];
 
 // External links
-export const cvLink = "https://drive.google.com/file/d/13E7uT3wc7hFRI7E9zA6W3_O9k20yU9I1/view?usp=sharing";
+export const cvLink = "https://drive.google.com/file/d/1Iz4U4azlZKRONuo4QJcR5DKkGxVmEGx5/view?usp=sharing";
 export const shortBioLink = "https://drive.google.com/file/d/13E7uT3wc7hFRI7E9zA6W3_O9k20yU9I1/view?usp=sharing";
 export const portfolioLink = "https://drive.google.com/file/d/14XjPwEqsOHdnWgzGsGrmdGZijTtdZN5-/view?usp=sharing";
 export const workshopsLink = "https://drive.google.com/file/d/1hmt0BKL7o6OlqeFEJOdfWW3xCPBxeLuo/view?usp=sharing";
