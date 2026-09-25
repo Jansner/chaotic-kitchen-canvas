@@ -1,5 +1,5 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import { mentors, selectedProfessionalExperience, choreographies, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, portfolioLink, workshopsLink, strangersPartners, networkOrganisations } from "@/data/cv";
+import { mentors, selectedProfessionalExperience, choreographies, awards, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, portfolioLink, workshopsLink, strangersPartners, networkOrganisations } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 import linusProfile from "@/assets/project-media/linus-profile.webp";
@@ -270,6 +270,37 @@ const AboutSection = () => {
                     {choreo.details && (
                       <span className="text-xs text-primary ml-2">({choreo.details})</span>
                     )}
+                  </div>
+                </StaggerItem>
+              ))}
+          </StaggerContainer>
+          </div>
+
+          {/* Awards & Recognition */}
+          <div className="mb-16">
+            <AnimatedSection>
+              <h4 className="text-2xl font-light tracking-wide mb-8 text-primary">Awards & Recognition</h4>
+            </AnimatedSection>
+            <StaggerContainer className="space-y-4">
+              {awards.map((award, index) => (
+                <StaggerItem key={index}>
+                  <div className="grid grid-cols-1 md:grid-cols-[120px_1fr_1fr] gap-2 md:gap-6 py-4 border-b border-border/50">
+                    <span className="text-sm text-muted-foreground">{award.date}</span>
+                    <span className="font-light flex items-center gap-2 flex-wrap">
+                      {award.title}
+                      {award.link && (
+                        <a
+                          href={award.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Open the organiser's website"
+                          className="inline-flex items-center gap-1 text-xs text-primary/70 hover:text-primary transition-colors"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                    </span>
+                    <span className="text-muted-foreground font-light">{award.detail}</span>
                   </div>
                 </StaggerItem>
               ))}
