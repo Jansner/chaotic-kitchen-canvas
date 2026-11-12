@@ -17,6 +17,7 @@ export interface Project {
     author: string;
   };
   dossierLink?: string;
+  technicalRiderLink?: string;
   details?: {
     format?: string;
     duration?: string;
@@ -186,27 +187,46 @@ Strangers in the Night is thus an investigation into the chiaroscuro of contempo
     id: "what-falls-doesnt-always-land",
     title: "What Falls Doesn't Always Land",
     subtitle: "Duet with Handpan",
-    year: "2024",
-    description: "A poetic and visceral duet exploring displacement, trust, and the struggle for survival.",
-    fullDescription: `This is a poetic and visceral duet that explores the emotional weight of displacement, trust, and the struggle for survival. Two bodies fall, catch, and merge, echoing themes of forced migration and emotional resilience. It's an intimate reflection on how physical closeness can still feel distant when the world around you is unstable. 
+    year: "2026",
+    description: "A body falls. Another reaches. Between these two actions, a relationship is made—and placed at risk.",
+    quote: {
+      text: "Thus all doth fall. This hand of mine must fall",
+      author: "Rainer Maria Rilke, Autumn, translated by Jessie Lamont"
+    },
+    fullDescription: `A body falls. Another reaches. Between these two actions, a relationship is made—and placed at risk.
 
-This piece is a sculptural and bodily exploration of identity, grief, and the silent negotiations in every partnership, especially those navigating trauma. It questions: What do we hold onto when everything else collapses? What falls… doesn't always land.`,
-    dossierLink: "https://drive.google.com/file/d/1GEbxfblf9x-SghfxaCBxTUqnOnnEezl8/view?usp=sharing",
+Two performers explore how political instability and the retreat into separate personal worlds create isolation and strain our capacity to trust and support one another. Acrobatic falls, catches and precarious balances meet a handpan whose harmonies and resonant frequencies become a third presence, making connection something seen, heard and felt.
+
+Connected like siblings, the performers repeatedly entrust their weight, fear and vulnerability to one another. Each return changes what they can give and what they need. How many times can we fall and still find someone waiting? Can we discover ourselves within the fall, or must we land to know who we are?
+
+At the centre of this relationship is a handpan: a third body with its own voice, resonance and circular geometry. Its distinctive metallic harmonies extend the encounter beyond physical contact. A touch becomes a tone; the tone continues after contact has ended. Breath, movement and sound inhabit the same space, allowing the connection between the performers to be heard as well as seen. Frequencies, overlapping tones and their decay become material for a physical exploration of how we affect one another, including when we are no longer touching.
+
+The handpan's circular form echoes through recurring gestures and returning pathways. Together, the performers and instrument form a shifting trinity. Harmony gathers them into a shared pulse, while their separate rhythms pull them apart. Can three distinct presences sustain a balance without losing their differences?
+
+This repeated falling carries the pressure of war, displacement and failures of collective care. The work speaks particularly to younger audiences navigating an intense flow of images, expectations and uncertainty: the desire to belong, the difficulty of trusting, and the exhaustion of recovering again and again. How long do we allow someone to keep falling?
+
+Acrobatic risk, sculptural partnering and theatrical outbursts unfold within an intimate musical world. Calm emerges through listening and adjusting to another presence. The work arrives at a balance between its three bodies—temporary, responsive and dependent on each of them. For a moment, the fall is held.`,
+    dossierLink: "/documents/wfdal-dossier.pdf",
+    technicalRiderLink: "/documents/wfdal-technical-rider.pdf",
     details: {
       duration: "Approx. 20min",
       choreography: "Linus Jansner, Yamuna Huygen",
       performers: "Linus Jansner, Yamuna Huygen",
-      premiere: "December 2024 — RedSapata, Linz, Austria",
+      premiere: "October 31, 2026 — FLOCK Festival (Official Premiere)",
       location: "Austria / Canada",
       presentations: [
-        "December 20, 2024 — RedSapata, Linz, Austria (Premiere)",
-        "May 5, 2025 — Eslöv, Sweden",
-        "September 10, 2025 — Festival Quartiers Danses, Montreal, Canada",
+        "October 31, 2026 — FLOCK Festival (Official Premiere)",
         "October 2026 — Wiesbaden, Germany",
-        "2027 — Upcoming Tour (dates TBC)"
+        "2027 — Upcoming Tour (dates TBC)",
+        "April 28, 2026 — Detour Festival, Brussels, Belgium (Work in Progress)",
+        "September 10, 2025 — Festival Quartiers Danses, Montréal, Canada (Work in Progress)",
+        "June 28, 2025 — Mannheim, Germany (Work in Progress)",
+        "May 5, 2025 — Eslöv, Sweden (Work in Progress)",
+        "December 20, 2024 — RedSapata, Linz, Austria (Work in Progress)"
       ]
     },
     videoLinks: [
+      { title: "Premiere Video", url: "https://youtu.be/VHsa5_HU5DQ", type: "performance" },
       { title: "Trailer", url: "https://www.youtube.com/watch?v=JcDAF7e63A8", type: "trailer" },
       { title: "Performance", url: "https://www.youtube.com/watch?v=L33j9ULOvUU", type: "performance" },
       { title: "Outside Version", url: "https://youtu.be/HmtfQQG1c6U", type: "other" }

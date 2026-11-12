@@ -326,18 +326,31 @@ const ProjectPage = () => {
                   {project.fullDescription || project.description}
                 </div>
 
-                {/* Dossier Link */}
-                {project.dossierLink && (
-                  <div className="mt-6">
-                    <a
-                      href={project.dossierLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      <FileText className="w-4 h-4" />
-                      View Dossier
-                    </a>
+                {/* Dossier & Technical Rider Links */}
+                {(project.dossierLink || project.technicalRiderLink) && (
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {project.dossierLink && (
+                      <a
+                        href={project.dossierLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        <FileText className="w-4 h-4" />
+                        Dossier
+                      </a>
+                    )}
+                    {project.technicalRiderLink && (
+                      <a
+                        href={project.technicalRiderLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        <FileText className="w-4 h-4" />
+                        Technical Rider
+                      </a>
+                    )}
                   </div>
                 )}
 
@@ -455,7 +468,7 @@ const ProjectPage = () => {
                 {/* Video links, placed beneath images in featured media bundles */}
                 {!isNoiseWithoutSilence && project.videoLinks && project.videoLinks.length > 0 && (
                   <div className="grid grid-cols-2 gap-2">
-                    {project.videoLinks.slice(hasBundledMedia ? 0 : 1).map((video, index) => {
+                    {(hasBundledMedia ? project.videoLinks : project.videoLinks.filter(v => v !== trailerVideo)).map((video, index) => {
                       const thumbnail = getYouTubeThumbnail(video.url);
                       return (
                         <a
