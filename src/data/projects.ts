@@ -80,7 +80,7 @@ Don’t You Hear? continues Linus Jansner’s research into the body as a psycho
       { title: "Performance", url: "https://youtu.be/hTsvFTEqo4k", type: "performance" }
     ],
     type: 'performance',
-    order: 2
+    order: 3
   },
   {
     id: "balance-in",
@@ -232,7 +232,7 @@ Acrobatic risk, sculptural partnering and theatrical outbursts unfold within an 
       { title: "Outside Version", url: "https://youtu.be/HmtfQQG1c6U", type: "other" }
     ],
     type: 'performance',
-    order: 3
+    order: 2
   },
   {
     id: "noise-without-silence",
