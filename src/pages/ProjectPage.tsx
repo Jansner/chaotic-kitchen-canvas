@@ -618,7 +618,7 @@ const ProjectPage = () => {
         )}
 
         {getReferencesForProject(project.id).length > 0 && (
-          <section className="container mx-auto px-6 pb-16" aria-labelledby="project-refs-heading">
+          <section className="container mx-auto px-6 pt-12 pb-16" aria-labelledby="project-refs-heading">
             <h2 id="project-refs-heading" className="text-xs uppercase tracking-widest text-muted-foreground mb-4">References & press</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {getReferencesForProject(project.id).map((ref) => (
