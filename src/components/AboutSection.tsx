@@ -1,6 +1,7 @@
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ScrollAnimations";
 import { mentors, selectedProfessionalExperience, choreographies, awards, education, skills, languages, coProducingPartners, directPartners, producingPartners, productionCompany, supportedBy, cvLink, shortBioLink, portfolioLink, workshopsLink, strangersPartners, networkOrganisations } from "@/data/cv";
 import { ExternalLink } from "lucide-react";
+import { referencesNewestFirst } from "@/data/references";
 import artistPortrait from "@/assets/artist-portrait.jpg";
 import linusProfile from "@/assets/project-media/linus-profile.webp";
 import workshopPoster from "@/assets/project-media/workshop-unfolding-poster.webp";
@@ -274,6 +275,24 @@ const AboutSection = () => {
                 </StaggerItem>
               ))}
           </StaggerContainer>
+          </div>
+
+          {/* Reviews & References */}
+          <div className="mb-16">
+            <AnimatedSection>
+              <h4 className="text-2xl font-light tracking-wide mb-8 text-primary">Reviews & References</h4>
+            </AnimatedSection>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+              {referencesNewestFirst().filter((r) => r.kind === "review").map((ref) => (
+                <a key={ref.id} href={ref.url} target="_blank" rel="noopener noreferrer" className="group aspect-square border border-border/70 p-3 flex flex-col justify-between hover:border-primary/50 transition-colors">
+                  <ExternalLink className="w-3.5 h-3.5 text-primary self-end" />
+                  <span>
+                    <span className="block text-sm font-light leading-snug group-hover:text-primary transition-colors">{ref.source}</span>
+                    <span className="block mt-1 text-xs text-muted-foreground line-clamp-2">{ref.work}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Awards & Recognition */}

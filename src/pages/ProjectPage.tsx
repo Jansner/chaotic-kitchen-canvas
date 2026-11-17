@@ -84,6 +84,7 @@ import beneath10 from "@/assets/project-media/beneath-10.webp";
 import beneath11 from "@/assets/project-media/beneath-11.webp";
 import { driveGalleries } from "@/data/driveGalleries";
 import { publishedReviews } from "@/data/press";
+import { getReferencesForProject } from "@/data/references";
 
 // Image mapping for projects
 const projectImages: Record<string, { main: string; gallery: string[] }> = {
@@ -612,6 +613,24 @@ const ProjectPage = () => {
                   </StaggerItem>
                 )}
               </StaggerContainer>
+            </div>
+          </section>
+        )}
+
+        {getReferencesForProject(project.id).length > 0 && (
+          <section className="container mx-auto px-6 pb-16" aria-labelledby="project-refs-heading">
+            <h2 id="project-refs-heading" className="text-xs uppercase tracking-widest text-muted-foreground mb-4">References & press</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {getReferencesForProject(project.id).map((ref) => (
+                <a key={ref.id} href={ref.url} target="_blank" rel="noopener noreferrer" className="group border border-border/70 p-4 hover:border-primary/50 transition-colors">
+                  <span className="flex items-start justify-between gap-2 text-sm font-light leading-snug group-hover:text-primary transition-colors">
+                    {ref.source}
+                    <ExternalLink className="w-3.5 h-3.5 shrink-0 mt-0.5 text-primary" />
+                  </span>
+                  <span className="block mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-primary/80">{ref.kind === "review" ? "Review" : "Programme"}</span>
+                  <span className="block mt-2 text-xs text-muted-foreground leading-relaxed">{ref.note}</span>
+                </a>
+              ))}
             </div>
           </section>
         )}

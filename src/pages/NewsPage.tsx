@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, ArrowRight, ExternalLink, Languages, X } from "lucide-react";
 import { newsItems, NewsItem } from "@/data/news";
 import { pressTexts, publishedReviews } from "@/data/press";
+import { referencesNewestFirst, formatRefDate } from "@/data/references";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ScrollAnimations";
@@ -141,6 +142,24 @@ const NewsPage = () => {
             </AnimatedSection>
 
             <div className="mt-14">
+              <AnimatedSection>
+                <h3 className="text-xl font-light tracking-wide mb-2">References & Links</h3>
+                <p className="text-sm text-muted-foreground font-light mb-8">Independent reviews, festival programmes and production pages naming Linus Jansner, newest first.</p>
+              </AnimatedSection>
+              <ul className="divide-y divide-border/60 border-y border-border/60 mb-16">
+                {referencesNewestFirst().map((ref) => (
+                  <li key={ref.id}>
+                    <a href={ref.url} target="_blank" rel="noopener noreferrer" className="group grid grid-cols-1 md:grid-cols-[7rem_1fr_auto] gap-2 md:gap-6 py-4 hover:text-primary transition-colors">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground">{formatRefDate(ref.date)}</span>
+                      <span>
+                        <span className="block text-sm font-light">{ref.source} — {ref.title}</span>
+                        <span className="block text-xs text-muted-foreground mt-1">{ref.work} · {ref.note}</span>
+                      </span>
+                      <span className="flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.2em] text-primary">{ref.kind === "review" ? "Review" : "Programme"}<ExternalLink className="w-3.5 h-3.5" /></span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
               <AnimatedSection>
                 <h3 className="text-xl font-light tracking-wide mb-2">Published Reviews</h3>
                 <p className="text-sm text-muted-foreground font-light mb-8">
